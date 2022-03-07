@@ -1,1 +1,15 @@
-<p>product-detail works!</p>
+  <div class="contenedorFlex" *ngIf = "!!product">
+    <img class="imagen" src="https://s3-eu-west-1.amazonaws.com/carritus.com/images_pms/70/59391570.jpg">
+    <h1 class="titulo"  appHoverHighlight> {{ product?.getName() }} </h1>
+    <h2 class="gramaje"> Pieza de 425g </h2>
+    <h2 class="precio"> Precio de 1,74$ </h2>
+    <div class="linea"> </div>
+    <input class="boton" type= "button" value="Añadir al Carro">
+    <div>
+        <h3 class="contador" id="contador"> 0 </h3>
+    </div>
+    <div class="op">
+        <button onclick = "incrementClick()" > + </button>
+        <button onclick = "decrementClick()" > - </button>
+    </div>
+  </div>

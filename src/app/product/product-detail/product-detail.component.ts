@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../modelos/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
+
+  @Input("Product") product!: Product;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  //private unidades = document.getElementById("contador");
+
+  incrementClick(){
+
+    //this.unidades = unidades + 1;
+  }
+
+  decrementClick(){
+
   }
 
 }

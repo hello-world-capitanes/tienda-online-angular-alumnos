@@ -1,0 +1,59 @@
+.contenedorFlex{
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.titulo{
+  text-align: center;
+  height: 10px;
+  font-size: bold 100%;
+}
+
+.gramaje{
+  padding-left: 10px;
+  height: 0px;
+  font-size: 80%;
+}
+
+.precio{
+  padding-left: 10px;
+  font-size: 80%;
+}
+
+.imagen{
+  display: block;
+  margin-top: 10%;
+  margin-left: 103px;
+  height: 100px;
+  width: 100px;
+}
+
+.linea{
+  border-top-style: solid;
+  border-top-color: rgb(34, 25, 25);
+  border-top-width: 1px;
+  height: 10px;
+}
+
+.op{
+  display: block;
+  margin: auto;
+  height: 40px;
+}
+
+.contador{
+  text-align: center;
+  height: 10px;
+}
+
+.boton{
+
+  height: 20px;
+  width: 200px;
+  display: block;
+  margin: auto;
+}
