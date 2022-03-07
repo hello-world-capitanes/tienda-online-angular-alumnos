@@ -13,9 +13,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  products: Product[] = [
-    new Product("anastasio"),
-    new Product("producto2")
-  ];
-
 }

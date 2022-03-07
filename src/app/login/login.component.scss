@@ -1,0 +1,35 @@
+.window{
+  height: 330px;
+  width: 300px;
+  background-color: rgba(44, 33, 33, 0.034);
+}
+.identificate-menu{
+  margin: 30px;
+  padding-top: 50px;
+}
+
+.title-identificate-menu{
+  font-weight: bolder;
+  font-size: larger;
+  padding-bottom: 10px;
+  padding-left: 3px;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-accept-form button{
+  width: 100%;
+}
+
+.button-deny-form button{
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.input-password{
+  visibility: hidden;
+}
