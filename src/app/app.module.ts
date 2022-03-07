@@ -2,22 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-=======
->>>>>>> d5fb5b6 (initial commit)
+import { AppRoutingModule } from './app.routing';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
-<<<<<<< HEAD
     BrowserModule,
-    BrowserAnimationsModule
-=======
-    BrowserModule
->>>>>>> d5fb5b6 (initial commit)
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

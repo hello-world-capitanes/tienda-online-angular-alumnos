@@ -11,18 +11,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",
-<<<<<<< HEAD
     "@angular/cdk": "^13.2.5",
-=======
->>>>>>> d5fb5b6 (initial commit)
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
     "@angular/core": "~13.2.0",
     "@angular/forms": "~13.2.0",
-<<<<<<< HEAD
     "@angular/material": "^13.2.5",
-=======
->>>>>>> d5fb5b6 (initial commit)
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
