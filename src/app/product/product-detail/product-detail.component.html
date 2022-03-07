@@ -1,1 +1,27 @@
-<p>product-detail works!</p>
+            <div class="flexbox" *ngIf="!!product" appProductHighlight>
+
+              <div>
+                 <img class="imagenRedonda" [src]="product.image">
+             </div>
+
+             <div>
+                 <p style="font-weight: bold; font-size: 15px; margin:5px">{{product.name}}</p>
+                 <p style="font-size: 12px; color:grey; margin:5px">Pieza 425 g</p>
+                 <p id="precio" style="margin:5px">1,75 €/ud.</p>
+             </div>
+
+             <div class="roundedhr"></div>
+
+             <div>
+                 <p style="color: grey; font-size: 12px; margin:5px">En carro</p>
+             </div>
+
+             <div class="flexbox2">
+
+                 <p id ="uds" style="font-weight: bold; font-size: 20px; margin:5px">1 uds.</p>
+                 <button id="buttonRestar" style="font-size: 17px; border-color:black; border-radius: 30px; height:30px; width: 30px; padding:1px">-</button>
+                 <button id="buttonSumar" style="font-size: 17px; border-color:black; background-color:yellow; border-radius: 30px; height:30px; width: 30px; padding:1px">+</button>
+
+             </div>
+
+         </div>
