@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductHighlightDirective } from './directive/directive-example';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductHighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="grid">
+  <ng-container *ngFor="let product of products">
+    <app-product-detail [productCard]="product"></app-product-detail>
+  </ng-container>
+</div>
+
+
