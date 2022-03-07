@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({selector: '[appProductHighlight]'})
 export class ProductHighlightDirective{
-@Input('color') color: string = 'lightblue';
+@Input('color') color: string = 'lightgrey';
 
 constructor(private element: ElementRef){}
 
