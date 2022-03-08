@@ -12,8 +12,9 @@ import { HoverHighlightDirective } from './directives/hover-highlight.directive'
 import { ArticuloComponent } from './articulo/articulo.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
+import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserFormComponent } from './user/components/user-form/user-form.compone
     ArticuloComponent,
     LoginComponent,
     CreateAccountComponent,
-    UserFormComponent
+    UserFormComponent,
+    MostrarContrasenaDirective
   ],
 
   imports: [
@@ -34,8 +36,9 @@ import { UserFormComponent } from './user/components/user-form/user-form.compone
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

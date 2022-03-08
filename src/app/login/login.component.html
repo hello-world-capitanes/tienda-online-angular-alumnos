@@ -1,27 +1,30 @@
-<div class = "window">
+<div class = "window"  *ngIf = "mostrarLogeo">
   <div class = "identificate-menu">
     <div class = "title-identificate-menu">
         <span> Identifícate </span>
     </div>
 
-    <form class="container-form">
-      <mat-form-field class="input-email" appearance="fill">
+    <form [formGroup] = "formLogin" class = "container-form">
+      <mat-form-field class = "input-email" appearance = "fill">
         <mat-label>Introduce tu email</mat-label>
-        <input matInput placeholder="example@email.com">
+        <input matInput placeholder = "example@email.com" formControlName = "email">
       </mat-form-field>
 
-      <mat-form-field class="input-password" appearance="fill">
+      <mat-form-field class = "input-password" appearance = "fill" *ngIf = "isOn">
         <mat-label> Contraseña </mat-label>
-        <input matInput placeholder="***********">
+        <input matInput placeholder = "**********" formControlName = "contrasena">
       </mat-form-field>
 
       <div class = "button-accept-form">
-        <button mat-raised-button> Continuar </button>
+        <button mat-raised-button (click) = "cargarSiguientePantalla()"> Continuar </button>
       </div>
 
       <div class = "button-deny-form">
-        <button mat-button> Cancelar </button>
+        <button mat-button > Cancelar </button>
       </div>
     </form>
   </div>
 </div>
+
+<app-create-account *ngIf = "mostrarVentanaRegistro"> </app-create-account>
+
