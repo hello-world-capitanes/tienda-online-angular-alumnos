@@ -1,1 +1,4 @@
-<p>product-detail works!</p>
+<div *ngIf="!!product">
+    <span>{{ product.name }}</span>
+    <img [src]="product.image">
+</div>
