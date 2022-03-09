@@ -7,11 +7,11 @@ export class Product {
         this._image = image;
     }
 
-    get name(): string {
+    getName(): string {
         return this._name;
     }
 
-    get image(): string {
+    getImage(): string {
         return this._image;
     }
 }

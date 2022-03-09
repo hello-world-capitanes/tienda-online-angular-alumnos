@@ -7,7 +7,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input("productCard") product!: Product;
+  @Input("productCard") product !: Product;
 
   constructor() { }
 
