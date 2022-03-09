@@ -26,4 +26,5 @@ export class Product {
   get precio(): string{
     return this.precio;
   }
+
 }
