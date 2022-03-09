@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { SharedModule } from './shared/shared.module';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { LoginComponent } from './login/login.component';
@@ -37,6 +38,7 @@ import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.dire
     MatButtonModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
 
   providers: [],

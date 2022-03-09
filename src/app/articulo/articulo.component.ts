@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product/modelos/product.model';
+import { Product } from '../product/models/product.model';
 
 @Component({
   selector: 'app-articulo',
@@ -12,10 +12,5 @@ export class ArticuloComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  products: Product[] = [
-    new Product("anastasio"),
-    new Product("producto2")
-  ];
 
 }
