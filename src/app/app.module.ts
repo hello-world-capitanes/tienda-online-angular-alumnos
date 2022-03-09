@@ -8,19 +8,27 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductHighlightDirective } from './directive/directive-example';
 import { SharedModule } from './shared/shared.module';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalRegisterComponent } from './modal-register/modal-register.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductDetailComponent,
-    ProductHighlightDirective
+    ProductHighlightDirective,
+    ModalLoginComponent,
+    ModalRegisterComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
+    MatDialogModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

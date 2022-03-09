@@ -12,9 +12,9 @@
       <a mat-tab-link>Categorías</a>
       <a mat-tab-link>Mis habituales</a>
     </nav>
-  
+
     <span class="spacer"></span>
-  
+
     <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
       <span>Iniciar sesión</span>
       <mat-icon>keyboard_arrow_down</mat-icon>
@@ -22,7 +22,7 @@
     <mat-menu #userMenu="matMenu" xPosition="before">
       <h2 class="username">Invitado</h2>
       <mat-divider></mat-divider>
-      <button mat-raised-button color="accent" class="sign-in-button" aria-label="Go to user">
+      <button mat-raised-button color="accent" class="sign-in-button" (click)="openDialog()">
         Iniciar sesión
       </button>
       <mat-divider></mat-divider>
@@ -37,7 +37,7 @@
         </mat-list-item>
       </mat-list>
     </mat-menu>
-  
+
     <button mat-raised-button color="accent" aria-label="Go to shopping-cart">
       <mat-icon matBadge="1" class="shopping-cart-icon">shopping_cart</mat-icon>
       <span>1,00 €</span>

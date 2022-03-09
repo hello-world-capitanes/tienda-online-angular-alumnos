@@ -1,20 +1,19 @@
 .flex{
   display: flex;
-  justify-content: start;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
 }
 
 .box1,
 .box2{
-  border: 1px solid black;
   max-width: 200px;
-  border: none;
+  border: 3px solid #E0E0E0;
+  border-radius: 5px;
 }
 
-.box1:hover,
-.box2:hover{
-  transform: scale(1.10);
-  border-color: gray;
-  box-shadow: 100px;
+.boxseparte{
+  padding: 10px;
 }
 
 .foto{
@@ -36,17 +35,17 @@
 
 .boton{
   background-color: white;
-  border-color: orange;
+  border-color: #FF538E;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .boton:hover{
-  background-color: lightgray;
+  background-color: #FF538E;
 }
 
 .linea{
-  border-bottom:solid 1px grey;
+  border-bottom: 2px solid  #E0E0E0;
   width:100%;
   height:25px;
   align-items: center;
