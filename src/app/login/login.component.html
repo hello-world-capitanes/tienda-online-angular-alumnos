@@ -6,13 +6,15 @@
 
     <form [formGroup] = "formLogin" class = "container-form">
       <mat-form-field class = "input-email" appearance = "fill">
-        <mat-label>Introduce tu email</mat-label>
+        <mat-label> Introduce tu email </mat-label>
         <input matInput placeholder = "example@email.com" formControlName = "email">
+        <!-- <span> Introduce una contraseña válida </span> -->
       </mat-form-field>
 
       <mat-form-field class = "input-password" appearance = "fill" *ngIf = "isOn">
         <mat-label> Contraseña </mat-label>
         <input matInput placeholder = "**********" formControlName = "contrasena">
+        <!-- <span> La contraseña debe de tener una longitud de 8 caracteres </span> -->
       </mat-form-field>
 
       <div class = "button-accept-form">
