@@ -1,5 +1,4 @@
 .window{
-  height: 600px;
   width: 400px;
   background-color: rgba(44, 33, 33, 0.02);
 }
@@ -40,9 +39,12 @@
   width: 0px;
 }
 
-.checkbox-container{
-  width: 340px;
-  height: 100px;
+.input-checkbox-container{
+  width: 240px;
+  height: 130px;
+}
+
+.input-checkbox-container-flex{
   display: flex;
   flex-direction: row;
 }
@@ -74,4 +76,31 @@
   height: inherit;
   width: 0px;
   height: 0px;
+}
+
+.error{
+  font-size: 1.5ch;
+  color: red;
+}
+
+.input-container{
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-password{
+  height: 30px;
+}
+
+.button-help-form{
+  padding-bottom: 20px;
+}
+
+.input{
+  height: 50px;
+}
+
+#checkbox-error{
+  width: 370px;
 }

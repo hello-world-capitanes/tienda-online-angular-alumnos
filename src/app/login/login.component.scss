@@ -1,17 +1,31 @@
+
 .window{
-  height: 330px;
   width: 300px;
-  background-color: rgba(44, 33, 33, 0.034);
+  background-color: rgba(44, 33, 33, 0);
 }
+
 .identificate-menu{
-  margin: 30px;
-  padding-top: 50px;
+  margin: 10px;
+}
+
+.input{
+  height: 55px;
+  width: 100%;
+}
+
+.error{
+  font-size: 1.5ch;
+  color: red;
+}
+
+.containers{
+  height: 90px;
 }
 
 .title-identificate-menu{
   font-weight: bolder;
   font-size: larger;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   padding-left: 3px;
 }
 
@@ -30,7 +44,3 @@
 
 }
 
-/* .input-password{
-  visibility: hidden;
-}
- */

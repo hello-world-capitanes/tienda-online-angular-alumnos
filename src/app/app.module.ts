@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +14,7 @@ import { HoverHighlightDirective } from './directives/hover-highlight.directive'
 import { ArticuloComponent } from './articulo/articulo.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
 
@@ -38,7 +39,7 @@ import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.dire
     MatButtonModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule
   ],
 
   providers: [],
