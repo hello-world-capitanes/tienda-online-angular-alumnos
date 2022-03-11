@@ -1,0 +1,30 @@
+<div class="contenedor">
+  <h1 mat-dialog-title>Identifícate</h1>
+  <div mat-dialog-content class="contenedor2">
+    <span class="margin">Introduce tus datos</span>
+    <br>
+    <form class="margin" [formGroup]="formRegister">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput formControlName="nombreFormControl" placeholder="Raúl">
+      <mat-error>{{errorMessageNombre}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellidos</mat-label>
+        <input type="text" matInput formControlName="apellidoFormControl" placeholder="Bravo López">
+        <mat-error>{{errorMessageApellidos}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input type="pass" matInput formControlName="passFormControl" placeholder="********">
+        <mat-error>{{errorMessagePass}}</mat-error>
+      </mat-form-field>
+
+      <button class="margin" mat-raised-button color="primary">Continuar</button>
+      <button class="margin" mat-raised-button color="accent" mat-dialog-close>Cancelar</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="contenedor">
+  <h1 mat-dialog-title>Identifícate</h1>
+  <div mat-dialog-content class="contenedor2">
+    <span class="margin">Introduce tu email</span>
+    <br>
+    <form class="margin" [formGroup]="formLogin">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="emailFormControl" placeholder="Ex. raul@gmail.com">
+        <mat-error>{{errorMessageEmail}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput formControlName="passFormControl" placeholder="********">
+        <mat-error>{{errorMessagePass}}</mat-error>
+      </mat-form-field>
+
+      <button class="margin" mat-raised-button color="primary" (click)="aceptar()">Continuar</button>
+      <button class="margin" mat-raised-button color="accent" mat-dialog-close>Cancelar</button>
+    </form>
+  </div>
+</div>
