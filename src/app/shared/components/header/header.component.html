@@ -69,8 +69,13 @@
     <mat-divider></mat-divider>
 
     <div class="bloque4">
-        <img class="imagenIconoInfo" src="assets/images/imagenIconoINFO.jpg" alt="">
-        <span class="totalAproximado"> Total aproximado </span>
+        <mat-icon class="imagenIconoInfo"> help </mat-icon>
+
+        <div class="total-aproximado-container">
+          <span> Total aproximado </span>
+        </div>
+
+
         <div class = "total-price-container">
           <span class="precioTotalAproximado" #precioTotal> 1 </span>
           <span class="simboloPrecioTotal"> € </span>
@@ -80,6 +85,7 @@
     <div class="bloque5">
         <button mat-button class="tramitarPedido" (click) ="tramitarPedido();">Tramitar pedido</button>
     </div>
+
 
 
   </div>
