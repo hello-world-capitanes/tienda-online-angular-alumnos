@@ -5,16 +5,18 @@
     <div class="bloque1">
 
         <div class="botonSalirDelCarro">
-            <button mat-button (click) = "sidenav.toggle()"> X </button>
+            <button mat-button (click) = "sidenav.toggle()">
+              <mat-icon>cancel</mat-icon>
+            </button>
         </div>
 
         <div class="titleSub">
-            <h1 class="title">
+            <p class="title">
                 Carro
-            </h1>
-            <h2 class="subtitle">
+            </p>
+            <p class="subtitle">
                 Entregar en 28039
-            </h2>
+            </p>
         </div>
 
         <div class="botonVaciarCarro">
@@ -32,6 +34,8 @@
     <div class="bloque2">
 
     </div>
+
+    <mat-divider></mat-divider>
 
     <div class="bloque3">
         <div>
@@ -55,18 +59,22 @@
                     <p class="unidades marron"><span class="marron" #unidad> 1 </span> ud.</p>
                 </div>
                 <div class="botonesAddRem">
-                    <button mat-button (click) ="remUnidad();"><mat-icon>restore_from_trash</mat-icon></button>
+                    <button mat-button (click) ="remUnidad();"><mat-icon>remove_shopping_cart</mat-icon></button>
                     <button mat-button (click) ="addUnidad();"><mat-icon>add_shopping_cart</mat-icon></button>
                 </div>
             </div>
         </div>
     </div>
 
+    <mat-divider></mat-divider>
+
     <div class="bloque4">
         <img class="imagenIconoInfo" src="assets/images/imagenIconoINFO.jpg" alt="">
         <span class="totalAproximado"> Total aproximado </span>
-        <span class="precioTotalAproximado" #precioTotal> 1 </span>
-        <span class="simboloPrecioTotal"> € </span>
+        <div class = "total-price-container">
+          <span class="precioTotalAproximado" #precioTotal> 1 </span>
+          <span class="simboloPrecioTotal"> € </span>
+        </div>
     </div>
 
     <div class="bloque5">

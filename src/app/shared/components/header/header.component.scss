@@ -109,7 +109,7 @@ mat-list {
 }
 
 .titleSub{
-  padding-left: 1px;
+  padding-left: 10px;
 }
 
 .title{
@@ -124,8 +124,6 @@ mat-list {
 }
 
 .botonSalirDelCarro{
-  width: 35px;
-  height: 35px;
   display: flex;
   justify-content: center;
 }
@@ -269,6 +267,7 @@ mat-list {
   align-items: left;
   background-color: rgb(255, 255, 255);
   flex-direction: row;
+  width: 100%;
 }
 
 .totalAproximado{
@@ -283,8 +282,14 @@ mat-list {
   height: 13px;
 }
 
+.total-price-container{
+  text-align: right;
+  padding-right: 30px;
+  width: 100%;
+}
+
 .precioTotalAproximado{
-  padding-left: 120px;
+  text-align: right;
   font-weight: bolder;
   font-size: larger;
 }
@@ -305,7 +310,7 @@ mat-list {
 
 .tramitarPedido{
   height: 35px;
-  width: 90%;
+  width: 97%;
   background-color: #01AC60;
   border-radius: 5px;
   box-shadow: 0 0 3px #80DBB4;
