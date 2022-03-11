@@ -16,17 +16,13 @@ export class loginComponent implements OnInit {
 
   datos=[{usuario:"raul@gmail.com",pass:"12345"}]
 
+  isCorrectEmail:boolean=false;
+
   aceptar():void{
 
-     if(this.form.get('emailFormControl')?.value==this.datos[0].usuario){
-
-
-
-
-    } else{
-
+    this.isCorrectEmail = (this.form.get('emailFormControl')?.value === this.datos[0].usuario);
+    if (!this.isCorrectEmail){
       this.dialog.open(RegisterComponent);
-
     }
 
   }
