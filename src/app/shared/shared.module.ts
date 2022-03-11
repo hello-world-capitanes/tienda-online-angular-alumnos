@@ -1,3 +1,6 @@
+import { SideBarServiceService } from 'src/app/services/sideBarService/side-bar-service.service';
+import { SidebarComponent } from './../sidebar/sidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
@@ -9,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -21,7 +23,6 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     MatMenuModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatTabsModule,
     MatListModule,
@@ -32,7 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatBadgeModule,
     MatExpansionModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule
   ],
   exports: [
     HeaderComponent,

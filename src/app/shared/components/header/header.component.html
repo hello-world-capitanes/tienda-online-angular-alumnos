@@ -1,147 +1,53 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<mat-sidenav #sidenav [mode]= "modo" class = "sidenav" position="end">
-  <div class="main">
-    <div class="bloque1">
+<mat-toolbar>
+    <a mat-button class="logo" aria-label="Go to home" routerLink="/">
+      <img src="assets/images/mercadona_logo.svg">
+    </a>
+    <form class="search-form">
+      <div class="search-icon">
+        <mat-icon>search</mat-icon>
+      </div>
+      <input type="search" matInput placeholder="Buscar productos">
+    </form>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link>Categorías</a>
+      <a mat-tab-link>Mis habituales</a>
+    </nav>
 
-        <div class="botonSalirDelCarro">
-            <button mat-button (click) = "sidenav.toggle()">
-              <mat-icon>cancel</mat-icon>
-            </button>
-        </div>
+    <span class="spacer"></span>
 
-        <div class="titleSub">
-            <p class="title">
-                Carro
-            </p>
-            <p class="subtitle">
-                Entregar en 28039
-            </p>
-        </div>
+    <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
+      <span>Iniciar sesión</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
 
-        <div class="botonVaciarCarro">
-            <button mat-button (click) ="vaciarCarrito();"> Vaciar </button>
-        </div>
-
-        <div class="botonCuboVaciarCarro">
-            <button mat-button mat-button (click) = "vaciarCarrito();">
-                <img class="botonCuboVaciarCarroImagen" src="assets/images/imagenBasura.png" alt="">
-            </button>
-        </div>
-
-    </div>
-
-    <div class="bloque2">
-
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="bloque3">
-        <div>
-            <img class="imagenProducto" src="assets/images/palmera.jpg" alt="">
-        </div>
-
-        <div class="productoInfo">
-            <div>
-                <p class="nomProducto">Palmera de cacao</p>
-                <p>
-                    <span class="negrita" #precioArticulo> 1.75 </span>
-                    <span> € </span>
-                    <span class="productoUd"> /ud.</span>
-                </p>
-            </div>
-
-            <hr class="separador">
-            <div class="productoAddContenedor">
-                <div class="enCarroCont">
-                    <p class="enCarro">En carro</p>
-                    <p class="unidades marron"><span class="marron" #unidad> 1 </span> ud.</p>
-                </div>
-                <div class="botonesAddRem">
-                    <button mat-button (click) ="remUnidad();"><mat-icon>remove_shopping_cart</mat-icon></button>
-                    <button mat-button (click) ="addUnidad();"><mat-icon>add_shopping_cart</mat-icon></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="bloque4">
-        <mat-icon class="imagenIconoInfo"> help </mat-icon>
-
-        <div class="total-aproximado-container">
-          <span> Total aproximado </span>
-        </div>
-
-
-        <div class = "total-price-container">
-          <span class="precioTotalAproximado" #precioTotal> 1 </span>
-          <span class="simboloPrecioTotal"> € </span>
-        </div>
-    </div>
-
-    <div class="bloque5">
-        <button mat-button class="tramitarPedido" (click) ="tramitarPedido();">Tramitar pedido</button>
-    </div>
-
-
-
-  </div>
-</mat-sidenav>
-
-<mat-sidenav-container>
-  <mat-toolbar>
-      <a mat-button class="logo" aria-label="Go to home" routerLink="/">
-        <img src="assets/images/mercadona_logo.svg">
-      </a>
-      <form class="search-form">
-        <div class="search-icon">
-          <mat-icon>search</mat-icon>
-        </div>
-        <input type="search" matInput placeholder="Buscar productos">
-      </form>
-      <nav mat-tab-nav-bar>
-        <a mat-tab-link>Categorías</a>
-        <a mat-tab-link>Mis habituales</a>
-      </nav>
-
-      <span class="spacer"></span>
-
-      <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
-        <span>Iniciar sesión</span>
-        <mat-icon>keyboard_arrow_down</mat-icon>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <h2 class="username">Invitado</h2>
+      <mat-divider></mat-divider>
+      <button mat-raised-button (click) = "openLogin()" color="accent" class="sign-in-button" aria-label="Go to user">
+        Iniciar sesión
       </button>
 
-      <mat-menu #userMenu="matMenu" xPosition="before">
-        <h2 class="username">Invitado</h2>
-        <mat-divider></mat-divider>
-        <button mat-raised-button (click) = "openLogin()" color="accent" class="sign-in-button" aria-label="Go to user">
-          Iniciar sesión
-        </button>
+      <mat-divider></mat-divider>
 
-        <mat-divider></mat-divider>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>help</mat-icon>
+          <div mat-line>Preguntas frecuentes</div>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>support_agent</mat-icon>
+          <div mat-line>Ayuda</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
 
-        <mat-list role="list">
-          <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>help</mat-icon>
-            <div mat-line>Preguntas frecuentes</div>
-          </mat-list-item>
-          <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>support_agent</mat-icon>
-            <div mat-line>Ayuda</div>
-          </mat-list-item>
-        </mat-list>
-      </mat-menu>
-
-      <button mat-raised-button color="accent" aria-label="Go to shopping-cart"  (click)="sidenav.toggle()">
-        <mat-icon matBadge="1" class="shopping-cart-icon">shopping_cart</mat-icon>
-        <span>1,00 €</span>
-      </button>
-  </mat-toolbar>
-</mat-sidenav-container>
-
+    <button mat-raised-button [class.active]="toggleActive" color="accent" aria-label="Go to shopping-cart"  (click)="activateSideNav()">
+      <mat-icon matBadge="1" class="shopping-cart-icon">shopping_cart</mat-icon>
+      <span>1,00 €</span>
+    </button>
+</mat-toolbar>
 
 <mat-divider></mat-divider>
 

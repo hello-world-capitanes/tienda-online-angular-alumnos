@@ -1,5 +1,6 @@
+import { SideBarServiceService } from './services/sideBarService/side-bar-service.service';
 import { MatIconModule } from '@angular/material/icon';
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,8 +18,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     CreateAccountComponent,
     UserFormComponent,
     MostrarContrasenaDirective,
-    ShoppingCartComponent
+    SidebarComponent
   ],
 
   imports: [
@@ -42,10 +44,12 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatIconModule,
-    SharedModule
+    SharedModule,
+    MatSidenavModule,
+    MatDividerModule
   ],
 
-  providers: [],
+  providers: [SideBarServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

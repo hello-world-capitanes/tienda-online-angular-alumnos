@@ -1,5 +1,3 @@
-
-
 export class Cliente{
 
   private _nombre: string;
