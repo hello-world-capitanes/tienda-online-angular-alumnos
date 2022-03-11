@@ -1,7 +1,6 @@
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { AppComponent } from './app.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HomeComponent } from './home/home.component';

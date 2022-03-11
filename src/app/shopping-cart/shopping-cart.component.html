@@ -1,0 +1,74 @@
+<div class="main">
+  <div class="bloque1">
+
+      <div class="botonSalirDelCarro">
+          <button onclick="eliminarDelCarro();"> X </button>
+      </div>
+
+      <div class="titleSub">
+          <h1 class="title">
+              Carro
+          </h1>
+          <h2 class="subtitle">
+              Entregar en 28039
+          </h2>
+      </div>
+
+      <div class="botonVaciarCarro">
+          <button onclick="vaciarCarrito();"> Vaciar </button>
+      </div>
+
+      <div class="botonCuboVaciarCarro">
+          <button onclick="vaciarCarrito();">
+              <img class="botonCuboVaciarCarroImagen" src="./img/imagenBasura.png" alt="">
+          </button>
+      </div>
+
+  </div>
+
+  <div class="bloque2">
+
+  </div>
+
+  <div class="bloque3">
+      <div>
+          <img class="imagenProducto" src="./img/palmera.jpg" alt="">
+      </div>
+
+      <div class="productoInfo">
+          <div>
+              <p class="nomProducto">Palmera de cacao</p>
+              <p>
+                  <span class="negrita" id="precioArticulo"> 1.75 </span>
+                  <span> € </span>
+                  <span class="productoUd"> /ud.</span>
+              </p>
+          </div>
+
+          <hr class="separador">
+          <div class="productoAddContenedor">
+              <div class="enCarroCont">
+                  <p class="enCarro">En carro</p>
+                  <p class="unidades marron"><span class="marron" id="unidad"> 1 </span> ud.</p>
+              </div>
+              <div class="botonesAddRem">
+                  <button onclick="remUnidad();"><i class="fa-solid fa-trash-can marron"></i></button>
+                  <button onclick="addUnidad();"><i class="fa-solid fa-plus marron"></i></button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="bloque4">
+      <img class="imagenIconoInfo" src="./img/imagenIconoINFO.jpg" alt="">
+      <span class="totalAproximado"> Total aproximado </span>
+      <span class="precioTotalAproximado" id = "precioTotal"> 1 </span>
+      <span class="simboloPrecioTotal"> € </span>
+  </div>
+
+  <div class="bloque5">
+      <button class="tramitarPedido" onclick="tramitarPedido();">Tramitar pedido</button>
+  </div>
+
+
+</div>

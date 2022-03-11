@@ -1,8 +1,6 @@
-import { MatDialog } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -15,7 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,10 +31,12 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormControl, Validators 
     MatIconModule,
     MatBadgeModule,
     MatExpansionModule,
+    MatIconModule,
     MatDialogModule
   ],
   exports: [
     HeaderComponent,
   ]
 })
+
 export class SharedModule { }

@@ -1,4 +1,4 @@
-import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
@@ -14,9 +14,10 @@ import { HoverHighlightDirective } from './directives/hover-highlight.directive'
 import { ArticuloComponent } from './articulo/articulo.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.dire
     LoginComponent,
     CreateAccountComponent,
     UserFormComponent,
-    MostrarContrasenaDirective
+    MostrarContrasenaDirective,
+    ShoppingCartComponent
   ],
 
   imports: [
@@ -39,6 +41,7 @@ import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.dire
     MatButtonModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    MatIconModule,
     SharedModule
   ],
 
