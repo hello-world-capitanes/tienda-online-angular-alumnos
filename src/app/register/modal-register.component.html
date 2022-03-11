@@ -1,14 +1,56 @@
-<form class="register">
+<form [formGroup]="registerForm">
   <h1>Crear cuenta</h1>
-  <input type="text" placeholder="Introduce tu nombre" name="nombre" required>
+  <div class="container">
+    <mat-label><b>Introduce tu nombre</b></mat-label>
+    <input type="text" matInput placeholder="Nombre" formControlName="name">
 
-  <input type="text" placeholder="Introduce tus apellidos" name="nombre" required>
+    <div *ngIf="registerForm.get('name')?.hasError('required') && registerForm.get('name')?.touched" class="error">
+      <span style="color:red">
+        Por favor, introduce tu nombre
+      </span>
+    </div>
+  </div>
 
-  <input type="password" placeholder="Introduce tu contraseña" name="password" required>
+  <div class="container">
+    <mat-label><b>Introduce tu apellido</b></mat-label>
+    <input type="text" matInput placeholder="Apellido" formControlName="surname">
 
-  <input type="checkbox">
-  <p>Al continuar, aceptas <a href="#">nuestros términos y condiciones </a>
-    así como <a href="#">la politica de privacidad.</a></p>
+    <div *ngIf="registerForm.get('surname')?.hasError('required') && registerForm.get('surname')?.touched"
+      class="error">
+      <span style="color:red">
+        Por favor, introduce tu apellido
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <mat-label><b>Introduce tu contraseña</b></mat-label>
+    <input type="password" matInput placeholder="Contraseña" formControlName="password">
+
+    <div *ngIf="registerForm.get('password')?.hasError('required') && more" class="error">
+      <span style="color:red">
+        Por favor, introduce tu contraseña
+      </span>
+    </div>
+
+    <!-- <div *ngIf="registerForm.get('password')?.hasError('pattern') && registerForm.get('password')?.touched"
+      class="error">
+      <span style="color:red">
+        Introduce una contraseña valida
+      </span>
+    </div> -->
+  </div>
+
+  <div class="container">
+    <input type="checkbox">
+    <div *ngIf="registerForm.get('checkbox')?.hasError('required') && more" class="error">
+      <span style="color:red">
+        Debes de aceptar nuestros terminos y condiciones para poder registrarte.
+      </span>
+    </div>
+    <p>Al continuar, aceptas <a href="#">nuestros términos y condiciones </a>
+      así como <a href="#">la politica de privacidad.</a></p>
+  </div>
 
   <button mat-raised-button color="accent" aria-label="Progress"><b>Continuar</b></button>
   <button mat-dialog-close color="accent" aria-label="Go back"><b>Atrás</b></button>

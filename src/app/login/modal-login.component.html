@@ -2,13 +2,31 @@
 
 <form [formGroup]="loginForm">
   <div class="container">
-    <mat-label>Introduce tu email</mat-label>
+    <mat-label><b>Introduce tu email</b></mat-label>
     <input type="text" matInput placeholder="Email" formControlName="email">
+
+    <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="error">
+      <span style="color:red">
+        Por favor, introduce tu correo
+      </span>
+    </div>
   </div>
 
   <div class="container" *ngIf="activated">
-    <mat-label>Introduce tu contraseña</mat-label>
+    <mat-label><b>Introduce tu contraseña</b></mat-label>
     <input type="password" matInput placeholder="Contraseña" formControlName="password">
+
+    <div *ngIf="loginForm.get('password')?.hasError('required') && more" class="error">
+      <span style="color:red">
+        Por favor, introduce tu contraseña
+      </span>
+    </div>
+
+    <!-- <div *ngIf="loginForm.get('password')?.hasError('pattern') && loginForm.get('password')?.touched" class="error">
+      <span style="color:red">
+        Introduce una contraseña valida
+      </span>
+    </div> -->
   </div>
 
   <div class="AceptBtn">

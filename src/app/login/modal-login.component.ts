@@ -34,17 +34,17 @@ export class ModalLoginComponent implements OnInit {
       email: new FormControl(null, [
         Validators.required,
         Validators.email,
-        Validators.minLength(5)
+        Validators.minLength(5),
       ]),
       password: new FormControl(null, [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(8),
+        /* Validators.pattern(/^[a-z0-9._%+-A-Z]/), */
       ]),
     })
   }
 
   addPass(): void {
-
     if (this.users.some((element) => (this.loginForm.get('email')?.value) === element.email)) {
       this.activated = true;
       this.counter++;
@@ -53,13 +53,13 @@ export class ModalLoginComponent implements OnInit {
       }
 
       if (this.loginForm.valid) {
-        this.dialog.closeAll();
+        this.ref.close(true);
       }
 
     } else {
 
       if (this.loginForm.get('email')?.valid) {
-        this.dialog.closeAll();
+        this.ref.close();
         const dialogRef2 = this.dialog.open(ModalRegisterComponent);
       }
     }

@@ -8,9 +8,9 @@ describe('ModalRegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalRegisterComponent ]
+      declarations: [ModalRegisterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -15,15 +15,15 @@ export class Product {
     return this._name;
   }
 
-  get foto(): string{
+  get foto(): string {
     return this._foto;
   }
 
-  get peso(): string{
+  get peso(): string {
     return this._peso;
   }
 
-  get precio(): string{
+  get precio(): string {
     return this.precio;
   }
 

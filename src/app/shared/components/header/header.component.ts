@@ -14,9 +14,14 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  openDialog(){
-    this.dialog.open(ModalLoginComponent, {
+  openDialog() {
+    const loginDialog = this.dialog.open(ModalLoginComponent, {
       width: '250px',
+    });
+    loginDialog.afterClosed().subscribe(result => {
+      if (result) {
+        alert('Logged')
+      }
     });
   }
 

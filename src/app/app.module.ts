@@ -12,7 +12,7 @@ import { ModalLoginComponent } from './login/modal-login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalRegisterComponent } from './register/modal-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
