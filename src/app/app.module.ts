@@ -8,10 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductHighlightDirective } from './directive/directive-example';
 import { SharedModule } from './shared/shared.module';
-import { ModalLoginComponent } from './modal-login/modal-login.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { ModalRegisterComponent } from './modal-register/modal-register.component';
-import {MatIconModule} from '@angular/material/icon';
+import { ModalLoginComponent } from './login/modal-login.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalRegisterComponent } from './register/modal-register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import {MatIconModule} from '@angular/material/icon';
     AppRoutingModule,
     SharedModule,
     MatDialogModule,
-    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

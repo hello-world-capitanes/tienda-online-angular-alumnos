@@ -1,0 +1,21 @@
+<h1>Identifícate</h1>
+
+<form [formGroup]="loginForm">
+  <div class="container">
+    <mat-label>Introduce tu email</mat-label>
+    <input type="text" matInput placeholder="Email" formControlName="email">
+  </div>
+
+  <div class="container" *ngIf="activated">
+    <mat-label>Introduce tu contraseña</mat-label>
+    <input type="password" matInput placeholder="Contraseña" formControlName="password">
+  </div>
+
+  <div class="AceptBtn">
+    <button mat-raised-button color="accent" (click)="addPass()"><b>Login</b></button>
+  </div>
+
+  <div class="CancelBtn">
+    <button mat-dialog-close color="accent" aria-label="cancel"><b>Cancelar</b></button>
+  </div>
+</form>

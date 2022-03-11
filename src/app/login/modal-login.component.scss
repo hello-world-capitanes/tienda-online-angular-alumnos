@@ -13,13 +13,8 @@ color: black;
 box-sizing: border-box;
 }
 
-/* input[type="password"]{
-  display: none;
-} */
-
 button {
-color: white;
-background-color: #FF538E;
+color: darkgray;
 padding: 14px 20px;
 margin: 8px 0;
 border: none;
@@ -34,14 +29,3 @@ background-color: #DBD7D8;
 color: #FF538E;
 }
 
-.container {
-padding: 16px;
-}
-
-a{
-  color: black;
-}
-
-a:hover{
-  color: #FF538E;
-}

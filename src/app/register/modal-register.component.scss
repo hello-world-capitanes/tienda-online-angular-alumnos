@@ -13,10 +13,6 @@ color: black;
 box-sizing: border-box;
 }
 
-/* input[type="password"]{
-  display: none;
-} */
-
 button {
 color: white;
 background-color: #FF538E;
@@ -38,3 +34,10 @@ color: #FF538E;
 padding: 16px;
 }
 
+.a{
+  color: black;
+}
+
+a:hover{
+  color: #FF538E;
+}

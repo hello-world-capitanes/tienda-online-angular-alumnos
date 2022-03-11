@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalLoginComponent } from 'src/app/modal-login/modal-login.component';
+import { ModalLoginComponent } from 'src/app/login/modal-login.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
