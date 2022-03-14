@@ -1,46 +1,47 @@
 <mat-toolbar>
-    <a mat-button class="logo" aria-label="Go to home" routerLink="/">
-      <img src="assets/images/mercadona_logo.svg">
-    </a>
-    <form class="search-form">
-      <div class="search-icon">
-        <mat-icon>search</mat-icon>
-      </div>
-      <input type="search" matInput placeholder="Buscar productos">
-    </form>
-    <nav mat-tab-nav-bar>
-      <a mat-tab-link>Categorías</a>
-      <a mat-tab-link>Mis habituales</a>
-    </nav>
-  
-    <span class="spacer"></span>
-  
-    <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
-      <span>Iniciar sesión</span>
-      <mat-icon>keyboard_arrow_down</mat-icon>
+  <a mat-button class="logo" aria-label="Go to home" routerLink="/home">
+    <img src="assets/images/mercadona_logo.svg">
+  </a>
+  <form class="search-form">
+    <div class="search-icon">
+      <mat-icon>search</mat-icon>
+    </div>
+    <input type="search" matInput placeholder="Buscar productos">
+  </form>
+  <nav mat-tab-nav-bar class="categories-tabs">
+    <a mat-tab-link>Categorías</a>
+    <a mat-tab-link>Mis habituales</a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
+    <mat-icon class="login-icon">login</mat-icon>
+    <span>Iniciar sesión</span>
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+  <mat-menu #userMenu="matMenu" xPosition="before">
+    <h2 class="username">Invitado</h2>
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="accent" class="sign-in-button" aria-label="Go to user" (click)="openSigninForm()">
+      Iniciar sesión
     </button>
-    <mat-menu #userMenu="matMenu" xPosition="before">
-      <h2 class="username">Invitado</h2>
-      <mat-divider></mat-divider>
-      <button mat-raised-button color="accent" class="sign-in-button" aria-label="Go to user">
-        Iniciar sesión
-      </button>
-      <mat-divider></mat-divider>
-      <mat-list role="list">
-        <mat-list-item role="listitem">
-          <mat-icon mat-list-icon>help</mat-icon>
-          <div mat-line>Preguntas frecuentes</div>
-        </mat-list-item>
-        <mat-list-item role="listitem">
-          <mat-icon mat-list-icon>support_agent</mat-icon>
-          <div mat-line>Ayuda</div>
-        </mat-list-item>
-      </mat-list>
-    </mat-menu>
-  
-    <button mat-raised-button color="accent" aria-label="Go to shopping-cart">
-      <mat-icon matBadge="1" class="shopping-cart-icon">shopping_cart</mat-icon>
-      <span>1,00 €</span>
-    </button>
+    <mat-divider></mat-divider>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <mat-icon mat-list-icon>help</mat-icon>
+        <div mat-line>Preguntas frecuentes</div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <mat-icon mat-list-icon>support_agent</mat-icon>
+        <div mat-line>Ayuda</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-menu>
+
+  <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart" (click)="toggleShoppingCart()">
+    <mat-icon [matBadge]="getNumberOfProducts()">shopping_cart</mat-icon>
+    <span *ngIf="getTotalPrice(); let totalPrice" class="total-price">{{ totalPrice }}</span>
+  </button>
 </mat-toolbar>
 <mat-divider></mat-divider>

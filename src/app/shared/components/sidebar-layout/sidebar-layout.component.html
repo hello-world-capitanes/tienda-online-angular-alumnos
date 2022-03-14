@@ -1,0 +1,12 @@
+<mat-drawer-container>
+    <mat-drawer-content>
+        <div>
+            <app-header (toggleShoppingCartEvent)="toggleShoppingCart()"></app-header>
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </mat-drawer-content>
+    <mat-drawer class="sidebar" mode="over" position="end" [opened]="isShoppingCartOpened">
+        <app-shopping-cart (closeShoppingCartEvent)="toggleShoppingCart(false)"></app-shopping-cart>
+    </mat-drawer>
+</mat-drawer-container>
