@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class HoverHighlightDirective {
 
 
-  @Input("hover") color: string = "red";
+  @Input("hover") color: string = "#DBF3FF";
 
   constructor(private element?: ElementRef) { }
 

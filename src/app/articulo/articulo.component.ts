@@ -10,8 +10,8 @@ export class ArticuloComponent implements OnInit {
 
 
   products: Product[] = [
-    new Product("Palmerita", "https://prod-mercadona.imgix.net/images/af5f40fa72d3697d7075c9549fcbc436.jpg?fit=crop&h=300&w=300"),
-    new Product("pan", "https://prod-mercadona.imgix.net/images/af5f40fa72d3697d7075c9549fcbc436.jpg?fit=crop&h=300&w=300"),
+    new Product("Palmerita", "https://pastelerialaoriental.net/delivery/1351-large_default/palmera-de-chocolate.jpg", "1,74€","425g" ),
+    new Product("Pan", "https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg", "0,90 €","250g" ),
   ];
 
   constructor() { }

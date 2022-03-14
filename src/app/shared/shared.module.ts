@@ -1,5 +1,3 @@
-import { SideBarServiceService } from 'src/app/services/sideBarService/side-bar-service.service';
-import { SidebarComponent } from './../sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
