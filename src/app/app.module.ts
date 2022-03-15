@@ -14,7 +14,6 @@ import { SharedModule } from './shared/shared.module';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { LoginComponent } from './login/login.component';
-import { CreateAccountComponent } from './create-account/create-account.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
@@ -29,7 +28,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     HoverHighlightDirective,
     ArticuloComponent,
     LoginComponent,
-    CreateAccountComponent,
     UserFormComponent,
     MostrarContrasenaDirective,
     SidebarComponent

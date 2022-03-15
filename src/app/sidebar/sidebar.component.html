@@ -25,44 +25,49 @@
 
     </div>
 
-    <div *ngFor = "let product of products" class = "bloque3">
+    <div *ngIf = "!getSidenavService().vacio()">
 
-        <div class = "divider">
-          <mat-divider></mat-divider>
-        </div>
+      <div  *ngFor = "let product of getSidenavService().getProducts()" class = "bloque3">
 
-        <div>
-            <img class="imagenProducto" src="assets/images/palmera.jpg" alt="">
-        </div>
-
-
-        <div class="productoInfo">
-            <div>
-                <p class="nomProducto">Palmera de cacao</p>
-                <p class="descripcionProducto"> Pieza de 425g</p>
-                <p>
-                    <span class="negrita" #precioArticulo> 1.75 </span>
-                    <span> € </span>
-                    <span class="productoUd"> /ud.</span>
-                </p>
-            </div>
-
+          <div class = "divider">
             <mat-divider></mat-divider>
+          </div>
 
-            <hr class="separador">
-            <div class="productoAddContenedor">
-                <div class="enCarroCont">
-                    <p class="enCarro">En carro</p>
-                    <p class="unidades marron"><span class="marron" #unidad> 1 </span> ud.</p>
-                </div>
-                <div class="botonesAddRem">
-                    <button mat-button (click) ="remUnidad();" ><mat-icon>remove_shopping_cart</mat-icon></button>
-                    <button class = "botonesAddRem1" mat-button (click) ="addUnidad();" ><mat-icon>add_shopping_cart</mat-icon></button>
-                </div>
-            </div>
-        </div>
+          <div>
+              <img class="imagenProducto" src = '{{ product.getImage() }}' alt="">
+          </div>
+
+
+          <div class="productoInfo">
+              <div>
+                  <p class="nomProducto"> {{ product.getName() }} </p>
+                  <p class="descripcionProducto"> Pieza de 425g </p>
+                  <p>
+                      <span class="negrita" #precioArticulo> 1.75 </span>
+                      <span> € </span>
+                      <span class="productoUd"> /ud.</span>
+                  </p>
+              </div>
+
+              <mat-divider></mat-divider>
+
+              <hr class="separador">
+              <div class="productoAddContenedor">
+                  <div class="enCarroCont">
+                      <p class="enCarro">En carro</p>
+                      <p class="unidades marron"><span class="marron"> {{ product.getCantidad()}} </span> ud.</p>
+                  </div>
+                  <div class="botonesAddRem">
+                      <button mat-button (click) = "product.sumarCantidad()" ><mat-icon>remove_shopping_cart</mat-icon></button>
+                      <button class = "botonesAddRem1" mat-button (click) = "product.restarCantidad()" ><mat-icon>add_shopping_cart</mat-icon></button>
+                  </div>
+              </div>
+          </div>
+
+      </div>
 
     </div>
+
 
     <div class="bloque4">
         <mat-icon class="imagenIconoInfo"> help </mat-icon>

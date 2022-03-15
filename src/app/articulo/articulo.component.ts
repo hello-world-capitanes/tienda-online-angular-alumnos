@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product/models/product.model';
+import { SideBarServiceService } from '../services/sideBarService/side-bar-service.service';
 
 @Component({
   selector: 'app-articulo',

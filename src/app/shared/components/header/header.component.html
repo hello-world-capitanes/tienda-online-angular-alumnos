@@ -18,14 +18,14 @@
     <span class="spacer"></span>
 
     <button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
-      <span>Iniciar sesión</span>
-      <mat-icon>keyboard_arrow_down</mat-icon>
+      <span>  {{ mensajeBienvenida}}  </span>
+      <mat-icon> keyboard_arrow_down </mat-icon>
     </button>
 
     <mat-menu #userMenu="matMenu" xPosition="before">
-      <h2 class="username">Invitado</h2>
+      <h2 class="username"> {{ perfil }} </h2>
       <mat-divider></mat-divider>
-      <button mat-raised-button (click) = "openLogin()" color="accent" class="sign-in-button" aria-label="Go to user">
+      <button mat-raised-button *ngIf = "!logeado" (click) = "openLogin()" color="accent" class="sign-in-button" aria-label="Go to user">
         Iniciar sesión
       </button>
 

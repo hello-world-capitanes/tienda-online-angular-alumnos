@@ -39,16 +39,13 @@ export class UserFormComponent implements OnInit {
   sendForm(){
     this.buttonPressed = true;
 
-    console.log(this.createUser.get('checkbox'));
-
     if (this.createUser.valid){
-      this.dialogRef.close();
+      console.log(this.createUser?.value);
+      this.dialogRef.close(this.createUser?.value);
     }
   }
 
   goBack(){
-    const dialogRef2 = this.dialog.open(LoginComponent);
     this.dialogRef.close();
-
   }
 }

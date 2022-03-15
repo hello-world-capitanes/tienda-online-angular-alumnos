@@ -1,4 +1,4 @@
-  <div class="contenedorFlex" *ngIf = "!!product"  appHoverHighlight>
+  <div class="contenedorFlex" appHoverHighlight>
     <img class="imagen" src = "{{ product?.getImage() }}" alt="image">
     <h1 class="titulo"> {{ product?.getName() }} </h1>
     <div class="subtitulo"> Pieza de 425g </div>
@@ -7,11 +7,11 @@
     <input class="boton" type= "button" value="Añadir al Carro">
 
     <div>
-        <h3 class="contador" id="contador"> 0 </h3>
+        <h3 class="contador"> {{ unidades }} </h3>
     </div>
 
     <div class="op">
-        <button onclick = "incrementClick()" > + </button>
-        <button onclick = "decrementClick()" > - </button>
+        <button mat-button (click) = "incrementClick()" > + </button>
+        <button mat-button (click) = "decrementClick()" > - </button>
     </div>
   </div>

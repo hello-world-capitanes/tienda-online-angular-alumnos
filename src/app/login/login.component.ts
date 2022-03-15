@@ -1,7 +1,7 @@
 import { UserFormComponent } from './../user/components/user-form/user-form.component';
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Cliente } from './modelos/login.model';
 
 @Component({
@@ -18,15 +18,14 @@ export class LoginComponent implements OnInit {
   buttonCounter: number = 0;
 
   clientes: Cliente[] = [
-        new Cliente("paco","paco@correo.com"),
-        new Cliente("garcía", "garcía@correo.com"),
-        new Cliente("osman", "osman@correo.com"),
-        new Cliente("gregor", "gregor@correo.com")
+        new Cliente("Paco","paco@correo.com"),
+        new Cliente("García", "garcía@correo.com"),
+        new Cliente("Osman", "osman@correo.com"),
+        new Cliente("Gregor", "gregor@correo.com")
   ];
 
   constructor(private formulario: FormBuilder,
               public dialogRef: MatDialogRef<LoginComponent>,
-              public dialog: MatDialog
               ) {}
 
   ngOnInit(): void {
@@ -50,24 +49,29 @@ export class LoginComponent implements OnInit {
     if (this.clientes.some((element) => (this.formLogin.get('email')?.value) === element.getCorreo())) {
       this.isOn = true;
       this.buttonCounter++;
+
       if (this.buttonCounter >= 2){
         this.buttonPressed = true;
       }
 
       if (this.formularioLogin.valid){
-        this.dialogRef.close();
+        let array = [this.formLogin?.value];
+        let cliente = this.clientes.find((element) => (this.formLogin.get('email')?.value === element.getCorreo()));
+        array.push(cliente);
+
+        this.dialogRef.close(array);
       }
 
     } else {
 
       if (this.formLogin.get('email')?.valid){
-        this.dialogRef.close();
-        const dialogRef2 = this.dialog.open(UserFormComponent);
+        let array = [this.formLogin?.value, ""];
+        this.dialogRef.close(array);
       }
     }
   }
 
-  cancelForm(): void {
+   cancelForm(): void {
     this.dialogRef.close();
   }
 }

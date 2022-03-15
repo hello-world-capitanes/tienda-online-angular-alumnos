@@ -15,10 +15,6 @@ export class SidebarComponent implements OnInit {
 
   @ViewChild('sidenav') public sidenav !: MatSidenav;
 
-  products: Product[] = [
-    new Product("Palmerita", "https://pastelerialaoriental.net/delivery/1351-large_default/palmera-de-chocolate.jpg", "1,74€", "425g" ),
-    new Product("Pan", "https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg", "0,90 €", "250g" ),
-  ];
 
   constructor(private sidenavService: SideBarServiceService) { }
 
@@ -29,37 +25,23 @@ export class SidebarComponent implements OnInit {
     this.sidenavService.setSidenav(this.sidenav);
   }
 
+
   toggleNav(){
     this.sidenavService.close();
   }
 
 
-  /* console.log(typeof(parseInt(precioArticulo.textContent)); */
-
-  addUnidad(){
-    /* console.log("addUnidad");
-    contador++;
-    unidad.textContent = contador;
-    precioTotal.textContent = contador * parseFloat(precioArticulo.textContent); */
-    /* console.log(parseFloat(precioArticulo.textContent)); */
-  }
-
-  remUnidad(){
-      /* if(contador > 1){
-          contador--;
-          unidad.textContent = contador;
-          precioTotal.textContent = contador * parseFloat(precioArticulo.textContent);
-      } */
-
+  getSidenavService(){
+    return this.sidenavService;
   }
 
   vaciarCarrito(){
-      /* console.log("vaciarCarrito");
-      precioTotal.textContent = 0;
-      unidad.textContent = 0;
-      contador = 0; */
+
   }
 
   tramitarPedido(){
+
   }
+
+
 }
