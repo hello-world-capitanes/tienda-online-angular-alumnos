@@ -25,16 +25,16 @@
 
     </div>
 
-    <div class="bloque2">
+    <div *ngFor = "let product of products" class = "bloque3">
 
-    </div>
+        <div class = "divider">
+          <mat-divider></mat-divider>
+        </div>
 
-    <mat-divider></mat-divider>
-
-    <div class="bloque3">
         <div>
             <img class="imagenProducto" src="assets/images/palmera.jpg" alt="">
         </div>
+
 
         <div class="productoInfo">
             <div>
@@ -46,6 +46,8 @@
                     <span class="productoUd"> /ud.</span>
                 </p>
             </div>
+
+            <mat-divider></mat-divider>
 
             <hr class="separador">
             <div class="productoAddContenedor">
@@ -59,9 +61,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <mat-divider></mat-divider>
+    </div>
 
     <div class="bloque4">
         <mat-icon class="imagenIconoInfo"> help </mat-icon>

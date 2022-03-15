@@ -1,6 +1,7 @@
 import { SideBarServiceService } from './../services/sideBarService/side-bar-service.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
+import { Product } from '../product/models/product.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +14,11 @@ export class SidebarComponent implements OnInit {
   modo: MatDrawerMode = 'push';
 
   @ViewChild('sidenav') public sidenav !: MatSidenav;
+
+  products: Product[] = [
+    new Product("Palmerita", "https://pastelerialaoriental.net/delivery/1351-large_default/palmera-de-chocolate.jpg", "1,74€", "425g" ),
+    new Product("Pan", "https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg", "0,90 €", "250g" ),
+  ];
 
   constructor(private sidenavService: SideBarServiceService) { }
 

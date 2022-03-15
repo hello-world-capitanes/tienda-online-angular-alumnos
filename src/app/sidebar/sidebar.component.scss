@@ -67,6 +67,13 @@
 /* BLOQUE 3 */
 
 .bloque3{
+  border: #E0E0E0;
+  border-width: 0.05cm;
+  border-style: solid;
+
+  border-left: none;
+  border-right: none;
+
   display: flex;
   align-items: center;
   background-color: rgb(255, 255, 255);
@@ -91,7 +98,6 @@
 .productoInfo p{
   font-size: 14px;
 }
-
 
 .nomProducto{
   height: 10px;
