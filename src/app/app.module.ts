@@ -23,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
     ProductHighlightDirective,
     loginComponent,
     RegisterComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
+
 import { loginComponent } from './../../../login/login.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 

@@ -14,10 +14,9 @@ export class loginComponent implements OnInit {
 
   formLogin!:FormGroup;
 
-  datos=[{usuario:"raul@gmail.com",pass:"12345"}]
+  datos=[{usuario:"raul@gmail.com",pass:"12345",nombre:"Raúl"}]
 
   isCorrectEmail:boolean=false;
-
   aceptar():void{
 
     this.isCorrectEmail = (this.form.get('emailFormControl')?.value === this.datos[0].usuario);
