@@ -1,0 +1,11 @@
+
+<div class="product-list">
+    <ng-container *ngIf="!!products; else noProducts">
+        <ng-container *ngFor="let product of products">
+            <app-product-card [product]="product" appOverShadow></app-product-card>
+        </ng-container>
+    </ng-container>
+    <ng-template #noProducts>
+        <p>No hay productos disponibles</p>
+    </ng-template>
+</div>
