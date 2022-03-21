@@ -13,7 +13,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { CarritoComponent } from './carrito/carrito.component';
 import { ProductModule } from './core/product/product.module';
 import { ProductHighlightDirective } from './directive/directive-example';
 
@@ -32,7 +31,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ProductHighlightDirective,
     ModalLoginComponent,
     ModalRegisterComponent,
-    CarritoComponent,
 
   ],
   imports: [

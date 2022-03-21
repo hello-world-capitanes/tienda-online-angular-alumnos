@@ -1,5 +1,6 @@
 mat-toolbar {
   background: none;
+  justify-content: center;
 }
 
 .logo {
@@ -12,28 +13,28 @@ mat-toolbar {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
+  border-radius: 50px;
   margin: 0 15px;
   background: white;
   .search-icon {
-    display: flex;
-    align-items: center;
-    mat-icon {
+      display: flex;
+      align-items: center;
+      mat-icon {
       height: auto;
       width: auto;
       padding: 0 2px 0 5px;
       font-size: 18px;
       color: rgba(0, 0, 0, 0.12);
-    }
+      }
   }
   input[type="search"] {
-    width: 300px;
-    margin-top: 0.1px;
-    padding: 6px;
-    border: 0;
-    border-radius: 0 16px 16px 0;
-    font-size: 14px;
-    -webkit-appearance: searchfield-cancel-button;
+      width: 300px;
+      margin-top: 0.1px;
+      padding: 6px;
+      border: 0;
+      border-radius: 0 16px 16px 0;
+      font-size: 14px;
+      -webkit-appearance: searchfield-cancel-button;
   }
 }
 
@@ -45,6 +46,9 @@ mat-toolbar {
 
 .profile-button {
   margin-right: 10px;
+  .login-icon {
+      display: none;
+  }
 }
 .username {
   margin: 5px 15px 10px 15px;
@@ -54,17 +58,42 @@ mat-toolbar {
   margin: 10px 20px;
 }
 
-.shopping-cart-icon {
-  margin-right: 20px;
+.total-price {
+  margin-left: 20px;
 }
 
 mat-list {
   mat-list-item {
-    &:hover {
-      background: rgba(0, 0, 0, 0.04);
-    }
-    &:active {
-      background: rgba(0, 0, 0, 0.1);
-    }
+      &:hover {
+          background: rgba(0,0,0,.04);
+      }
+      &:active {
+          background: rgba(0,0,0,.1);
+      }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .categories-tabs {
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .profile-button {
+      span, mat-icon {
+          display: none;
+      }
+      .login-icon {
+          display: inline-block;
+      }
+  }
+  .shopping-cart-button {
+      .total-price {
+          display: none;
+      }
+  }
+  .search-form, .categories-tabs {
+      display: none;
   }
 }
