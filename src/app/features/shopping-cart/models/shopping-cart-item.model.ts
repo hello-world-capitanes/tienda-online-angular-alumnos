@@ -1,4 +1,4 @@
-import { Product } from "src/app/core/product/models/product.model";
+import { Product } from "../../product/models/product.model";
 
 export class ShoppingCartItem {
     static readonly DEFAULT_UNITS = 0;

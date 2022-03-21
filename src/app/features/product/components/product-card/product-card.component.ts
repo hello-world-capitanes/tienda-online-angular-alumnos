@@ -1,16 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/core/product/models/product.model';
+import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from 'src/app/shared/utils/price.service';
-import { ShoppingCartService } from 'src/app/core/shopping-cart/services/shopping-cart.service';
+import { Product } from '../../models/product.model';
+
 
 @Component({
-  selector: 'app-product-list-item',
-  templateUrl: './product-list-item.component.html',
-  styleUrls: ['./product-list-item.component.scss']
+  selector: 'app-product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss']
 })
-export class ProductListItemComponent implements OnInit {
+export class ProductCardComponent implements OnInit {
 
   @Input("product") product!: Product;
+
+  units: number = 0;
 
   constructor(
     private priceService: PriceService,
@@ -19,6 +22,7 @@ export class ProductListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.units = this.shoppingCartService.getUnitsInCart(this.product);
   }
 
   getPrice(): string {
@@ -27,16 +31,14 @@ export class ProductListItemComponent implements OnInit {
       "-";
   }
 
-  getUnits(): number {
-    return !!this.product ? this.shoppingCartService.getUnitsInCart(this.product) : 1;
-  }
-
   addToShoppingCart() {
     this.shoppingCartService.addProduct(this.product);
+    this.units++;
   }
 
   deleteFromShoppingCart() {
     this.shoppingCartService.deleteProduct(this.product);
+    this.units--;
   }
 
 }

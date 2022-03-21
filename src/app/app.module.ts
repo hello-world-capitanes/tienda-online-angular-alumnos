@@ -1,4 +1,5 @@
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -7,8 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { HomeComponent } from './core/home/home.component';
-import { ProductModule } from './core/product/product.module';
+import { ProductModule } from './features/product/product.module';
+import { HomeComponent } from './features/home/home.component';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
@@ -20,6 +21,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
 
     SharedModule,

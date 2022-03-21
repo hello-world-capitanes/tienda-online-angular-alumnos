@@ -1,4 +1,5 @@
 .product-card {
+    max-width: 300px;
     display: inline-flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -17,6 +18,12 @@
         box-shadow: 0 2px 12px 0 var(--white-cream-light);
         max-height: 200px;
         max-width: 200px;
+        margin: 0 auto;
+    }
+    small {
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
     }
     .product-card-footer {
         display: flex;
