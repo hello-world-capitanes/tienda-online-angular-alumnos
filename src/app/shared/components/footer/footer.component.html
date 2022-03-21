@@ -1,0 +1,30 @@
+<div class="footer">
+    <mat-divider></mat-divider>
+    <mat-toolbar>
+        <div class="footer-links">
+            <button mat-button disabled>
+                © Mercadona S.A.
+            </button>
+            <button mat-button>
+                Política de cookies
+            </button>
+            <button mat-button>
+                Términos y condiciones
+            </button>
+            <button mat-button>
+                Política de privacidad
+            </button>
+        </div>
+
+        <span class="spacer"></span>
+
+        <div style="display: inline-block" *ngIf="getDefaultLanguage(); let defaultLanguage" [matMenuTriggerFor]="languageMenu">
+            <app-button-language [language]="defaultLanguage" [isButtonDisabled]="true"></app-button-language>
+        </div>
+        <mat-menu #languageMenu="matMenu" xPosition="before" yPosition="above">
+            <ng-container matMenuContent *ngFor="let language of languages">
+                <app-button-language [language]="language"></app-button-language>
+            </ng-container>
+        </mat-menu>
+    </mat-toolbar>
+</div>

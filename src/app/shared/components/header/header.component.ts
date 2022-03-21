@@ -1,9 +1,10 @@
-import { Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
-import { LoginComponent } from 'src/app/login/login.component';
-import { SideBarServiceService } from 'src/app/services/sideBarService/side-bar-service.service';
+import { ShoppingCartService } from 'src/app/core/shopping-cart/services/shopping-cart.service';
 import { UserFormComponent } from 'src/app/user/components/user-form/user-form.component';
+import { PriceService } from '../../utils/price.service';
+import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,15 +18,22 @@ export class HeaderComponent implements OnInit {
   logeado: boolean = false;
   perfil: string = "Invitado";
 
-  constructor(
+/*   constructor(
     public dialog: MatDialog,
-    private sidenav: SideBarServiceService) {}
+    private sidenav: SideBarServiceService) {} */
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  @Output() toggleShoppingCartEvent = new EventEmitter<void>();
+
+  constructor(
+    private matDialog: MatDialog,
+    private priceService: PriceService,
+    private shoppingCartService: ShoppingCartService,
+  ) {
   }
 
-  openLogin(): void {
+/*   openLogin(): void {
     if (!this.logeado){
 
       const dialogRef = this.dialog.open(LoginComponent);
@@ -51,9 +59,9 @@ export class HeaderComponent implements OnInit {
   activateSideNav(){
     this.toggleActive = !this.toggleActive;
     this.sidenav.toggle();
-  }
+  } */
 
-  openRegisterWindow(objeto: any){
+  /* penRegisterWindow(objeto: any){
 
       let datosLogin: any;
       const dialogRef = this.dialog.open(UserFormComponent);
@@ -69,7 +77,47 @@ export class HeaderComponent implements OnInit {
         }
       });
 
+  } */
+
+  getNumberOfProducts(): number | null {
+    const total: number = this.shoppingCartService.getNumberOfProducts();
+    return (Number.isNaN(total) || total === 0) ? null : total;
+  }
+
+  getTotalPrice(): string | null {
+    const total: number = this.shoppingCartService.getTotalPrice();
+    return (Number.isNaN(total) || total === 0) ? null : this.priceService.getPrice(total);
+  }
+
+  toggleShoppingCart() {
+    this.toggleShoppingCartEvent.emit();
+  }
+
+  openSigninForm() {
+    const dialogRef = this.matDialog.open(SignInFormComponent, {
+      width: '350px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) {
+        return;
+      }
+
+      if (result && !result.password) {
+        //this.openSignUpForm(result);
+      }
+
+      if(result && result.password && result.email){
+        alert('Logged');
+      }
+    });
+  }
+
+  private openSignUpForm() {
+/*     const dialogRef = this.matDialog.open(SignUpFormComponent, {
+      data: { email: user.email },
+      width: '500px',
+    });
+    dialogRef.afterClosed().subscribe(); */
   }
 
 }
-

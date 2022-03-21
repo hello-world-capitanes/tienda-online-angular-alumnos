@@ -1,4 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { LanguageService } from './shared/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +9,19 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Mercadona';
+  title = 'tienda-online-angular-alumnos';
 
-  constructor(){
-
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+    private languageService: LanguageService,
+  ) {
+    this.languageService?.languages?.forEach(language => {
+      this.matIconRegistry.addSvgIcon(
+        language?.key,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/${language?.key}.svg`)
+      );
+    });
   }
 
-  ngOnInit(): void {
-
-  }
 }

@@ -1,0 +1,9 @@
+<button mat-menu-item (click)="changeLanguage(language)" [disabled]="isButtonDisabled">
+    <ng-container *ngIf="language?.key; else noIconPath">
+        <mat-icon [svgIcon]="language?.key!"></mat-icon>
+    </ng-container>
+    <ng-template #noIconPath>
+        <mat-icon>flag</mat-icon>
+    </ng-template>
+    <span>{{ language?.name }}</span>
+</button>
