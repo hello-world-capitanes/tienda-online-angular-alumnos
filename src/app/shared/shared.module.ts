@@ -14,9 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { ShoppingCartModule } from '../core/shopping-cart/shopping-cart.module';
+import { ShoppingCartModule } from '../features/shopping-cart/shopping-cart.module';
 import { BannerComponent } from './components/banner/banner.component';
-
 import { ButtonLanguageComponent } from './components/button-language/button-language.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';

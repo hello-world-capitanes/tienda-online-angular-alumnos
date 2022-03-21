@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MatDialog} from '@angular/material/dialog';
-import { ShoppingCartService } from 'src/app/core/shopping-cart/services/shopping-cart.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
-import { SidebarLayoutComponent } from '../sidebar-layout/sidebar-layout.component';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
 
 @Component({

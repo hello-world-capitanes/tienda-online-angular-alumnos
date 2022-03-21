@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { USER_CONTANTS } from 'src/app/core/user/utils/user-constants';
-import { USER_ERRORS } from 'src/app/core/user/utils/user-messages';
+import { USER_CONTANTS } from 'src/app/features/user/utils/user-constants';
+import { USER_ERRORS } from 'src/app/features/user/utils/user-messages';
 
 @Component({
   selector: 'app-sign-in-form',

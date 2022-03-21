@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // CLI imports router
-import { HomeComponent } from './core/home/home.component';
-import { ProductCardComponent } from './core/product/components/product-card/product-card.component';
-import { ProductListComponent } from './core/product/components/product-list/product-list.component';
+import { HomeComponent } from './features/home/home.component';
+import { ProductCardComponent } from './features/product/components/product-card/product-card.component';
+import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },

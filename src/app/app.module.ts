@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+=======
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> origin/develop
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
-import { registerLocaleData } from '@angular/common';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -13,14 +19,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { ProductModule } from './core/product/product.module';
 import { ProductHighlightDirective } from './directive/directive-example';
-
+import { HomeComponent } from './features/home/home.component';
+import { ProductModule } from './features/product/product.module';
 import { ModalLoginComponent } from './login/modal-login.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ModalRegisterComponent } from './register/modal-register.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './core/home/home.component';
+
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -36,6 +42,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     SharedModule,
     MatDialogModule,

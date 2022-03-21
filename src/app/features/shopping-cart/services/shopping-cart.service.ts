@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from 'src/app/core/product/models/product.model';
+import { Product } from '../../product/models/product.model';
 import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 
 @Injectable({
