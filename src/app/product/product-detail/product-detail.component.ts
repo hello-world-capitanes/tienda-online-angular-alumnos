@@ -8,15 +8,10 @@ import { Product } from 'src/app/product/models/product-model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input("productCard") product: Product | undefined;
-  @Output() onClickSection: EventEmitter<void> = new EventEmitter();
+  @Input("productCard") product!: Product;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  goToDetail(){
-    this.onClickSection.emit();
   }
 }

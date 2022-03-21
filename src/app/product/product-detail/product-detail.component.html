@@ -1,32 +1,4 @@
-<ng-container *ngIf="!! product">
-  <div class="flex">
-    <div class="box1" appProductHighlight>
-      <img class="foto"
-        src="https://prod-mercadona.imgix.net/images/5e949a6f64b52be230b8f1084156dcd9.jpg?fit=crop&h=300&w=300">
-      <br>
-      <div class="descripcionProducto">
-        <span class="titulo">Palmera de chocolate</span>
-        <br>
-        <span class="peso">425g</span>
-        <br>
-         <div class="peso">425g</div>
-        <span class="precio"><b>1.75€</b></span><span class="precio">/ud</span></div>
-        <div class="linea"></div>
-        <br>
-        <div><button class="boton">Añadir al carro</button></div>
-      </div>
-    </div>
-
-    <div class="box2" appProductHighlight>
-      <img class="foto"
-        src="https://prod-mercadona.imgix.net/images/4c68adec44abf73c036fcd154dc924a4.jpg?fit=crop&h=300&w=300">
-      <br>
-      <div class="titulo">Pan</div>
-      <div class="peso">Pieza 80g</div>
-      <div class="precio"> <b><span class="dinero">0.90€</span></b><span class="dinero">/ud</span>
-        <div class="linea"></div>
-        <br>
-        <div><button class="boton">Añadir al carro</button></div>
-      </div>
-    </div>
-</ng-container>
+<div *ngIf="!!product">
+  <span>{{ product.name }}</span>
+  <img [src]="product.image">
+</div>

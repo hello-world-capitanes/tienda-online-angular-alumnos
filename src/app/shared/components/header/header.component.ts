@@ -1,7 +1,10 @@
-import { User } from './../../../login/models/email-model';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ShoppingCartService } from 'src/app/core/shopping-cart/services/shopping-cart.service';
 import { ModalLoginComponent } from 'src/app/login/modal-login.component';
+import { PriceService } from '../../utils/price.service';
+import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,22 +12,7 @@ import { ModalLoginComponent } from 'src/app/login/modal-login.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(
-    public dialog: MatDialog
-  ) {
-
-  }
-
-  openDialog() {
-    const loginDialog = this.dialog.open(ModalLoginComponent, {
-      width: '250px',
-    });
-    loginDialog.afterClosed().subscribe(result => {
-      if (result) {
-        alert('Usuario correcto, bienvenido/a')
-      }
-    });
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

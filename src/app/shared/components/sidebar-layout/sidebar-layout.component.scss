@@ -1,0 +1,21 @@
+mat-drawer-container {
+    height: 100%;
+}
+
+.sidebar {
+    width: 30%;
+}
+
+mat-drawer-content {
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+    .sidebar {
+        width: 100%;
+    }
+}
