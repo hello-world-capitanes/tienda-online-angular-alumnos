@@ -36,11 +36,15 @@ export class SidebarComponent implements OnInit {
   }
 
   vaciarCarrito(){
-
+    this.sidenavService.vaciar();
   }
 
   tramitarPedido(){
 
+  }
+
+  getCantitadTotal(){
+    return 5;
   }
 
 

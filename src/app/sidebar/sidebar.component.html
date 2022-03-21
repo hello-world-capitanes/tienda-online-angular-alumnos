@@ -52,14 +52,15 @@
               <mat-divider></mat-divider>
 
               <hr class="separador">
+
               <div class="productoAddContenedor">
                   <div class="enCarroCont">
-                      <p class="enCarro">En carro</p>
+                      <span class="enCarro">En carro</span>
                       <p class="unidades marron"><span class="marron"> {{ product.getCantidad()}} </span> ud.</p>
                   </div>
                   <div class="botonesAddRem">
-                      <button mat-button (click) = "product.sumarCantidad()" ><mat-icon>remove_shopping_cart</mat-icon></button>
-                      <button class = "botonesAddRem1" mat-button (click) = "product.restarCantidad()" ><mat-icon>add_shopping_cart</mat-icon></button>
+                      <button mat-button (click) = "product.sumarCantidad()" > <mat-icon>add_shopping_cart</mat-icon></button>
+                      <button class = "botonesAddRem1" mat-button (click) = "product.restarCantidad()" > <mat-icon>remove_shopping_cart</mat-icon></button>
                   </div>
               </div>
           </div>
@@ -78,7 +79,9 @@
 
 
         <div class = "total-price-container">
-          <span class="precioTotalAproximado" #precioTotal> 1 </span>
+
+
+          <span class="precioTotalAproximado"> {{ "getCantidadTotal()" }} </span>
           <span class="simboloPrecioTotal"> € </span>
         </div>
     </div>
