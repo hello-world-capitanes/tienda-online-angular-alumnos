@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import { registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
->>>>>>> origin/develop
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
