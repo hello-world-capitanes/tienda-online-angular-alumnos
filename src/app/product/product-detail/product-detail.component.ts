@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/product/models/product-model';
-
 
 @Component({
   selector: 'app-product-detail',
@@ -9,10 +8,15 @@ import { Product } from 'src/app/product/models/product-model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input("productCard") product!: Product;
+  @Input("productCard") product: Product | undefined;
+  @Output() onClickSection: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  goToDetail(){
+    this.onClickSection.emit();
   }
 }

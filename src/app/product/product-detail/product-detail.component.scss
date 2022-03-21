@@ -2,18 +2,20 @@
   display: flex;
   padding-bottom: 20px;
   padding-top: 20px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .box1,
 .box2 {
   max-width: 200px;
   border: 3px solid #e0e0e0;
-  border-radius: 5px;
-}
+  position: relative;
+  padding: 8px 8px 14px;
+  border-radius: 12px;
+  margin: 4px;
+  box-shadow: white;
+  overflow: hidden;
 
-.boxseparte {
-  padding: 10px;
 }
 
 .foto {
@@ -24,24 +26,24 @@
 .precio {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  text-align: left;
 }
 
 .peso {
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  text-align: left;
 }
 
 .boton {
   background-color: white;
-  border-color: #ff538e;
+  border-color: #FCB831;
   border-radius: 5px;
   padding: 5px;
 }
 
 .boton:hover {
-  background-color: #ff538e;
+  background-color: #FEE3AD;
 }
 
 .linea {

@@ -1,3 +1,4 @@
+import { User } from './../../../login/models/email-model';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalLoginComponent } from 'src/app/login/modal-login.component';
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
     });
     loginDialog.afterClosed().subscribe(result => {
       if (result) {
-        alert('Logged')
+        alert('Usuario correcto, bienvenido/a')
       }
     });
   }

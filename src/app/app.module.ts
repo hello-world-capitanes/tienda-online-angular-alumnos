@@ -13,7 +13,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalRegisterComponent } from './register/modal-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CarritoComponent } from './carrito/carrito.component';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ProductHighlightDirective,
     ModalLoginComponent,
     ModalRegisterComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatDividerModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

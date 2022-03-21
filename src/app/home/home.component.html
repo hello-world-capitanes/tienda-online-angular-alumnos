@@ -1,3 +1,6 @@
- <ng-container *ngFor="let product of products">
-    <app-product-detail [productCard]="product"></app-product-detail>
- </ng-container>
+<div class="product-container">
+  <app-product-detail *ngFor="let product of products"
+    [productCard]="product"
+    (onClickSection)="goToDetail()"
+  ></app-product-detail>
+</div>
