@@ -15,10 +15,9 @@ export class SideBarServiceService {
   }
 
   public setProduct(producto: Product){
-
     if (this.vacio()){
         this.productosEnCarrito.push(producto);
-        producto.sumarCantidad();
+
     } else {
 
       if (this.productosEnCarrito.some((elemento) => (producto.getName() === elemento.getName()))){
@@ -30,7 +29,6 @@ export class SideBarServiceService {
 
       } else {
           this.productosEnCarrito.push(producto);
-          producto.sumarCantidad();
       }
     }
 
@@ -46,20 +44,6 @@ export class SideBarServiceService {
           this.productosEnCarrito.splice(indice,1);
       } */
     }
-
-    let copiaListaAux = this.productosEnCarrito;
-
-    if (!this.vacio()){
-
-      for (let elemento in this.productosEnCarrito){
-
-        if (this.productosEnCarrito[elemento].getCantidad() === 0){
-          copiaListaAux.splice(parseInt(elemento),1);
-        }
-      }
-    }
-
-    this.productosEnCarrito = copiaListaAux;
 
     return this.productosEnCarrito;
   }
@@ -83,9 +67,4 @@ export class SideBarServiceService {
   public toggle(): void{
     this.sidenav.toggle();
   }
-
-  public vaciar(){
-    this.productosEnCarrito = new Array();
-  }
-
 }
