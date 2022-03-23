@@ -11,7 +11,7 @@
       </mat-form-field>
       <mat-form-field *ngIf="signInForm.get('password')?.enabled" class="signin__password" appearance="outline">
         <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="password" formControlName="password" required>
+        <input matInput type="password" placeholder="password" formControlName="password" required>
         <mat-error *ngIf="signInForm.get('password')?.errors && signInForm.get('password')?.hasError('required')">
             {{ USER_ERRORS.required }}</mat-error>
         <mat-error *ngIf="signInForm.get('password')?.errors && signInForm.get('password')?.hasError('minLength')">
@@ -20,9 +20,8 @@
             {{ USER_ERRORS.password.maxLength }}</mat-error>
       </mat-form-field>
       <div class="action-button__container">
-        <button mat-raised-button color="primary" type="submit" [disabled]="signInForm.invalid">Continuar</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="signInForm.invalid" onclick="addPass()">Continuar</button>
         <button mat-raised-button color="accent" mat-dialog-close>Cancelar</button>
       </div>
     </form>
   </section>
-  

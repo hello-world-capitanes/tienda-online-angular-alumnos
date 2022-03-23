@@ -44,6 +44,12 @@ export class ModalLoginComponent implements OnInit {
     })
   }
 
+  submitForm() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+  }
+
   addPass(): void {
     if (this.users.some((element) => (this.loginForm.get('email')?.value) === element.email)) {
       this.activated = true;

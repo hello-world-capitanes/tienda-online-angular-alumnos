@@ -39,7 +39,8 @@
     </mat-list>
   </mat-menu>
 
-  <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart" (click)="toggleShoppingCart()">
+  <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart"
+    (click)="toggleShoppingCart()">
     <mat-icon [matBadge]="getNumberOfProducts()">shopping_cart</mat-icon>
     <span *ngIf="getTotalPrice(); let totalPrice" class="total-price">{{ totalPrice }}</span>
   </button>

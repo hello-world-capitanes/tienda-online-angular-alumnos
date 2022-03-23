@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartComponent } from './sidebar-layout.component';
+import { SidebarLayoutComponent } from './sidebar-layout.component';
 
 describe('CartComponent', () => {
-  let component: CartComponent;
-  let fixture: ComponentFixture<CartComponent>;
+  let component: SidebarLayoutComponent;
+  let fixture: ComponentFixture<SidebarLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartComponent ]
+      declarations: [ SidebarLayoutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartComponent);
+    fixture = TestBed.createComponent(SidebarLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

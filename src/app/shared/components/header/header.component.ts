@@ -21,6 +21,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   /*  this.streamMultiply.pipe(header(value => this.shoppingCartService.getNumberOfProducts())).subscribe(value => {
+      this.totalProducts.push(value);
+    }); */
   }
 
   getNumberOfProducts(): number | null {
