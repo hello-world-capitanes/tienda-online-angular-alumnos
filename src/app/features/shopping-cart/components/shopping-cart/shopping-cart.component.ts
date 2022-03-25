@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { PriceService } from '../../../../shared/utils/price.service';
-import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { ShoppingCartItem } from './../../models/shopping-cart-item.model';
 
 interface CartOrder {
   label: string;
@@ -18,6 +18,7 @@ interface CartOrder {
 export class ShoppingCartComponent implements OnInit {
 
   @Output() closeShoppingCartEvent = new EventEmitter<void>();
+  shoppingCartItems: ShoppingCartItem[] = [];
 
   orderOptions: CartOrder[] = [
     { label: "Según se añadieron", value: "date", default: true },
@@ -34,15 +35,18 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.shoppingCartService.shoppingCartItems.subscribe(
+      (product => this.shoppingCartItems = product)
+    );
   }
 
   closeShoppingCart() {
     this.closeShoppingCartEvent.emit();
   }
 
-  getShoppingCartItems(): ShoppingCartItem[] {
-    return this.shoppingCartService.shoppingCartItems;
-  }
+  // getShoppingCartItems(): ShoppingCartItem[] {
+  //   return this.shoppingCartService.shoppingCartItems;
+  // }
 
   emptyShoppingCart() {
     this.shoppingCartService.empty();

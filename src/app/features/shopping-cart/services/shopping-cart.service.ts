@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Product } from '../../product/models/product.model';
 import { ShoppingCartItem } from '../models/shopping-cart-item.model';
@@ -7,15 +8,18 @@ import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 })
 export class ShoppingCartService {
 
-  private _shoppingCartItems: ShoppingCartItem[];
+  private _shoppingCartItems: ShoppingCartItem[] = [];
+  private _shoppingCartItems$ = of(this._shoppingCartItems);
 
   constructor() {
-    this._shoppingCartItems = [];
   }
 
-  get shoppingCartItems(): ShoppingCartItem[] {
-    return this._shoppingCartItems;
+  get shoppingCartItems(): Observable<ShoppingCartItem[]> {
+    return this._shoppingCartItems$;
   }
+  // get shoppingCartItems(): ShoppingCartItem[] {
+  //   return this._shoppingCartItems;
+  // }
 
   private getProductIndex(product: Product): number {
     if (!product || !product?.name || !product?.price) {
