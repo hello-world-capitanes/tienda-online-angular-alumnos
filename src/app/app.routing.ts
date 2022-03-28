@@ -1,3 +1,4 @@
+import { CategoriesComponent } from './features/categories/categories.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // CLI imports router
 import { HomeComponent } from './features/home/home.component';
@@ -9,6 +10,9 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'products', component: ProductListComponent },
     { path: 'product/:id', component: ProductCardComponent },
+    { path: 'category', component: CategoriesComponent },
+
+
 ];
 
 // configures NgModule imports and exports
