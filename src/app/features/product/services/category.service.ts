@@ -20,11 +20,11 @@ export class CategoryService {
     this._categories$ = this.categoryApiService.getCategories();
   }
 
-  get products(): Category[] {
+  get categories(): Category[] {
     return this._categories;
   }
 
-  get products$(): Observable<Category[]> {
+  get categories$(): Observable<Category[]> {
     return this._categories$;
   }
 
