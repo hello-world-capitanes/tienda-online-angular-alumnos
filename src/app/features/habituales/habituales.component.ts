@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-habituales',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habituales.component.scss']
 })
 export class HabitualesComponent implements OnInit {
+  products!: Product[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
