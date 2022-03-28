@@ -1,17 +1,30 @@
-<mat-drawer-container class="container" autosize>
-    <div class="sidenav-content">
-
-    </div> 
-    <mat-drawer class="sidenav" mode="side" [opened]="openedByDefault">
-        <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Welcome
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>I am the content!</p>
-            </mat-expansion-panel>
-          </mat-accordion>  
-    </mat-drawer> 
+<mat-drawer-container class="container">
+  <div class="sidenav-content">
+    <div class="product-list">
+      <ng-container *ngIf="!!products; else noProducts">
+        <ng-container *ngFor="let product of products">
+          <app-product-card
+            [product]="product"
+            appOverShadow
+          ></app-product-card>
+        </ng-container>
+      </ng-container>
+      <ng-template #noProducts>
+        <p>No hay productos disponibles</p>
+      </ng-template>
+    </div>
+  </div>
+  <mat-drawer class="sidenav" mode="side" [opened]="openedByDefault">
+    <mat-accordion>
+      <ng-container *ngFor="let categories of categories">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ categories.name }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </mat-drawer>
 </mat-drawer-container>

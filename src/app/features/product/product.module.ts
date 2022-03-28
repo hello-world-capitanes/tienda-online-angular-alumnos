@@ -23,9 +23,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
     BrowserModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
-    
+
     SharedModule,
-    
+
     MatSidenavModule,
     MatExpansionModule,
     MatButtonModule,
@@ -35,6 +35,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
   exports: [
     ProductCardComponent,
     ProductListComponent,
+    ProductCategoriesSidebarComponent,
   ]
 })
 export class ProductModule { }
