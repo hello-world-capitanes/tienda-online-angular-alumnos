@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../product/models/product.model';
+import { ProductService } from '../product/services/product.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  products!: Product[];
+
+  constructor(
+    private productService: ProductService,
+  ) {
+    this.productService.products$.subscribe(productsFromApi => {
+      this.products = (!!productsFromApi && productsFromApi.length > 0 ? productsFromApi : []);
+    })
+  }
 
   ngOnInit(): void {
   }
