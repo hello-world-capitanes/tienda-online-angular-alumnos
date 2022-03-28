@@ -3,7 +3,7 @@
     <span>{{ product.name }}</span>
     <small>{{ !!product?.description ? product?.description : "1 ud." }}</small>
     <span><strong>{{ getPrice() }}</strong>/ud.</span>
-    <ng-container *ngIf="units <= 0; else inShoppingCart">
+    <ng-container *ngIf="getUnits() <= 0; else inShoppingCart">
         <button mat-raised-button color="primary" (click)="addToShoppingCart()">
             Añadir al carro
         </button>
@@ -13,11 +13,11 @@
         <div class="product-card-footer">
             <div class="product-card-footer-units">
                 <small>En carro</small>
-                <span><strong>{{ this.units }} ud.</strong></span>
+                <span><strong>{{ getUnits() }} ud.</strong></span>
             </div>
             <div>
                 <button mat-mini-fab color="warn" (click)="deleteFromShoppingCart()">
-                    <ng-container *ngIf="units > 1; else noUnits">
+                    <ng-container *ngIf="getUnits() > 1; else noUnits">
                         <mat-icon>remove</mat-icon>
                     </ng-container>
                     <ng-template #noUnits>
