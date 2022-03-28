@@ -1,3 +1,4 @@
+import { HabitualesComponent } from './features/habituales/habituales.component';
 import { UserInfoComponent } from './features/user/components/user-info/user-info.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // CLI imports router
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'product/:id', component: ProductCardComponent },
   { path: 'user/:id', component: UserInfoComponent },
+  { path: 'habituales', component: HabitualesComponent},
   // {
   //   path: 'user',
   //   loadChildren: () =>
