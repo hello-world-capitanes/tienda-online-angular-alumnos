@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app.routing';
 import { ProductModule } from './features/product/product.module';
 import { HomeComponent } from './features/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { CategoriesComponent } from './features/categories/categories.component';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
