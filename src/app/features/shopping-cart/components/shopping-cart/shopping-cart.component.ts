@@ -25,6 +25,8 @@ export class ShoppingCartComponent implements OnInit {
   ]
   productOrderControl: FormControl;
 
+  shoppingCartItems: ShoppingCartItem[] = [];
+
   constructor(
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
@@ -34,6 +36,9 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.shoppingCartService.shoppingCartItems$.subscribe(
+      (arrayItems => this.shoppingCartItems = arrayItems)
+    )
   }
 
   closeShoppingCart() {

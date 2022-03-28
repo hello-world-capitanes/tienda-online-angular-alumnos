@@ -12,6 +12,7 @@ export class ProductListItemComponent implements OnInit {
 
   @Input("product") product!: Product;
 
+
   constructor(
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
@@ -19,6 +20,7 @@ export class ProductListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   getPrice(): string {
@@ -28,7 +30,7 @@ export class ProductListItemComponent implements OnInit {
   }
 
   getUnits(): number {
-    return !!this.product ? this.shoppingCartService.getUnitsInCart(this.product) : 1;
+    return !!this.product ? this.shoppingCartService.getUnitsOfProduct(this.product) : 1
   }
 
   addToShoppingCart() {

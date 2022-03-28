@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app.routing';
 import { ProductModule } from './features/product/product.module';
 import { HomeComponent } from './features/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
@@ -19,6 +20,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   declarations: [
     AppComponent,
     HomeComponent,
+    CategoriesComponent,
     HabitualesComponent,
   ],
   imports: [
