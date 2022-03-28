@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 export class PriceService {
 
     getPrice(number: number) {
-        return (!Number.isNaN(number) ? "-" : number.toFixed(2)) + " €";
+        return (Number.isNaN(number) ? "-" : number) + " €";
     }
 
 }

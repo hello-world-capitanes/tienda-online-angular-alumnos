@@ -18,7 +18,7 @@ export interface ApiProduct {
 })
 export class ProductApiService extends ApiService {
 
-  private readonly PRODUCT_URL = "products";
+  private readonly PRODUCT_URL = "products/";
 
   constructor(
     private http: HttpClient,
@@ -29,7 +29,7 @@ export class ProductApiService extends ApiService {
   getProducts(): Observable<Product[]> {
     return this.http.get(`${this.API_URL}/${this.PRODUCT_URL}`).pipe(map((res) => {
       const products = res as ApiProduct[];
-      return products?.map(p => new Product(p.id, p.title, p.image, p.price, p.description));
+      return products?.map(p => new Product(p.title, p.image, p.price, p.description));
     }));
   }
 
