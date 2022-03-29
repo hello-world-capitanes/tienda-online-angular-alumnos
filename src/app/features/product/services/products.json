@@ -1,19 +1,34 @@
 [
-    {
-        "name": "Palmerita",
-        "image": "https://prod-mercadona.imgix.net/images/5e949a6f64b52be230b8f1084156dcd9.jpg?fit=crop&h=300&w=300",
-        "price": 1.50,
-        "description": "ª"
-    },
-    {
-        "name": "Barra de pan",
-        "image": "https://prod-mercadona.imgix.net/images/cf704505040b3a1810a6f792d0411361.jpg?fit=crop&h=300&w=300",
-        "price": 0.50
-    },
-    {
-        "name": "Garrafa de aceite de oliva",
-        "image": "https://prod-mercadona.imgix.net/images/af5f40fa72d3697d7075c9549fcbc436.jpg?fit=crop&h=300&w=300",
-        "price": 5.40,
-        "description": "5 litros"
-    }
+  {
+      "id": "1",
+      "name": "Banana",
+      "image": "banana.jpg",
+      "price": "30",
+      "description": "Banana Amarilla",
+      "active": true
+  },
+  {
+      "id": "2",
+      "name": "Pomelo",
+      "image": "Pomelo.jpg",
+      "price": "20",
+      "description": "Pomelo Naranja",
+      "active": true
+  },
+  {
+      "id": "3",
+      "name": "Cacahuete",
+      "image": "Cacahuete.jpg",
+      "price": "30",
+      "description": "Cacahuete",
+      "active": true
+  },
+  {
+      "name": "VasoD9989e99A8888423324g88432u89a",
+      "image": "IMAGEN",
+      "price": "2",
+      "description": "Vasito de agua2",
+      "active": true,
+      "id": "deotfdj"
+  }
 ]

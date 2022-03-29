@@ -1,4 +1,6 @@
+
 import { ModalRegisterComponent } from './register/modal-register.component';
+import { UserModule } from './features/user/user.module';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
@@ -22,6 +24,8 @@ import { ModalLoginComponent } from './login/modal-login.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 import { SharedModule } from './shared/shared.module';
+import { CategoriesComponent } from './features/categories/categories.component';
+import { HabitualesComponent } from './features/habituales/habituales.component';
 
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
@@ -33,6 +37,8 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ProductHighlightDirective,
     ModalLoginComponent,
     ModalRegisterComponent,
+    CategoriesComponent,
+    HabitualesComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,8 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     MatSidenavModule,
     MatListModule,
     ProductModule,
-    MatDividerModule
+    MatDividerModule,
+    UserModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },
