@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   @Output() toggleShoppingCartEvent = new EventEmitter<void>();
 
   constructor(
+    private router: Router,
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
@@ -50,8 +52,8 @@ export class HeaderComponent implements OnInit {
         //this.openSignUpForm(result);
       }
 
-      if(result && result.password && result.email){
-        alert('Logged');
+      if(result && !!result?.email && !!result?.password){
+        this.router.navigate(['user', 1]);
       }
     });
   }
