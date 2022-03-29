@@ -1,3 +1,4 @@
+import { ModalRegisterComponent } from './register/modal-register.component';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
@@ -19,7 +20,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ProductModule } from './features/product/product.module';
 import { ModalLoginComponent } from './login/modal-login.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { ModalRegisterComponent } from './register/modal-register.component';
+
 import { SharedModule } from './shared/shared.module';
 
 
