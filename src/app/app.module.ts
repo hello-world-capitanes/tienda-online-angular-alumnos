@@ -33,7 +33,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ProductHighlightDirective,
     ModalLoginComponent,
     ModalRegisterComponent,
-
   ],
   imports: [
     BrowserModule,
