@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
+    private router: Router
   ) {
   }
 
@@ -47,12 +49,15 @@ export class HeaderComponent implements OnInit {
       }
 
       if (result && !result.password) {
+        this.router.navigateByUrl('/user/');
         //this.openSignUpForm(result);
       }
 
       if(result && result.password && result.email){
+        this.router.navigateByUrl('/user/');
         alert('Logged');
       }
+
     });
   }
 
