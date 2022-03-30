@@ -8,11 +8,7 @@ describe('SignInFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-<<<<<<< HEAD:src/app/product/product-detail/product-detail.component.spec.ts
-      declarations: [ProductDetailComponent]
-=======
       declarations: [ SignInFormComponent ]
->>>>>>> develop:src/app/shared/components/sign-in-form/sign-in-form.component.spec.ts
     })
       .compileComponents();
   });

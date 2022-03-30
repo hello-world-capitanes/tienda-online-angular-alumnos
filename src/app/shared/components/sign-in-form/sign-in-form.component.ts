@@ -75,7 +75,7 @@ export class SignInFormComponent implements OnInit {
   }
 
   addPass(): void {
-    const users = ['capitan@hw.com', 'fernando@hw.com', 'monica@gmail.com'];
+    const users = ['marta@gmail.com', 'roberto@gmail.com', 'monica@gmail.com'];
     if (this.users.some((element) => (this.signInForm.get('email')?.value) === element.email)) {
       this.activated = true;
       this.counter++;

@@ -1,8 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
+
 
 @Component({
   selector: 'app-header',
@@ -17,6 +19,8 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
+    public dialog: MatDialog,
+    private router: Router
   ) {
   }
 
@@ -54,16 +58,16 @@ export class HeaderComponent implements OnInit {
       }
 
       if(result && result.password && result.email){
-        alert('Logged');
+        /* alert('Logged'); */
+        this.router.navigate(['user', 1]);
+        this.authService.login(result.email, result.password).then((user)=>{
+          if(!user){
+            return;
+          }
+          this.router.navigate(['user']);
+        })
       }
-    });
-  }
 
-  private openSignUpForm() {
-/*     const dialogRef = this.matDialog.open(SignUpFormComponent, {
-      data: { email: user.email },
-      width: '500px',
     });
-    dialogRef.afterClosed().subscribe(); */
   }
 }

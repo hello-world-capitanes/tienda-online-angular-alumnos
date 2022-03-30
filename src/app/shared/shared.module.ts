@@ -23,9 +23,6 @@ import { SidebarLayoutComponent } from './components/sidebar-layout/sidebar-layo
 import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 import { OverShadowDirective } from './directives/over-shadow.directive';
 
-
-
-
 @NgModule({
   declarations: [
     SidebarLayoutComponent,
@@ -34,7 +31,6 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     SignInFormComponent,
     BannerComponent,
     ButtonLanguageComponent,
-
     OverShadowDirective
   ],
   imports: [
@@ -42,6 +38,7 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     RouterModule,
     ReactiveFormsModule,
     ShoppingCartModule,
+
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,

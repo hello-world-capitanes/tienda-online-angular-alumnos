@@ -25,5 +25,5 @@ export class ProductService {
   get products$(): Observable<Product[]> {
     return this._products$;
   }
-  
+
 }

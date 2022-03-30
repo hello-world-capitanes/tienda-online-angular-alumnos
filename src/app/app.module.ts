@@ -1,6 +1,3 @@
-
-import { ModalRegisterComponent } from './register/modal-register.component';
-import { UserModule } from './features/user/user.module';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
@@ -18,15 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { ProductHighlightDirective } from './directive/directive-example';
-import { HomeComponent } from './features/home/home.component';
-import { ProductModule } from './features/product/product.module';
-import { ModalLoginComponent } from './login/modal-login.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-
-import { SharedModule } from './shared/shared.module';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
-
+import { HomeComponent } from './features/home/home.component';
+import { ProductModule } from './features/product/product.module';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ModalRegisterComponent } from './register/modal-register.component';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -35,7 +30,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     HomeComponent,
     ProductDetailComponent,
     ProductHighlightDirective,
-    ModalLoginComponent,
     ModalRegisterComponent,
     CategoriesComponent,
     HabitualesComponent,
@@ -55,8 +49,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     MatSidenavModule,
     MatListModule,
     ProductModule,
-    MatDividerModule,
-    UserModule
+    MatDividerModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },
