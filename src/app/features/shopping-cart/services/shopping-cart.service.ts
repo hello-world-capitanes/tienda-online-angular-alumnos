@@ -1,5 +1,6 @@
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { of, Observable } from 'rxjs';
 import { Product } from '../../product/models/product.model';
 import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 
@@ -11,7 +12,12 @@ export class ShoppingCartService {
   private _shoppingCartItems: ShoppingCartItem[] = [];
   private _shoppingCartItems$ = of(this._shoppingCartItems);
 
-  constructor() {
+
+  constructor() { }
+
+
+  get shoppingCartItems$(): Observable<ShoppingCartItem[]>{
+    return this._shoppingCartItems$;
   }
 
   get shoppingCartItems(): Observable<ShoppingCartItem[]> {
@@ -28,9 +34,10 @@ export class ShoppingCartService {
     return this._shoppingCartItems.findIndex(item => item?.product?.name === product?.name);
   }
 
-  getUnitsInCart(product: Product): number {
+  getUnitsOfProduct(product: Product): number {
     const productIndex = this.getProductIndex(product);
     return (productIndex >= 0) ? this._shoppingCartItems[productIndex]?.units : 0;
+
   }
 
   addProduct(product: Product) {
@@ -41,9 +48,12 @@ export class ShoppingCartService {
     const productIndex = this.getProductIndex(product);
     if (productIndex >= 0) {
       this._shoppingCartItems[productIndex].units++;
+
     } else {
       this._shoppingCartItems.push({ product, units: 1 });
     }
+    console.log("suma: ", this._shoppingCartItems[productIndex]);
+
   }
 
   deleteProduct(product: Product) {
@@ -52,12 +62,15 @@ export class ShoppingCartService {
     }
 
     const productIndex = this.getProductIndex(product);
+
     if (productIndex >= 0) {
       this._shoppingCartItems[productIndex].units--;
       if (this._shoppingCartItems[productIndex].units <= 0) {
         this._shoppingCartItems.splice(productIndex, 1);
       }
     }
+    console.log("resta: ", this._shoppingCartItems[productIndex]);
+
   }
 
   empty(): void {

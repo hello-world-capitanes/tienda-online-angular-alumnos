@@ -22,7 +22,14 @@ export class ProductCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.units = this.shoppingCartService.getUnitsInCart(this.product);
+    this.shoppingCartService.shoppingCartItems$.subscribe(
+      (numProduct => this.units = numProduct.length)
+    );
+  }
+
+
+  getUnits(): number {
+    return !!this.product ? this.shoppingCartService.getUnitsOfProduct(this.product) : 1
   }
 
   getPrice(): string {
@@ -33,12 +40,13 @@ export class ProductCardComponent implements OnInit {
 
   addToShoppingCart() {
     this.shoppingCartService.addProduct(this.product);
-    this.units++;
+    this.units = this.shoppingCartService.getUnitsOfProduct(this.product);
+
   }
 
   deleteFromShoppingCart() {
     this.shoppingCartService.deleteProduct(this.product);
-    this.units--;
+    this.units = this.shoppingCartService.getUnitsOfProduct(this.product);
   }
 
 }
