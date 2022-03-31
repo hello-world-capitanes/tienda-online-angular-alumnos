@@ -1,0 +1,35 @@
+{
+  "Users" :[
+    {
+      "id": 1,
+      "email": "correoprueba1@gmail.com",
+      "password": "contrasena1",
+      "dineros": 4,
+      "usuario": "Jhonson"
+    },
+
+    {
+      "id": 2,
+      "email": "correoprueba2@gmail.com",
+      "password": "contrasena2",
+      "dineros": 50,
+      "usuario": "crackster"
+    },
+
+    {
+      "id": 3,
+      "email": "correoprueba3@gmail.com",
+      "password": "contrasena3",
+      "dineros": 150,
+      "usuario": "carlitos"
+    },
+
+    {
+      "id": 4,
+      "email": "correoprueba4@gmail.com",
+      "password": "contrasena4",
+      "dineros": 500,
+      "usuario": "Bo"
+    }
+  ]
+}

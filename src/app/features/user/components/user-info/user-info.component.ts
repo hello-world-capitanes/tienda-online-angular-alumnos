@@ -11,7 +11,6 @@ export class UserInfoComponent implements OnInit {
   user = data;
 
   constructor() {
-
   }
 
   ngOnInit(): void {
