@@ -24,6 +24,7 @@ export class ShoppingCartComponent implements OnInit {
     { label: "Por categoría", value: "category" },
   ]
   productOrderControl: FormControl;
+  shoppingCartItems: ShoppingCartItem[] = [];
 
   constructor(
     private priceService: PriceService,

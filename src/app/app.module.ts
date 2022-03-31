@@ -1,4 +1,6 @@
+import { UserModule } from './features/user/user.module';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -14,8 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { ArticuloComponent } from './articulo/articulo.component';
-import { HomeComponent } from './core/home/home.component';
-import { ProductModule } from './core/product/product.module';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
 import { LoginComponent } from './login/login.component';
@@ -23,23 +23,31 @@ import { SideBarServiceService } from './services/sideBarService/side-bar-servic
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
+import { ProductModule } from './features/product/product.module';
+import { HomeComponent } from './features/home/home.component';
+import { CategoriesComponent } from './features/categories/categories.component';
+import { HabitualesComponent } from './features/habituales/habituales.component';
+import { BannerComponent } from './shared/components/banner/banner.component';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HoverHighlightDirective,
-    ArticuloComponent,
-    LoginComponent,
+    CategoriesComponent,
+    HabitualesComponent,
     UserFormComponent,
-    MostrarContrasenaDirective,
     SidebarComponent,
+    LoginComponent,
+    MostrarContrasenaDirective,
+    HoverHighlightDirective,
+    ArticuloComponent
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatInputModule,
     MatButtonModule,
@@ -47,9 +55,10 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ReactiveFormsModule,
     MatIconModule,
     SharedModule,
-    MatSidenavModule,
+    ProductModule,
     MatDividerModule,
-    ProductModule
+    UserModule,
+    MatSidenavModule
   ],
 
   providers: [

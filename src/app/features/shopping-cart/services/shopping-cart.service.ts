@@ -40,6 +40,9 @@ export class ShoppingCartService {
     } else {
       this._shoppingCartItems.push({ product, units: 1 });
     }
+
+    console.log("suma: ", this._shoppingCartItems[productIndex]);
+
   }
 
   deleteProduct(product: Product) {
@@ -54,6 +57,8 @@ export class ShoppingCartService {
         this._shoppingCartItems.splice(productIndex, 1);
       }
     }
+    console.log("resta: ", this._shoppingCartItems[productIndex]);
+
   }
 
   empty(): void {

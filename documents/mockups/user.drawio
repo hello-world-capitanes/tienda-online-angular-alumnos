@@ -1,0 +1,75 @@
+<mxfile host="65bd71144e">
+    <diagram id="B_ucP97DQck_iEXcnHVt" name="Page-1">
+        <mxGraphModel dx="1054" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="46" y="40" width="734" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="46" y="40" width="734" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Search" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.searchBox;strokeColor=#999999;mainText=;strokeColor2=#008cff;fontColor=#666666;fontSize=17;align=left;spacingLeft=3;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="47.5" width="160" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="MERCADONA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#444444;strokeColor=none;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="45" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Categorías" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.anchor;fontStyle=1;fontColor=#ffffff;fontSize=14;" parent="8" vertex="1">
+                    <mxGeometry x="20.437837837837836" width="49.74999999999999" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Mis habituales" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#ffffff;fontSize=14;" parent="8" vertex="1">
+                    <mxGeometry x="90" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.rrect;rSize=0;fillColor=#33b5e5;strokeColor=none;fontSize=16;" parent="10" vertex="1">
+                    <mxGeometry y="27" width="110.00000000000001" height="3" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Fernando" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;html=1;fontColor=#333333;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="43.5" width="96" height="33" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="rounded=1;fillColor=#d80073;strokeColor=#A50040;html=1;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="43.5" width="60" height="33" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.shoppingCart;strokeColor=#FFFFFF;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="725" y="45" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="269.73" y="100" width="287.54" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;" parent="1" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="415.05999999999995" y="100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="Modificar perfil" style="rounded=1;fillColor=#0050ef;strokeColor=#001DBC;html=1;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=15;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="351" y="390" width="112" height="33" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="Nombre" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="291" y="208" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Fernando&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+                    <mxGeometry x="290" y="228" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Apeliidos" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="291" y="258" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="López Carrión&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+                    <mxGeometry x="291" y="278" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Email" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="291" y="308" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="fernando@hw.com&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+                    <mxGeometry x="290" y="328" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#FFFFFF;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" vertex="1" parent="1">
+                    <mxGeometry x="369" y="114" width="90" height="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
