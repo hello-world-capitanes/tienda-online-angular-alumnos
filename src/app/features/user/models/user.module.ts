@@ -1,14 +1,14 @@
 
 export class User{
 
-  private _id: number;
-  private _email: string;
-  private _password: string;
+  private _id: string;
   private _dineros: number;
   private _usuario: string;
+  private _email: string;
+  private _password: string;
 
 
-  constructor(id: number, dineros: number, usuario: string, email: string, password: string){
+  constructor(id: string, dineros: number, usuario: string, email: string, password: string){
     this._id = id;
     this._dineros = dineros;
     this._usuario = usuario;
@@ -32,11 +32,11 @@ export class User{
     this._password = value;
   }
 
-  public get id(): number {
+  public get id(): string {
     return this._id;
   }
 
-  public set id(value: number) {
+  public set id(value: string) {
     this._id = value;
   }
 

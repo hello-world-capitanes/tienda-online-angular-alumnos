@@ -1,6 +1,8 @@
 import { User } from './../../models/user.module';
 import { Component, OnInit } from '@angular/core';
-import * as data from '../../data/users.json';
+import usersJson from '../../data/users.json';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-user-info',
@@ -9,12 +11,17 @@ import * as data from '../../data/users.json';
 })
 export class UserInfoComponent implements OnInit {
 
-  user = data as User[];
+  user = usersJson as User[];
+  usuarioMostrar: User | undefined;
 
-  constructor() {
+  id!:number;
+
+  constructor(private route: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.paramMap.get('id')!;
+    this.usuarioMostrar = this.user.find( element =>element.id == id)
   }
-
 }

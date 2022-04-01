@@ -7,12 +7,11 @@ import { User } from '../../models/user.module';
 })
 export class ProfileServiceService {
 
-  private _listaUsuarios!: User[];
+  private _listaUsuarios: User[] = usersJson as User[];
 
 
   constructor() {
 
-   this._listaUsuarios = (usersJson as User[]);
   }
 
   public getUser(email: string): User | undefined{

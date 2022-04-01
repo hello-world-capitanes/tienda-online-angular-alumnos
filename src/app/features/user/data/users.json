@@ -1,33 +1,33 @@
 [
     {
-      "id": 1,
-      "email": "correoprueba1@gmail.com",
-      "password": "contrasena1",
+      "id": "1",
       "dineros": 4,
-      "usuario": "Jhonson"
+      "usuario": "Jhonson",
+      "email": "correoprueba1@gmail.com",
+      "password": "contrasena1"
     },
 
     {
-      "id": 2,
-      "email": "correoprueba2@gmail.com",
-      "password": "contrasena2",
+      "id": "2",
       "dineros": 50,
-      "usuario": "crackster"
+      "usuario": "crackster",
+      "email": "correoprueba2@gmail.com",
+      "password": "contrasena2"
     },
 
     {
-      "id": 3,
-      "email": "correoprueba3@gmail.com",
-      "password": "contrasena3",
+      "id": "3",
       "dineros": 150,
-      "usuario": "carlitos"
+      "usuario": "carlitos",
+      "email": "correoprueba3@gmail.com",
+      "password": "contrasena3"
     },
 
     {
-      "id": 4,
-      "email": "correoprueba4@gmail.com",
-      "password": "contrasena4",
+      "id": "4",
       "dineros": 500,
-      "usuario": "Bo"
+      "usuario": "Bo",
+      "email": "correoprueba4@gmail.com",
+      "password": "contrasena4"
     }
 ]
