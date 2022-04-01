@@ -1,0 +1,23 @@
+{
+  "Credentials" :[
+    {
+      "email": "correoprueba1@gmail.com",
+      "password": "contrasena1"
+    },
+
+    {
+      "email": "correoprueba2@gmail.com",
+      "password": "contrasena2"
+    },
+
+    {
+      "email": "correoprueba3@gmail.com",
+      "password": "contrasena3"
+    },
+
+    {
+      "email": "correoprueba4@gmail.com",
+      "password": "contrasena4"
+    }
+  ]
+}
