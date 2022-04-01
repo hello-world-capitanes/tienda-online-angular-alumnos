@@ -15,13 +15,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { ArticuloComponent } from './articulo/articulo.component';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
 import { LoginComponent } from './login/login.component';
-import { SideBarServiceService } from './services/sideBarService/side-bar-service.service';
 import { SharedModule } from './shared/shared.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { ProductModule } from './features/product/product.module';
 import { HomeComponent } from './features/home/home.component';
@@ -37,11 +34,9 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     CategoriesComponent,
     HabitualesComponent,
     UserFormComponent,
-    SidebarComponent,
     LoginComponent,
     MostrarContrasenaDirective,
-    HoverHighlightDirective,
-    ArticuloComponent
+    HoverHighlightDirective
   ],
 
   imports: [
@@ -62,7 +57,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   ],
 
   providers: [
-    SideBarServiceService,
     MatDividerModule,
     { provide: LOCALE_ID, useValue: 'es-ES' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },

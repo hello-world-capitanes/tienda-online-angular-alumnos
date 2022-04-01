@@ -1,28 +1,122 @@
-.product-list-item {
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 5px 10px 5px 0;
-    img {
-        height: 100px;
-        width: 100px;
-        padding: 5px 10px;
-    }
-    .product-list-item-info {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        width: 100%;
-        .product-list-item-info-header {
-            display: flex;
-            flex-flow: column nowrap;
-        }
-        .product-list-item-info-footer {
-            display: flex;
-            justify-content: space-between;
-            .product-list-item-footer-units {
-                display: flex;
-                flex-flow: column nowrap;
-            }
-        }
-    }
+.shopping-items{
+  align-self: left;
+  margin-top: 8px;
 }
+
+.shopping-items button{
+  border-radius: 20px;
+  height: 30px;
+  width: 5px;
+  border: 2px solid #FEB431;
+  background-color: white;
+}
+
+.delete-shopping{
+  margin-left: 10px;
+}
+
+.shopping-items button mat-icon{
+  font-size: 0.5cm;
+}
+
+.shopping-items button:hover{
+  background-color: #FEB431;
+}
+
+.product-container{
+  border: #E0E0E0;
+  border-width: 0.05cm;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.product-image{
+  width: 120px;
+  height: 120px;
+  margin-left: 20px;
+}
+
+.product-info{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 15px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: column;
+
+  p{
+    font-size: 14px;
+  }
+}
+
+.product-name{
+  height: 10px;
+  font-weight: bold;
+}
+
+.product-description{
+  font-size: small;
+  color: rgba(0, 0, 0, 0.562);
+}
+
+.precio{
+  margin-bottom: 4px;
+}
+
+.product-ud{
+  color:#808080bf;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.divider{
+  border: 1px solid #80808021;
+  margin-top: 4px;
+}
+
+.carro{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-units-container{
+  display: flex;
+  justify-content: space-between;
+  height: -webkit-fill-available;
+}
+
+.incart-units-container{
+  margin-top: 5px;
+}
+
+.incart-text{
+  font-size: 12px!important;
+  color: gray;
+}
+
+.incart-units{
+  font-weight: bold;
+  font-size: 20px!important;
+  margin-top: 2px;
+}
+
+.shopping-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.shopping-buttons button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  color: #808080bf;
+}
+

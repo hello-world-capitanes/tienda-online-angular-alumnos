@@ -1,5 +1,4 @@
-<div class="product-list-item" *ngIf="!!product">
-    <img [src]="product.image">
+<!--     <img [src]="product.image">
     <div class="product-list-item-info">
         <div class="product-list-item-info-header">
             <span>{{ product.name }}</span>
@@ -25,5 +24,60 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
+
+<div class = "product-container" *ngIf="!!product">
+
+  <div>
+      <img class = "product-image" [src] = "product.image" alt="">
+  </div>
+
+
+  <div class = "product-info">
+      <div>
+          <p class = "product-name"> {{ product.name }} </p>
+          <p class = "product-description"> {{ product.description }} </p>
+          <p>
+              <span class = "bold" #precioArticulo> {{ product.price}} </span>
+              <span> € </span>
+              <span class="product-ud"> /ud.</span>
+          </p>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <hr class="divider">
+
+      <div class="product-units-container">
+
+          <div class="incart-units-container">
+            <span class="incart-text"> En carro </span>
+
+            <p class="incart-units">
+
+                <span *ngIf="getUnits(); let units">{{ units > 1 ? units + " uds." : units + " ud."}} </span>
+            </p>
+          </div>
+
+          <div class="shopping-buttons">
+              <button mat-button class = "delete-shopping" (click) = "deleteFromShoppingCart()">
+
+                <ng-container *ngIf="getUnits() > 1; else noUnits">
+                  <mat-icon> remove_shopping_cart </mat-icon>
+                </ng-container>
+
+                <ng-template #noUnits>
+                    <mat-icon> delete </mat-icon>
+                </ng-template>
+
+              </button>
+
+              <button mat-button (click) = "addToShoppingCart()" >
+                <mat-icon> add_shopping_cart </mat-icon>
+              </button>
+          </div>
+      </div>
+  </div>
 </div>
+
+

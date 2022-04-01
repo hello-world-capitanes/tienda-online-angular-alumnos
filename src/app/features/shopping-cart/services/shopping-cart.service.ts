@@ -35,6 +35,7 @@ export class ShoppingCartService {
     }
 
     const productIndex = this.getProductIndex(product);
+
     if (productIndex >= 0) {
       this._shoppingCartItems[productIndex].units++;
     } else {

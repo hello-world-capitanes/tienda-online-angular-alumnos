@@ -1,21 +1,27 @@
 <section class="shopping-cart">
     <div class="shopping-cart-header">
-        <div>
-            <button mat-icon-button (click)="closeShoppingCart()">
-                <mat-icon>close</mat-icon>
+          <div class="exit-cart">
+            <button mat-button (click) = "closeShoppingCart()">
+              <mat-icon>cancel</mat-icon>
             </button>
-            <div class="shopping-cart-title-container">
-                <span class="shopping-cart-title">
-                    Carro
-                </span>
-<!--                 <span>Entregar en 28039</span> -->
-            </div>
         </div>
-        <button type="button" mat-button (click)="emptyShoppingCart()">
-            <mat-icon>delete</mat-icon>
-            <span>Vaciar</span>
-        </button>
+
+        <div class="title-container">
+            <p class="title">
+                Carro
+            </p>
+            <p class="subtitle">
+                Entregar en 28039
+            </p>
+        </div>
+
+        <div class="empty-cart">
+            <button mat-button (click) ="emptyShoppingCart();"> Vaciar
+              <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </div>
+
     <mat-divider></mat-divider>
 
     <mat-form-field class="shopping-cart-order">

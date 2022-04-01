@@ -7,12 +7,13 @@ export class Product {
   private _active: boolean;
 
   constructor(
+    id: string,
     name: string,
     image: string,
     price: number,
     description?: string,
   ) {
-    this._id = "";
+    this._id = id;
     this._name = name;
     this._image = image;
     this._price = price;
