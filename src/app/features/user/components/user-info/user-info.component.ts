@@ -13,7 +13,6 @@ export class UserInfoComponent implements OnInit {
 
   user = usersJson as User[];
   usuarioMostrar: User | undefined;
-
   id!:number;
 
   constructor(private route: ActivatedRoute) {

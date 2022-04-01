@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../../product/models/product.model';
 import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 
@@ -8,13 +9,19 @@ import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 export class ShoppingCartService {
 
   private _shoppingCartItems: ShoppingCartItem[];
+  private _shoppingCartItems$:BehaviorSubject<ShoppingCartItem[]>;
 
   constructor() {
     this._shoppingCartItems = [];
+    this._shoppingCartItems$ = new BehaviorSubject<ShoppingCartItem[]>(this._shoppingCartItems);
   }
 
   get shoppingCartItems(): ShoppingCartItem[] {
     return this._shoppingCartItems;
+  }
+
+  get shoppingCartItems$(): Observable<ShoppingCartItem[]>{
+    return this._shoppingCartItems$;
   }
 
   private getProductIndex(product: Product): number {
@@ -42,8 +49,7 @@ export class ShoppingCartService {
       this._shoppingCartItems.push({ product, units: 1 });
     }
 
-    console.log("suma: ", this._shoppingCartItems[productIndex]);
-
+    this._shoppingCartItems$.next(this._shoppingCartItems);
   }
 
   deleteProduct(product: Product) {
@@ -58,12 +64,13 @@ export class ShoppingCartService {
         this._shoppingCartItems.splice(productIndex, 1);
       }
     }
-    console.log("resta: ", this._shoppingCartItems[productIndex]);
+    this._shoppingCartItems$.next(this._shoppingCartItems);
 
   }
 
   empty(): void {
     this._shoppingCartItems = [];
+    this._shoppingCartItems$.next(this._shoppingCartItems);
   }
 
   getNumberOfProducts(): number {
