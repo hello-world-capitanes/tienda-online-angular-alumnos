@@ -1,9 +1,9 @@
 
 export class User{
 
+  private _id: number;
   private _email: string;
   private _password: string;
-  private _id: number;
   private _dineros: number;
   private _usuario: string;
 

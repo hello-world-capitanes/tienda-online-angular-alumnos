@@ -12,7 +12,7 @@ export class ProfileServiceService {
 
   constructor() {
 
-   this._listaUsuarios = (usersJson.Users as User[]);
+   this._listaUsuarios = (usersJson as User[]);
   }
 
   public getUser(email: string): User | undefined{

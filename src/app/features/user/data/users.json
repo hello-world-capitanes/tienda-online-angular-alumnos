@@ -1,5 +1,4 @@
-{
-  "Users" :[
+[
     {
       "id": 1,
       "email": "correoprueba1@gmail.com",
@@ -31,5 +30,4 @@
       "dineros": 500,
       "usuario": "Bo"
     }
-  ]
-}
+]

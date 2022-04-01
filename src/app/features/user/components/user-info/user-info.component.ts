@@ -1,3 +1,4 @@
+import { User } from './../../models/user.module';
 import { Component, OnInit } from '@angular/core';
 import * as data from '../../data/users.json';
 
@@ -8,7 +9,7 @@ import * as data from '../../data/users.json';
 })
 export class UserInfoComponent implements OnInit {
 
-  user = data;
+  user = data as User[];
 
   constructor() {
   }
