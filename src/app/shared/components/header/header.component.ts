@@ -1,17 +1,19 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { SignUpModalComponent } from 'src/app/features/authentication/components/sign-up-modal/sign-up-modal.component';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
-import { PriceService } from '../../utils/price.service';
-import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
+import { User } from 'src/app/features/user/models/user.model';
+import { SignInModalComponent } from '../../../features/authentication/components/sign-in-modal/sign-in-modal.component';
+import { PriceService } from '../../services/price.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   @Output() toggleShoppingCartEvent = new EventEmitter<void>();
 
   constructor(
@@ -19,20 +21,21 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
-  ) {
-  }
+    private snackBar: MatSnackBar
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   getNumberOfProducts(): number | null {
     const total: number = this.shoppingCartService.getNumberOfProducts();
-    return (Number.isNaN(total) || total === 0) ? null : total;
+    return Number.isNaN(total) || total === 0 ? null : total;
   }
 
   getTotalPrice(): string | null {
     const total: number = this.shoppingCartService.getTotalPrice();
-    return (Number.isNaN(total) || total === 0) ? null : this.priceService.getPrice(total);
+    return Number.isNaN(total) || total === 0
+      ? null
+      : this.priceService.getPrice(total);
   }
 
   toggleShoppingCart() {
@@ -40,30 +43,53 @@ export class HeaderComponent implements OnInit {
   }
 
   openSigninForm() {
-    const dialogRef = this.matDialog.open(SignInFormComponent, {
+    const dialogRef = this.matDialog.open(SignInModalComponent, {
       width: '350px',
     });
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       if (!result) {
         return;
       }
 
-      if (result && !result.password) {
-        //this.openSignUpForm(result);
+      if (!result?.password) {
+        this.openSignUpForm(result as User);
       }
 
-      if(result && !!result?.email && !!result?.password){
-        this.router.navigate(['user', 1]);
+      if (!!result?.email && !!result?.password) {
+        /*         this.authService.signIn(result.email, result.password)
+          .then(credentials => {
+            if (!credentials) {
+              alert("No credentials");
+            }
+            this.router.navigate(['user', 1]);
+          }).catch(error => {
+            this.snackBar.openFromComponent(ErrorSnackbarComponent, {
+              data: {
+                error: error?.message
+              }
+            });
+          }); */
       }
     });
   }
 
-  private openSignUpForm() {
-/*     const dialogRef = this.matDialog.open(SignUpFormComponent, {
+  private openSignUpForm(user: User) {
+    const dialogRef = this.matDialog.open(SignUpModalComponent, {
       data: { email: user.email },
       width: '500px',
     });
-    dialogRef.afterClosed().subscribe(); */
-  }
+    dialogRef.afterClosed().subscribe((userSignUp) => {
+      if (!userSignUp) {
+        return;
+      }
 
+      /*       this.authService.signUp(userSignUp).then((userCredential) => {
+        if (!userCredential) {
+          return;
+        }
+        this.userLogged = (!!userCredential?.user ? userCredential?.user : null);
+      }) */
+    });
+  }
 }

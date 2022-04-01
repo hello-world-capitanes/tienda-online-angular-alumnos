@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignInFormComponent } from './sign-in-form.component';
+import { ErrorSnackbarComponent } from './error-snackbar.component';
 
-describe('SignInFormComponent', () => {
-  let component: SignInFormComponent;
-  let fixture: ComponentFixture<SignInFormComponent>;
+describe('ErrorSnackbarComponent', () => {
+  let component: ErrorSnackbarComponent;
+  let fixture: ComponentFixture<ErrorSnackbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInFormComponent ]
+      declarations: [ ErrorSnackbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignInFormComponent);
+    fixture = TestBed.createComponent(ErrorSnackbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,5 @@
 
 <div class="product-list">
-    <button mat-button (click)="addProduct()">Add Product</button>
     <ng-container *ngIf="!!products; else noProducts">
         <ng-container *ngFor="let product of products">
             <app-product-card [product]="product" appOverShadow></app-product-card>

@@ -1,12 +1,11 @@
 export class User {
   private _id: string;
+  private _active: boolean;
   private _name: string;
   private _email: string;
-  private _dni: string;
   private _lastname1: string;
   private _lastname2?: string;
   private _image?: string;
-  private _active: boolean;
   private _lastLogin?: Date;
   private _lastConnection?: Date;
   private _deleteDate?: Date;
@@ -15,7 +14,6 @@ export class User {
     id: string,
     active: boolean,
     email: string,
-    dni: string,
     name: string,
     lastname1: string,
     lastname2?: string,
@@ -27,7 +25,6 @@ export class User {
     this._id = id;
     this._active = active;
     this._email = email;
-    this._dni = dni;
     this._name = name;
     this._lastname1 = lastname1;
     this._lastname2 = lastname2;
@@ -46,10 +43,6 @@ export class User {
 
   public get email(): string {
     return this._email;
-  }
-
-  public get dni(): string {
-    return this._dni;
   }
 
   public get name(): string {

@@ -1,0 +1,11 @@
+<div class="strength-bar strength-bar--safe">
+  <div class="strength-bar__level-indicator">
+    <span
+      *ngFor="let customStyle of styles"
+      class="strength-bar__level"
+      [style]="getBackground(customStyle)"
+    >
+    </span>
+  </div>
+  <p class="strength-bar__message" [style.color]="color">{{ message }}</p>
+</div>
