@@ -8,12 +8,10 @@ import { ProductCardComponent } from './features/product/components/product-card
 import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 import { UserModule } from './features/user/user.module';
 import { ProductCategoriesSidebarComponent } from './features/product/components/product-categories-sidebar/product-categories-sidebar.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'login', component: LoginComponent},
     { path: 'products', component: ProductListComponent },
     { path: 'product/:id', component: ProductCardComponent },
     { path: 'user/:id', component: UserInfoComponent },

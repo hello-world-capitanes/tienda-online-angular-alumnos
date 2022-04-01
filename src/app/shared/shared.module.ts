@@ -22,6 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarLayoutComponent } from './components/sidebar-layout/sidebar-layout.component';
 import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 import { OverShadowDirective } from './directives/over-shadow.directive';
+import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     BannerComponent,
     ButtonLanguageComponent,
     OverShadowDirective,
-    HeaderComponent
+    HeaderComponent,
+    SignUpFormComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,8 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     MatBadgeModule,
     MatExpansionModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCheckboxModule
   ],
   exports: [
     SidebarLayoutComponent,

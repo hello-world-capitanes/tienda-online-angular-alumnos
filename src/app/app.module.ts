@@ -17,9 +17,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { MostrarContrasenaDirective } from './directives/mostrar-contrasena.directive';
-import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
-import { UserFormComponent } from './user/components/user-form/user-form.component';
 import { ProductModule } from './features/product/product.module';
 import { HomeComponent } from './features/home/home.component';
 import { CategoriesComponent } from './features/categories/categories.component';
@@ -33,8 +31,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     HomeComponent,
     CategoriesComponent,
     HabitualesComponent,
-    UserFormComponent,
-    LoginComponent,
     MostrarContrasenaDirective,
     HoverHighlightDirective
   ],
