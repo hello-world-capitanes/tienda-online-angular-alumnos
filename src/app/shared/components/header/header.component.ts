@@ -59,8 +59,9 @@ export class HeaderComponent implements OnInit {
         this.authService.signIn(result.email,result.password).then(credentials =>{
           if(!credentials){
             alert("Your password is incorrect");
+          }else{
+            this.router.navigate(['/user',credentials.id]);
           }
-          this.router.navigate(['/user',credentials?.id]);
 
         })
       }

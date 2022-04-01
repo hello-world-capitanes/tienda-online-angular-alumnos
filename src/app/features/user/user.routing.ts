@@ -5,7 +5,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 
 const routes: Routes = [
   { path: '', component: UserInfoComponent },
-    { path: ':id', component: UserInfoComponent },
+    { path: ':id',
+    component: UserInfoComponent },
 ];
 
 // configures NgModule imports and exports

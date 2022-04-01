@@ -1,3 +1,4 @@
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
 import { UserInfoComponent } from './features/user/components/user-info/user-info.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'category', component: ProductCategoriesSidebarComponent },
     { path: 'habituales', component: HabitualesComponent},
     { path: 'user',
+      canLoad: [AuthGuardGuard],
       loadChildren: () => import('./features/user/user.module').then(m => m.UserModule)
     }
 ];
