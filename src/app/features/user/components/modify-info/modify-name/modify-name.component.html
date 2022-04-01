@@ -1,0 +1,27 @@
+<div>
+  <h1>Nombre completo</h1>
+  <form [formGroup]="modifyInfoForm" (ngSubmit)="submitForm()">
+    <mat-form-field class="input" appearance="fill" formControlName="name">
+      <mat-label>Nombre</mat-label>
+      <input matInput value="{{ this.authService.getLoggedUser().name }}">
+    </mat-form-field>
+
+    <mat-form-field class="input" appearance="fill" formControlName="lastName1">
+      <mat-label>Primer apellido</mat-label>
+      <input matInput placeholder="" value="{{ this.authService.getLoggedUser().lastname1 }}">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="input" appearance="fill" formControlName="lastName2">
+      <mat-label>Segundo apellido</mat-label>
+      <input matInput placeholder="" value="{{ this.authService.getLoggedUser().lastname2 }}">
+    </mat-form-field>
+
+    <br>
+    <div class="action-button__container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="modifyInfoForm.invalid">Continuar</button>
+      <button mat-raised-button color="accent" mat-dialog-close>Cancelar</button>
+    </div>
+  </form>
+</div>

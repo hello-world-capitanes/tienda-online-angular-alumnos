@@ -1,5 +1,8 @@
+import { AuthenticationService } from './../../../core/services/Authentication/authentication.service';
+import { UserService } from './../../../features/user/services/user.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
@@ -17,6 +20,8 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
+    private route: Router,
+    private authService: AuthenticationService
   ) {
   }
 
@@ -51,7 +56,11 @@ export class HeaderComponent implements OnInit {
       }
 
       if(result && result.password && result.email){
-        alert('Logged');
+        if(this.authService.logIn(result.email, result.password))
+        {
+          // this.route.navigate(["user", result.email]);
+          this.route.navigate(["user"]);
+        }
       }
     });
   }

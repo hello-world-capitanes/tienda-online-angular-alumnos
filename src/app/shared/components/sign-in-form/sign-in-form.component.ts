@@ -1,3 +1,4 @@
+import { UserService } from './../../../features/user/services/user.service';
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -19,8 +20,9 @@ export class SignInFormComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<SignInFormComponent>,
+    private userService: UserService
   ) {
-    
+
     this.signInForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(
@@ -45,17 +47,11 @@ export class SignInFormComponent implements OnInit {
       return this.dialogRef.close(this.signInForm?.value);
     }
 
-    if (this.isUserRegistered()) {
+    if (this.userService.userExist(this.signInForm.get('email')!.value)) {
       this.requestPassword();
     } else {
       return this.dialogRef.close(this.signInForm?.value);
     }
-  }
-
-  private isUserRegistered() {
-    const users = ['capitan@hw.com', 'fernando@hw.com'];
-
-    return users.includes(this.signInForm?.value?.email);
   }
 
   private requestPassword() {

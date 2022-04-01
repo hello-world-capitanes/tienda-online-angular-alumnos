@@ -1,15 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModifyNameComponent } from '../modify-info/modify-name/modify-name.component';
+import { AuthenticationService } from './../../../../core/services/Authentication/authentication.service';
+import { User } from './../../models/user.model';
 
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.scss']
+  styleUrls: ['./user-info.component.scss'],
 })
 export class UserInfoComponent implements OnInit {
+  user!: User;
 
-  constructor() { }
+  constructor(
+    private matDialog: MatDialog,
+    public authService: AuthenticationService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.user = this.authService.getLoggedUser();
   }
 
+  userFullName(): string {
+    return (
+      (!!this.authService.getLoggedUser().name ? this.authService.getLoggedUser().name : "") +
+      " " +
+      (!!this.authService.getLoggedUser().lastname1 ? this.authService.getLoggedUser().lastname1 : "") +
+      " " +
+      (!!this.authService.getLoggedUser().lastname2 ? this.authService.getLoggedUser().lastname2 : "")
+    );
+  }
+
+  editEmail()
+  {
+    console.log("uwu");
+    const dialogRef = this.matDialog.open(ModifyNameComponent, {
+      width: '350px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) {
+        return;
+      }
+    });
+  }
 }
