@@ -14,9 +14,11 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'products', component: ProductListComponent },
     { path: 'product/:id', component: ProductCardComponent },
-    { path: 'user/:id', component: UserInfoComponent },
     { path: 'category', component: ProductCategoriesSidebarComponent },
     { path: 'habituales', component: HabitualesComponent},
+    { path: 'user',
+      loadChildren: () => import('./features/user/user.module').then(m => m.UserModule)
+    }
 ];
 
 // configures NgModule imports and exports

@@ -17,10 +17,11 @@ export class SignInFormComponent implements OnInit {
   signInForm: FormGroup;
   showPassword = false;
 
+
   constructor(
     public dialogRef: MatDialogRef<SignInFormComponent>,
   ) {
-    
+
     this.signInForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(
@@ -53,7 +54,7 @@ export class SignInFormComponent implements OnInit {
   }
 
   private isUserRegistered() {
-    const users = ['capitan@hw.com', 'fernando@hw.com'];
+    const users = ['capitan@hw.com', 'fernando@hw.com','a@gmail.com'];
 
     return users.includes(this.signInForm?.value?.email);
   }

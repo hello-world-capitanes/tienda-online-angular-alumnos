@@ -14,6 +14,7 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private productService: ProductService,
   ) {
+    this.productService.category?("fruta"):
     this.productService.products$.subscribe(productsFromApi => {
       this.products = (!!productsFromApi && productsFromApi.length > 0 ? productsFromApi : []);
     })

@@ -1,3 +1,4 @@
+import { Category } from './../models/category.model';
 import productsJson from './products.json';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
@@ -11,11 +12,12 @@ export class ProductService {
 
   private _products: Product[] = (productsJson as any);
   private _products$: Observable<Product[]>;
+  private _category: string|undefined = "fruta";
 
   constructor(
     private productApiService: ProductApiService,
   ) {
-    this._products$ = this.productApiService.getProducts();
+    this._products$ = this.productApiService.getProducts(this._category);
   }
 
   get products(): Product[] {
@@ -25,5 +27,12 @@ export class ProductService {
   get products$(): Observable<Product[]> {
     return this._products$;
   }
-  
+  set category(category:string|undefined){
+
+    this._category=category;
+  }
+  get category(): string|undefined{
+    return this._category;
+  }
+
 }

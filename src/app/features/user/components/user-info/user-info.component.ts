@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import usersjson from "src/app/features/user/data/users.json";
+
+interface User{
+  id:string;
+  email:string;
+  name:string;
+  lastname:string;
+
+}
 
 @Component({
   selector: 'app-user-info',
@@ -7,9 +18,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  user?: User;
+
+  constructor(
+    private router: ActivatedRoute,
+
+  ) {
+
+  }
 
   ngOnInit(): void {
+    this.user = usersjson.find(data=> data.id==this.router.snapshot.paramMap.get('id'));
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
@@ -17,6 +19,8 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
+    private router : Router,
+    private authService : AuthenticationService
   ) {
   }
 
@@ -51,7 +55,14 @@ export class HeaderComponent implements OnInit {
       }
 
       if(result && result.password && result.email){
-        alert('Logged');
+
+        this.authService.signIn(result.email,result.password).then(credentials =>{
+          if(!credentials){
+            alert("Your password is incorrect");
+          }
+          this.router.navigate(['/user',credentials?.id]);
+
+        })
       }
     });
   }

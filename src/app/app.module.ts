@@ -1,4 +1,4 @@
-import { UserModule } from './features/user/user.module';
+
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es';
@@ -14,6 +14,7 @@ import { HomeComponent } from './features/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
+import { AuthenticationComponent } from './features/authentication/authentication.component';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -22,6 +23,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     HomeComponent,
     CategoriesComponent,
     HabitualesComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ProductModule,
 
     MatDividerModule,
-    UserModule
+
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },
