@@ -1,4 +1,4 @@
-<section class="signin__container">
+<!-- <section class="signin__container">
     <h1>Identificate</h1>
     <form [formGroup]="signInForm" (ngSubmit)="submitForm()">
       <mat-form-field class="signin__email" appearance="outline">
@@ -25,4 +25,52 @@
       </div>
     </form>
   </section>
-  
+
+ -->
+
+  <div class = "window">
+    <div class = "identificate-menu">
+      <div class = "title-identificate-menu">
+          <span> Identifícate </span>
+      </div>
+
+      <form [formGroup] = "formLogin" class = "container-form">
+
+        <div class = "containers">
+          <mat-form-field class = "input" id = "1" appearance = "fill">
+            <mat-label> Introduce tu email </mat-label>
+            <input matInput placeholder = "example@email.com" formControlName = "email"/>
+          </mat-form-field>
+
+          <div *ngIf = "formularioLogin.get('email')?.hasError('required') && formularioLogin.get('email')?.touched" class = "error">
+                Por favor introduce un correo
+          </div>
+
+          <div *ngIf = "formularioLogin.get('email')?.hasError('pattern') && formularioLogin.get('email')?.touched " class = "error">
+                Por favor introduce un correo válido
+          </div>
+        </div>
+
+        <div class = "containers" *ngIf = "isOn">
+          <mat-form-field class = "input" id = "2" appearance = "fill">
+            <mat-label> Contraseña </mat-label>
+            <input matInput type = "password" placeholder = "*******" formControlName = "password">
+          </mat-form-field>
+
+          <div *ngIf = "formularioLogin.get('password')?.hasError('required') && buttonPressed" class = "error">
+                Introduce tu contraseña
+          </div>
+
+        </div>
+
+        <div class = "button-accept-form">
+          <button mat-raised-button (click) = "continueForm()"> Continuar </button>
+        </div>
+
+        <div class = "button-deny-form">
+          <button mat-button (click) = "cancelForm()"> Cancelar </button>
+        </div>
+      </form>
+    </div>
+  </div>
+

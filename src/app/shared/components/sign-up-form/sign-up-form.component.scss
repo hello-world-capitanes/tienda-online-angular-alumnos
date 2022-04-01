@@ -1,0 +1,106 @@
+.window{
+  width: 400px;
+  background-color: rgba(44, 33, 33, 0.02);
+}
+.menu{
+  margin: 30px;
+  padding-top: 30px;
+}
+
+.title-menu{
+  font-weight: bolder;
+  font-size: 0.5cm;
+  padding-bottom: 20px;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-accept-form button{
+  width: 100%;
+}
+
+.button-restart-form button{
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button-help-form{
+  width: 100%;
+  text-align: center;
+}
+
+.button-help-form button{
+  font-size: 0.3cm;
+  text-decoration: underline;
+  height: 0px;
+  width: 0px;
+}
+
+.input-checkbox-container{
+  width: 240px;
+  height: 130px;
+}
+
+.input-checkbox-container-flex{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox{
+  margin-top: 20px;
+}
+
+.checkbox-info{
+  padding-left: 15px;
+}
+
+.checkbox-info span{
+  font-size: 0.3cm;
+  height: inherit;
+}
+
+.conditions-terms{
+  text-decoration: underline;
+  font-size: 0.3cm;
+  height: inherit;
+  width: 0px;
+  height: 0px;
+}
+
+.politica-privacidad{
+  text-decoration: underline;
+  font-size: 0.3cm;
+  height: inherit;
+  width: 0px;
+  height: 0px;
+}
+
+.error{
+  font-size: 1.5ch;
+  color: red;
+}
+
+.input-container{
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-password{
+  height: 30px;
+}
+
+.button-help-form{
+  padding-bottom: 20px;
+}
+
+.input{
+  height: 50px;
+}
+
+#checkbox-error{
+  width: 370px;
+}

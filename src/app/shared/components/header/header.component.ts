@@ -1,6 +1,6 @@
+import { SignUpFormComponent } from './../sign-up-form/sign-up-form.component';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserFormComponent } from 'src/app/user/components/user-form/user-form.component';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
@@ -17,10 +17,6 @@ export class HeaderComponent implements OnInit {
   mensajeBienvenida: string = "Iniciar Sesión";
   logeado: boolean = false;
   perfil: string = "Invitado";
-
-/*   constructor(
-    public dialog: MatDialog,
-    private sidenav: SideBarServiceService) {} */
 
   ngOnInit(): void {}
 
@@ -61,7 +57,7 @@ export class HeaderComponent implements OnInit {
     this.sidenav.toggle();
   } */
 
-  /* penRegisterWindow(objeto: any){
+  /* openRegisterWindow(objeto: any){
 
       let datosLogin: any;
       const dialogRef = this.dialog.open(UserFormComponent);
@@ -94,30 +90,43 @@ export class HeaderComponent implements OnInit {
   }
 
   openSigninForm() {
-    const dialogRef = this.matDialog.open(SignInFormComponent, {
+    const dialogRefSignIn = this.matDialog.open(SignInFormComponent, {
       width: '350px',
     });
-    dialogRef.afterClosed().subscribe(result => {
-      if (!result) {
+
+    dialogRefSignIn.afterClosed().subscribe( result => {
+      if (!result[0]){
         return;
       }
 
-      if (result && !result.password) {
-        //this.openSignUpForm(result);
+      if (result[0] && !result[0].password){
+        this.openSignUpForm();
       }
 
-      if(result && result.password && result.email){
-        alert('Logged');
+      if (result[0] && result[0].password && result[0].email){
+        this.logeado = true;
+        this.mensajeBienvenida = "Hola! "+ result[1];
+        this.perfil = result[1];
       }
     });
   }
 
   private openSignUpForm() {
-/*     const dialogRef = this.matDialog.open(SignUpFormComponent, {
-      data: { email: user.email },
-      width: '500px',
+    const dialogRefSignUp = this.matDialog.open(SignUpFormComponent, {
+
     });
-    dialogRef.afterClosed().subscribe(); */
+
+    dialogRefSignUp.afterClosed().subscribe( result => {
+
+      if (!result){
+        return;
+
+      } else {
+        this.mensajeBienvenida = "Hola! "+ result.nombre;
+        this.perfil = result.name;
+      }
+
+    });
   }
 
 }
