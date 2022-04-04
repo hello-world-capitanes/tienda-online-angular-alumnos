@@ -1,8 +1,8 @@
 import { User } from './../../models/user.module';
 import { Component, OnInit } from '@angular/core';
-import usersJson from '../../data/users.json';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
+import { ProfileServiceService } from '../../services/profile-service/profile-service.service';
 
 @Component({
   selector: 'app-user-info',
@@ -11,16 +11,16 @@ import { Observable, switchMap } from 'rxjs';
 })
 export class UserInfoComponent implements OnInit {
 
-  user = usersJson as User[];
   usuarioMostrar: User | undefined;
   id!:number;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private servicioUsuarios: ProfileServiceService) {
 
   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')!;
-    this.usuarioMostrar = this.user.find( element =>element.id == id)
+    this.usuarioMostrar = this.servicioUsuarios.getUserID(id);
   }
 }

@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { PriceService } from '../../utils/price.service';
 import { SignInFormComponent } from '../sign-in-form/sign-in-form.component';
+import { ListKeyManager } from '@angular/cdk/a11y';
+import { ProfileServiceService } from 'src/app/features/user/services/profile-service/profile-service.service';
+import { User } from 'src/app/features/user/models/user.module';
 
 @Component({
   selector: 'app-header',
@@ -27,55 +30,10 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
-    private router: Router
+    private router: Router,
+    private profileService: ProfileServiceService
   ) {
   }
-
-/*   openLogin(): void {
-    if (!this.logeado){
-
-      const dialogRef = this.dialog.open(LoginComponent);
-
-      dialogRef.afterClosed().subscribe(result => {
-        if (!result[0]){
-          return;
-        }
-
-        if (result[0] && !result[0].password){
-          this.openRegisterWindow(result[0]);
-        }
-
-        if (result[0] && result[0].password && result[0].email){
-          this.logeado = true;
-          this.mensajeBienvenida = "Hola! "+ result[1].getNombre();
-          this.perfil = result[1].getNombre();
-        }
-      });
-    }
-  }
-
-  activateSideNav(){
-    this.toggleActive = !this.toggleActive;
-    this.sidenav.toggle();
-  } */
-
-  /* openRegisterWindow(objeto: any){
-
-      let datosLogin: any;
-      const dialogRef = this.dialog.open(UserFormComponent);
-
-      dialogRef.afterClosed().subscribe(result => {
-        if (!result){
-          return;
-
-        } else {
-          this.mensajeBienvenida = "Hola! "+ result.nombre;
-          this.perfil = result.nombre;
-          this.logeado = true;
-        }
-      });
-
-  } */
 
   getNumberOfProducts(): number | null {
     const total: number = this.shoppingCartService.getNumberOfProducts();
@@ -102,8 +60,7 @@ export class HeaderComponent implements OnInit {
       }
 
       if (result[0] && !result[0].password){
-        this.openSignUpForm();
-        this.router.navigateByUrl('/user/');
+        this.openSignUpForm({email: result[0].email});
       }
 
       if (result[0] && result[0].password && result[0].email){
@@ -116,7 +73,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  private openSignUpForm() {
+  private openSignUpForm(data: any) {
     const dialogRefSignUp = this.matDialog.open(SignUpFormComponent, {
 
     });
@@ -127,10 +84,14 @@ export class HeaderComponent implements OnInit {
         return;
 
       } else {
-        this.mensajeBienvenida = "Hola! "+ result.nombre;
+        this.mensajeBienvenida = "Hola! "+ result.name;
         this.perfil = result.name;
-      }
+        let usuario = new User("0", 100, result.name,data.email, result.password);
+        this.router.navigateByUrl('/user/5');
 
+        this.profileService.usuario = usuario;
+
+      }
     });
   }
 

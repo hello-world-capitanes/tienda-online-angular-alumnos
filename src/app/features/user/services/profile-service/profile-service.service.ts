@@ -11,7 +11,6 @@ export class ProfileServiceService {
 
 
   constructor() {
-
   }
 
   public getUser(email: string): User | undefined{
@@ -22,11 +21,23 @@ export class ProfileServiceService {
     }
   }
 
+  public getUserID(id: string): User | undefined{
+    if (this._listaUsuarios.some( (elemento) => elemento.id == id)){
+      return this._listaUsuarios.find( (elemento) => elemento.id == id)
+    } else {
+      return undefined
+    }
+  }
+
   public get listaUsuarios(): User[] {
     return this._listaUsuarios;
   }
   public set listaUsuarios(value: User[]) {
     this._listaUsuarios = value;
+  }
+
+  public set usuario(usuario: User){
+    this._listaUsuarios.push(usuario);
   }
 
 }

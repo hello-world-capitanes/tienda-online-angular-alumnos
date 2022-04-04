@@ -48,7 +48,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     SharedModule,
     ProductModule,
     MatDividerModule,
-    UserModule,
     MatSidenavModule
   ],
 

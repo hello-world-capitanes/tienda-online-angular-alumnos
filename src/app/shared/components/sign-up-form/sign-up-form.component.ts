@@ -39,8 +39,8 @@ export class SignUpFormComponent implements OnInit {
     this.buttonPressed = true;
 
     if (this.createUser.valid){
-      console.log({name: this.createUser?.get('nombre'), surname: this.createUser?.get('apellidos'), password: this.createUser?.get('password')});
-      this.dialogRef.close({name: this.createUser?.get('nombre'), surname: this.createUser?.get('apellidos'), password: this.createUser?.get('password')});
+
+      this.dialogRef.close({name: this.createUser?.get('nombre')?.value, surname: this.createUser?.get('apellidos')?.value, password: this.createUser?.get('password')?.value});
     }
   }
 

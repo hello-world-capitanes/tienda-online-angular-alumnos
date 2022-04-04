@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/user.module';
 import { ProfileServiceService } from '../profile-service/profile-service.service';
-import usersJson from './authentication.json';
+import usersJson from '../../data/authentication.json';
 
 
 interface userAuthentication {

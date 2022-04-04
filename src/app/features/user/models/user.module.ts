@@ -1,6 +1,6 @@
 
 export class User{
-
+  private static _staticID: number;
   private _id: string;
   private _dineros: number;
   private _usuario: string;
@@ -9,7 +9,16 @@ export class User{
 
 
   constructor(id: string, dineros: number, usuario: string, email: string, password: string){
-    this._id = id;
+
+    if (User._staticID <= 0 || User._staticID == undefined || !User._staticID){
+      User._staticID = 5;
+
+    } else {
+      console.log(User._staticID);
+      User._staticID++;
+    }
+
+    this._id = "" + User._staticID;
     this._dineros = dineros;
     this._usuario = usuario;
     this._email = email;
