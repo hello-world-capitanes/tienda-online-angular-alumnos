@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import usersJson from '../data/users.json';
-import { AuthenticationService } from './../../../core/services/Authentication/authentication.service';
 import { User } from './../models/user.model';
 
 @Injectable({
@@ -28,6 +27,4 @@ export class UserService {
   {
     return this.users.find((user) => user.email == email)!;
   }
-
-
 }

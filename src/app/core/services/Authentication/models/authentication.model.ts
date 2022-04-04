@@ -13,4 +13,7 @@ export class Authentication {
   get email(): string{
     return this._email;
   }
+  set email(email: string){
+    this._email = email;
+  }
 }

@@ -1,1 +1,25 @@
-<p>modify-email works!</p>
+<div>
+  <h1>Cambiar email</h1>
+  <form [formGroup]="modifyInfoForm" (ngSubmit)="submitForm()">
+    <p>Nuevo email</p>
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+    <br>
+    <p>Por seguridad, introduce tu contraseña para cambiar tu email</p>
+    <mat-form-field class="input" appearance="fill" style="margin-bottom: -15px;">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" value="{{ this.authService.getLoggedUser().lastname1 }}" formControlName="password">
+    </mat-form-field>
+    <div *ngIf="!isPasswordValid()" class="error">
+      <span>Contraseña incorrecta</span>
+    </div>
+
+    <br>
+    <div class="action-button__container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!modifyInfoForm.valid || !isPasswordValid()">Continuar</button>
+      <button mat-raised-button color="accent" mat-dialog-close (click)="close()">Cancelar</button>
+    </div>
+  </form>
+</div>

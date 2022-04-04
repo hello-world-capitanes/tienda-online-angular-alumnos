@@ -1,0 +1,29 @@
+.input {
+  width: 100%;
+}
+h1{
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.23;
+}
+.action-button__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+
+}
+.action-button__container > button {
+  align-self: center;
+  margin-top: 1rem ;
+  min-width: 100%;
+}
+.error{
+  margin-top: 0px;
+
+  span{
+    color: red;
+    font-size: small;
+    margin-left: 5px;
+  }
+}

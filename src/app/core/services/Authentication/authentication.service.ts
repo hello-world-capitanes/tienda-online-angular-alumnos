@@ -11,37 +11,54 @@ export class AuthenticationService {
   private _authenticationUsers: Authentication[];
   private _isLogged: boolean = false;
   private userLogged!: User;
+  private userLoggedAuthentication!: Authentication;
 
   constructor(private userService: UserService) {
     this._authenticationUsers = authenticationJson as Authentication[];
   }
 
-  logIn(email: string, password: string): boolean{
-    if(!this.userService.userExist(email))
-    {
+  logIn(email: string, password: string): boolean {
+    if (!this.userService.userExist(email)) {
       return false;
     }
 
     let authenticationUser = this._authenticationUsers.find(
-      (userAuthentication) => userAuthentication.email == email && userAuthentication.password == password
-    )
+      (userAuthentication) =>
+        userAuthentication.email == email &&
+        userAuthentication.password == password
+    );
 
-    if(!authenticationUser)
-    {
+    if (!authenticationUser) {
       return false;
     }
 
     this._isLogged = true;
     this.userLogged = this.userService.getUser(email);
+    this.userLoggedAuthentication = authenticationUser;
     return true;
   }
 
-  isLogged(): boolean{
+  isLogged(): boolean {
     return this._isLogged;
   }
 
-  getLoggedUser(): User{
+  getLoggedUser(): User {
     return this.userLogged;
   }
 
+  changeFullName(name: string, lastname1: string, lastname2: string): void {
+    this.userLogged.name = name;
+    this.userLogged.lastname1 = lastname1;
+    this.userLogged.lastname2 = lastname2;
+    //TODO Llamada al dao para actualizar el registro
+  }
+
+  changeEmail(email: string): void{
+    this.userLogged.email = email;
+    this.userLoggedAuthentication.email = email;
+  }
+
+  passwordCorrect(password: string): boolean {
+    return this.userLoggedAuthentication.password === password ? true : false;
+  }
 }
