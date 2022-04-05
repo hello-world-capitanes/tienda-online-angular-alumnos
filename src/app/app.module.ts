@@ -16,6 +16,11 @@ import { HomeComponent } from './features/home/home.component';
 import { ProductModule } from './features/product/product.module';
 import { UserModule } from './features/user/user.module';
 import { SharedModule } from './shared/shared.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -39,6 +44,10 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
 
     MatDividerModule,
     UserModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },

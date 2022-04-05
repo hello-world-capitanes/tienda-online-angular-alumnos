@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-online-adrian-martin": {
+      "hosting": {
+        "tienda-online-angular-alumnos": [
+          "tienda-online-adrian-martin"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-online-adrian-martin"
+  }
+}
