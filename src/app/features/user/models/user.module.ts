@@ -1,5 +1,7 @@
+import { OperatorFunction } from "rxjs";
 
 export class User{
+
   private static _staticID: number;
   private _id: string;
   private _dineros: number;

@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AuthServiceService } from 'src/app/features/user/services/auth-service/auth-service.service';
 import { USER_CONTANTS } from 'src/app/features/user/utils/user-constants';
 import { USER_ERRORS } from 'src/app/features/user/utils/user-messages';
 
@@ -17,10 +18,9 @@ export class SignInFormComponent implements OnInit {
   buttonPressed: boolean = false;
   buttonCounter: number = 0;
 
-  clientes: string[] = ["paco@correo.com", "garcía@correo.com","osman@correo.com", "gregor@correo.com"];
-
   constructor(private formulario: FormBuilder,
               public dialogRef: MatDialogRef<SignInFormComponent>,
+              private authService: AuthServiceService
               ) {}
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class SignInFormComponent implements OnInit {
 
 
   continueForm(): void{
-    if (this.clientes.some((element) => (this.formLogin.get('email')?.value) === element)) {
+    if (this.authService.credentials.some((element) => (this.formLogin.get('email')?.value) === element.email)) {
       this.isOn = true;
       this.buttonCounter++;
 
@@ -52,7 +52,7 @@ export class SignInFormComponent implements OnInit {
       if (this.formularioLogin.valid){
         let array = [this.formLogin?.value];
 
-        let cliente = this.clientes.find((element) => (this.formLogin.get('email')?.value === element));
+        let cliente = this.authService.credentials.find((element) => (this.formLogin.get('email')?.value === element.email));
         array.push(cliente);
 
         this.dialogRef.close(array);

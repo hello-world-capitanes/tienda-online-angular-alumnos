@@ -64,6 +64,7 @@ export class HeaderComponent implements OnInit {
       }
 
       if (result[0] && result[0].password && result[0].email){
+
         this.router.navigateByUrl('/user/');
         this.logeado = true;
         this.mensajeBienvenida = "Hola! "+ result[1];
@@ -75,7 +76,6 @@ export class HeaderComponent implements OnInit {
 
   private openSignUpForm(data: any) {
     const dialogRefSignUp = this.matDialog.open(SignUpFormComponent, {
-
     });
 
     dialogRefSignUp.afterClosed().subscribe( result => {

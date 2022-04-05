@@ -31,5 +31,18 @@ export class AuthServiceService {
       this._user != this._profileService.getUser('email');
     }
   }
+
+  public setNewCredentials(email: string, password: string ){
+      let credential = {email: email, password: password} as userAuthentication;
+      this.credenciales.push(credential);
+  }
+
+  public getUserLogged(): boolean{
+    return (this._user ? true: false);
+  }
+
+  public get credentials(): userAuthentication[]{
+    return this.credenciales;
+  }
 }
 
