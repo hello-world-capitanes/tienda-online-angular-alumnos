@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private _products: Product[] = (productsJson as any);
   private _products$: Observable<Product[]>;
   private _category: string|undefined = "fruta";
 
@@ -20,13 +19,14 @@ export class ProductService {
     this._products$ = this.productApiService.getProducts(this._category);
   }
 
-  get products(): Product[] {
-    return this._products;
+  addProduct(product: Product): Observable<Product> {
+    return this.productApiService.addProduct(product);
   }
 
   get products$(): Observable<Product[]> {
     return this._products$;
   }
+<<<<<<< HEAD
   set category(category:string|undefined){
 
     this._category=category;
@@ -35,4 +35,11 @@ export class ProductService {
     return this._category;
   }
 
+=======
+
+  set products$(products$: Observable<Product[]>)  {
+    this._products$ = products$;
+  }
+  
+>>>>>>> develop
 }

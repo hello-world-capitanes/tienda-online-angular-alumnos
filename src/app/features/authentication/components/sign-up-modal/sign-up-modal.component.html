@@ -1,0 +1,41 @@
+<section class="signup__container">
+    <h1>Crear cuenta</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="signUpForm.get('name')?.errors && signUpForm.get('name')?.hasError('required')">
+          {{ GENERAL_ERRORS.required }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Primer Apellido</mat-label>
+        <input matInput formControlName="lastname1" required>
+        <mat-error *ngIf="signUpForm.get('lastname1')?.errors && signUpForm.get('lastname1')?.hasError('required')">
+          {{ GENERAL_ERRORS.required }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Segundo Apellido</mat-label>
+        <input matInput formControlName="lastname2">
+      </mat-form-field>
+      <mat-form-field  appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+              <!-- <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+      <app-strength-bar [controller]="signUpForm.get('password')"></app-strength-bar>
+  
+      <mat-checkbox formControlName="privacy" required>
+        <span class="privacy__label">Al continuar, aceptas nuestros términos y condiciones así comola política de privacidad.</span>
+      </mat-checkbox>
+  
+      <div class="action-button__container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="signUpForm.invalid">Continuar</button>
+        <button mat-raised-button color="accent" type="button" mat-dialog-close>Cancelar</button>
+      </div>
+    </form>
+  
+</section>
