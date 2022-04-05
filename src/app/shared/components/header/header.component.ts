@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../features/auth/services/auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -20,14 +21,15 @@ export class HeaderComponent implements OnInit {
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private authServ: AuthenticationService
   ) {
   }
 
   ngOnInit(): void {
-   /*  this.streamMultiply.pipe(header(value => this.shoppingCartService.getNumberOfProducts())).subscribe(value => {
-      this.totalProducts.push(value);
-    }); */
+    /*  this.streamMultiply.pipe(header(value => this.shoppingCartService.getNumberOfProducts())).subscribe(value => {
+       this.totalProducts.push(value);
+     }); */
   }
 
   getNumberOfProducts(): number | null {
@@ -57,17 +59,14 @@ export class HeaderComponent implements OnInit {
         //this.openSignUpForm(result);
       }
 
-      if(result && result.password && result.email){
-        /* alert('Logged'); */
-        this.router.navigate(['user', 1]);
-        this.authService.login(result.email, result.password).then((user)=>{
-          if(!user){
-            return;
+      if (result && result.password && result.email) {
+        this.authServ.signIn(result.email, result.password).then(credenciales => {
+          if (!credenciales) {
+            alert("Login incorrect");
           }
           this.router.navigate(['user']);
-        })
+        }).catch(error => { alert("Error") })
       }
-
     });
   }
 }

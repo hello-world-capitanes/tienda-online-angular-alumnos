@@ -11,6 +11,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductCategoriesSidebarComponent } from './components/product-categories-sidebar/product-categories-sidebar.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductRoutingModule } from './product-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    ProductRoutingModule
   ],
   exports: [
     ProductCardComponent,

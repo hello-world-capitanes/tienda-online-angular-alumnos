@@ -1,29 +1,19 @@
-import usersJson from './user.json'
+import { AuthComponent } from './../../auth/auth/auth.component';
+import { UserInfo } from './../models/user-info';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { UserApiService } from './user-api.service';
-import { User } from 'src/app/shared/components/sign-in-form/models/email-model';
+import userJson from "../services/user.json";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserServiceService {
 
-/*   private _user: User[] = (usersJson as any);
-  private _user$: Observable<User[]>;
+  user!: UserInfo[];
 
-  constructor(
-    private userApiService: UserApiService,
-  ) {
-    this._user$ = this.userApiService.getUsers();
+  constructor() {
   }
 
-  get users(): User[] {
-    return this._user;
+  public getUser(email:string): UserInfo | undefined {
+    return this.user.find(user => user.email === email);
   }
-
-  get users$(): Observable<User[]> {
-    return this._user$;
-  } */
-
 }

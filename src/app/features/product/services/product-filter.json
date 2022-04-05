@@ -1,0 +1,23 @@
+[
+  {
+      "id": 1,
+      "active": true,
+      "name": "Banana",
+      "categories": "Fruta",
+      "Marca": "Canarias"
+  },
+  {
+      "id": 2,
+      "active": true,
+      "name": "Pomelo",
+      "categories": "Fruta",
+      "marca": "Fruta"
+  },
+  {
+      "id": 3,
+      "active": true,
+      "name": "Cacahuete",
+      "categories": "Fruto seco",
+      "marca": "Seco"
+  }
+]

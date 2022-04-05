@@ -22,6 +22,7 @@ import { ProductModule } from './features/product/product.module';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ModalRegisterComponent } from './register/modal-register.component';
 import { SharedModule } from './shared/shared.module';
+import { AuthComponent } from './features/auth/auth/auth.component';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -33,6 +34,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ModalRegisterComponent,
     CategoriesComponent,
     HabitualesComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

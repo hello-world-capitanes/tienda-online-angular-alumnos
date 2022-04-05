@@ -1,7 +1,7 @@
-import { UserRoutingModule } from './user-routing.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserInfoComponent } from './components/components/user-info/user-info.component';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +9,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
   ]
 })
 export class UserModule { }
