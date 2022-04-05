@@ -1,3 +1,4 @@
+import { AuthenticationGuard } from './core/guards/authentication.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // CLI imports router
 import { HabitualesComponent } from './features/habituales/habituales.component';
@@ -7,13 +8,18 @@ import { ProductCategoriesSidebarComponent } from './features/product/components
 import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'products', component: ProductListComponent },
-    { path: 'product/:id', component: ProductCardComponent },
-    { path: 'category', component: ProductCategoriesSidebarComponent },
-    { path: 'habituales', component: HabitualesComponent},
-    { path: 'user', loadChildren: () => import('./features/user/user.module').then(m => m.UserModule) },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: 'product/:id', component: ProductCardComponent },
+  { path: 'category', component: ProductCategoriesSidebarComponent },
+  { path: 'habituales', component: HabitualesComponent },
+  {
+    path: 'user',
+    canLoad: [AuthenticationGuard],
+    loadChildren: () =>
+      import('./features/user/user.module').then((m) => m.UserModule),
+  },
 ];
 
 // configures NgModule imports and exports
@@ -21,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
