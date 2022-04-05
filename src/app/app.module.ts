@@ -21,7 +21,7 @@ import { ProductModule } from './features/product/product.module';
 import { HomeComponent } from './features/home/home.component';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
-import { BannerComponent } from './shared/components/banner/banner.component';
+import { AuthenticationModule } from './features/authentication/authentication.module';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -45,6 +45,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ReactiveFormsModule,
     MatIconModule,
     SharedModule,
+    AuthenticationModule,
     ProductModule,
     MatDividerModule,
     MatSidenavModule
@@ -55,6 +56,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     { provide: LOCALE_ID, useValue: 'es-ES' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -18,6 +18,12 @@
             "regexp": "bundle generation complete"
           }
         }
+      },
+      "label": "npm: start",
+      "detail": "ng serve --hmr",
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
     },
     {
