@@ -91,5 +91,5 @@ export class User {
   public set deleteDate(value: Date | undefined) {
     this._deleteDate = value;
   }
-  
+
 }

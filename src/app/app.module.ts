@@ -58,6 +58,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ProductModule,
     MatDividerModule,
     UserModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
