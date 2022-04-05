@@ -26,22 +26,12 @@ export class ProductApiService extends ApiService {
     super();
   }
 
-<<<<<<< HEAD
-  getProducts(category:string|undefined): Observable<Product[]> {
-    if(!!category){
-      return this.http.get(`${this.API_URL}/${this.PRODUCT_URL}${this.filtro}${category}`).pipe(map((res) => {
-        const products = res as ApiProduct[];
-        return products?.map(p => new Product(p.title, p.image, p.price, p.description));
-      }));
-    }
-=======
   getProducts(): Observable<Product[]> {
     this.http.get(`${this.API_URL}/${this.PRODUCT_URL}`).toPromise().then(res => {
       console.log(res);
     }).catch((error) => {
       console.error(error);
     });
->>>>>>> develop
     return this.http.get(`${this.API_URL}/${this.PRODUCT_URL}`).pipe(map((res) => {
       const products = res as ApiProduct[];
       return products?.map(p => new Product(p.title, p.image, p.price, p.description));

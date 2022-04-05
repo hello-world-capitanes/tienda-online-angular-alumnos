@@ -16,7 +16,7 @@ export class ProductService {
   constructor(
     private productApiService: ProductApiService,
   ) {
-    this._products$ = this.productApiService.getProducts(this._category);
+    this._products$ = this.productApiService.getProducts();
   }
 
   addProduct(product: Product): Observable<Product> {
@@ -26,7 +26,6 @@ export class ProductService {
   get products$(): Observable<Product[]> {
     return this._products$;
   }
-<<<<<<< HEAD
   set category(category:string|undefined){
 
     this._category=category;
@@ -35,11 +34,9 @@ export class ProductService {
     return this._category;
   }
 
-=======
 
   set products$(products$: Observable<Product[]>)  {
     this._products$ = products$;
   }
-  
->>>>>>> develop
+
 }

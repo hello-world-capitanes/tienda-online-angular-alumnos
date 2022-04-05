@@ -1,13 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
-=======
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { SignUpModalComponent } from 'src/app/features/authentication/components/sign-up-modal/sign-up-modal.component';
->>>>>>> develop
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { User } from 'src/app/features/user/models/user.model';
 import { SignInModalComponent } from '../../../features/authentication/components/sign-in-modal/sign-in-modal.component';
@@ -26,15 +22,11 @@ export class HeaderComponent implements OnInit {
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
-<<<<<<< HEAD
-    private router : Router,
-    private authService : AuthenticationService
+    private authService : AuthenticationService,
+    private snackBar: MatSnackBar
   ) {
   }
-=======
-    private snackBar: MatSnackBar
-  ) {}
->>>>>>> develop
+
 
   ngOnInit(): void {}
 
@@ -68,7 +60,6 @@ export class HeaderComponent implements OnInit {
         this.openSignUpForm(result as User);
       }
 
-<<<<<<< HEAD
       if(result && result.password && result.email){
 
         this.authService.signIn(result.email,result.password).then(credentials =>{
@@ -79,22 +70,6 @@ export class HeaderComponent implements OnInit {
           }
 
         })
-=======
-      if (!!result?.email && !!result?.password) {
-        /*         this.authService.signIn(result.email, result.password)
-          .then(credentials => {
-            if (!credentials) {
-              alert("No credentials");
-            }
-            this.router.navigate(['user', 1]);
-          }).catch(error => {
-            this.snackBar.openFromComponent(ErrorSnackbarComponent, {
-              data: {
-                error: error?.message
-              }
-            });
-          }); */
->>>>>>> develop
       }
     });
   }
@@ -108,16 +83,7 @@ export class HeaderComponent implements OnInit {
       if (!userSignUp) {
         return;
       }
-
-<<<<<<< HEAD
-=======
-      /*       this.authService.signUp(userSignUp).then((userCredential) => {
-        if (!userCredential) {
-          return;
-        }
-        this.userLogged = (!!userCredential?.user ? userCredential?.user : null);
-      }) */
     });
-  }
->>>>>>> develop
+    }
+
 }
