@@ -23,8 +23,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarLayoutComponent } from './components/sidebar-layout/sidebar-layout.component';
 import { OverShadowDirective } from './directives/over-shadow.directive';
-import { StrengthBarComponent } from '../features/authentication/components/sign-up-modal/strength-bar/strength-bar.component';
-import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +33,6 @@ import { SignInFormComponent } from './components/sign-in-form/sign-in-form.comp
     ButtonLanguageComponent,
     OverShadowDirective,
     ErrorSnackbarComponent,
-    SignInFormComponent,
 
   ],
   imports: [

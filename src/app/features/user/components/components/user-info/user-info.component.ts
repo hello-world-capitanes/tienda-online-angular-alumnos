@@ -1,9 +1,8 @@
-import { UserServiceService } from './../../../services/user.service';
-import  userJson  from '../../../services/user.json';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserInfo } from '../../../models/user-info';
 import { AuthenticationService } from 'src/app/features/auth/services/auth.service';
+import { UserInfo } from '../../../models/user-info';
+import { UserService } from './../../../services/user.service';
 
 @Component({
   selector: 'app-user-info',
@@ -16,7 +15,7 @@ export class UserInfoComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private userService: UserServiceService,
+    private userService: UserService,
     private authService: AuthenticationService,
   ) {
     if(!!this.authService.userLogged){

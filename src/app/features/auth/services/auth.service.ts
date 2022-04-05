@@ -1,8 +1,8 @@
-import { UserServiceService } from './../../user/services/user.service';
-import { UserInfo } from './../../user/models/user-info';
 import { Injectable } from '@angular/core';
 import { authUser } from '../auth/models/authUser';
 import authJson from '../data/auth.json';
+import { UserInfo } from './../../user/models/user-info';
+import { UserService } from './../../user/services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class AuthenticationService {
   private _userLogged!: UserInfo | null;
   authUsers: authUser[];
 
-  constructor(private userServ: UserServiceService) {
+  constructor(private userServ: UserService) {
     this.authUsers = authJson as authUser[];
   }
 
@@ -27,11 +27,11 @@ export class AuthenticationService {
     if (!!this.authUsers.find(
         (authUser) => authUser.email === email && authUser.password === password
       )) {
-      const user = this.userServ.getUser(email);
+      const user = this.userServ.getUsers();
       if (!user) {
         alert('No existe el usuario');
       }
-      this._userLogged = !!user ? user : null;
+/*       this._userLogged = !!user ? user : null; */
       return this.userLogged;
     }
     return null;
