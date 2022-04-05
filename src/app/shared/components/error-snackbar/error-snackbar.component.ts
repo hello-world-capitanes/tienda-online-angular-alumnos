@@ -25,6 +25,9 @@ export class ErrorSnackbarComponent implements OnInit, OnDestroy {
       !!data && !Number.isNaN(data?.duration) && data?.duration > 0
         ? data?.duration
         : this.dismissDuration;
+    if (!!data && data?.error && data?.error.length > 0) {
+      this.errorMessage = data.error
+    }
     this.dismissSub = this.snackBarRef.afterOpened().subscribe(() => {
       setInterval(() => {
         this.snackBarRef.dismiss();
