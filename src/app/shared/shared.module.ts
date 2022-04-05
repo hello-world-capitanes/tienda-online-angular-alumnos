@@ -1,3 +1,4 @@
+import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -38,6 +39,7 @@ import { StrengthBarComponent } from '../features/authentication/components/sign
     HeaderComponent,
     SignUpFormComponent,
     ErrorSnackbarComponent,
+    SignInFormComponent
   ],
   imports: [
     CommonModule,

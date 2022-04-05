@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthServiceService } from 'src/app/features/user/services/auth-service/auth-service.service';
-import { USER_CONTANTS } from 'src/app/features/user/utils/user-constants';
-import { USER_ERRORS } from 'src/app/features/user/utils/user-messages';
 
 @Component({
   selector: 'app-sign-in-form',

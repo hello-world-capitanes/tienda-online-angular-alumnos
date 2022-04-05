@@ -1,0 +1,70 @@
+.signin__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+
+  form > mat-form-field {
+    min-width: 100%;
+  }
+
+  .action-button__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+
+  }
+  .action-button__container > button {
+    align-self: center;
+    margin-top: 1rem ;
+    min-width: 100%;
+  }
+
+
+.window{
+  width: 300px;
+  background-color: rgba(44, 33, 33, 0);
+}
+
+.identificate-menu{
+  margin: 10px;
+}
+
+.input{
+  height: 55px;
+  width: 100%;
+}
+
+.error{
+  font-size: 1.5ch;
+  color: red;
+}
+
+.containers{
+  height: 90px;
+}
+
+.title-identificate-menu{
+  font-weight: bolder;
+  font-size: larger;
+  padding-bottom: 30px;
+  padding-left: 3px;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-accept-form button{
+  width: 100%;
+}
+
+.button-deny-form button{
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+
