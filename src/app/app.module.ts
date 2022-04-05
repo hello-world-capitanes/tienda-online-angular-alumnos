@@ -1,8 +1,10 @@
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import localeES from '@angular/common/locales/es';
-import localeEsExtra from '@angular/common/locales/extra/es';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
@@ -12,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { ProductHighlightDirective } from './directive/directive-example';
@@ -25,7 +28,6 @@ import { UserModule } from './features/user/user.module';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ModalRegisterComponent } from './register/modal-register.component';
 import { SharedModule } from './shared/shared.module';
-
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -50,17 +52,16 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDividerModule,
     MatSidenavModule,
     MatListModule,
-    ProductModule,
-    MatDividerModule,
     AuthenticationModule,
     ProductModule,
-    UserModule,
-
     MatDividerModule,
     UserModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },
@@ -69,3 +70,11 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+function localeEsExtra(localeES: any, arg1: string, localeEsExtra: any) {
+  throw new Error('Function not implemented.');
+}
+
+function localeES(localeES: any, arg1: string, localeEsExtra: (localeES: any, arg1: string, localeEsExtra: any) => void) {
+  throw new Error('Function not implemented.');
+}
+

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-online-monica-rodriguez": {
+      "hosting": {
+        "tienda-online-angular-alumnos": [
+          "tienda-online-monica-rodriguez"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-online-monica-rodriguez"
+  }
+}
