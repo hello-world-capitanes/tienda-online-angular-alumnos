@@ -1,0 +1,37 @@
+.datosPersonales{
+  margin-left: 25%;
+  margin-right: 25%;
+
+  .contenido{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .contenido::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .titulo{
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .titulo2{
+    font-weight: 400;
+    font-weight: 1.5;
+    font-size: 1rem;
+  }
+  .texto{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  button{
+    float: right;
+    border-radius: 10px;
+    border: 0px;
+    color: #229E6B;
+    margin-top: 5px;
+  }
+}

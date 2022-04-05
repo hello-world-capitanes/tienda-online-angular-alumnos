@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "email": "fernando@hw.com",
+        "name": "Fernando",
+        "lastname1": "López",
+        "lastname2": "Carrión",
+        "active": true,
+        "image": "https://media-exp1.licdn.com/dms/image/C5603AQELwra6SnztQQ/profile-displayphoto-shrink_200_200/0/1517799078255?e=1653523200&v=beta&t=bghfbennFuYu8K3bXgjSHImYNMbU5W7DrK8m3AYjNWo"
+    },
+    {
+        "id": 2,
+        "email": "rafael@hw.com",
+        "name": "Rafa",
+        "lastname1": "López",
+        "lastname2": "Carrión",
+        "active": false,
+        "image": "https://media-exp1.licdn.com/dms/image/C5603AQELwra6SnztQQ/profile-displayphoto-shrink_200_200/0/1517799078255?e=1653523200&v=beta&t=bghfbennFuYu8K3bXgjSHImYNMbU5W7DrK8m3AYjNWo"
+    }
+]

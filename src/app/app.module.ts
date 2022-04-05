@@ -8,10 +8,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
+import { AuthenticationModule } from './features/authentication/authentication.module';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
 import { HomeComponent } from './features/home/home.component';
 import { ProductModule } from './features/product/product.module';
+import { UserModule } from './features/user/user.module';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
@@ -29,7 +31,9 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     AppRoutingModule,
 
     SharedModule,
+    AuthenticationModule,
     ProductModule,
+    UserModule,
 
     MatDividerModule,
   ],
@@ -37,6 +41,6 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     { provide: LOCALE_ID, useValue: 'es-ES' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

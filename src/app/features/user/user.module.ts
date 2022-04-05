@@ -9,11 +9,13 @@ import { ModifyEmailComponent } from './components/modify-info/modify-email/modi
 import { ModifyNameComponent } from './components/modify-info/modify-name/modify-name.component';
 import { ModifyPasswordComponent } from './components/modify-info/modify-password/modify-password.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserRoutingModule } from './user.routing';
 
 @NgModule({
   declarations: [
     UserInfoComponent,
+    UserProfileComponent,
     ModifyNameComponent,
     ModifyEmailComponent,
     ModifyPasswordComponent

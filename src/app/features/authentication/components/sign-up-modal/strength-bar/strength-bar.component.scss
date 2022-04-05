@@ -1,0 +1,25 @@
+.strength-bar {
+    display: flex;
+    flex-direction: column;
+
+    height: 38px;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.strength-bar__level-indicator {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.strength-bar__level {
+  height: 4px;
+  background-color: grey;
+  width: 100%;
+}
+
+.strength-bar__message {
+  margin-top: 3px;
+}

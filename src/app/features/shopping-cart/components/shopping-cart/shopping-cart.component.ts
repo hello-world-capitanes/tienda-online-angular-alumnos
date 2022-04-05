@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { PriceService } from '../../../../shared/utils/price.service';
+import { PriceService } from 'src/app/shared/services/price.service';
+import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
-import { ShoppingCartItem } from './../../models/shopping-cart-item.model';
 
 interface CartOrder {
   label: string;

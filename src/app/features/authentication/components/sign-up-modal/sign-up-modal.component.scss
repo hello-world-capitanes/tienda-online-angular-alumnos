@@ -1,0 +1,30 @@
+.signup__container {
+  display: flex;
+  margin: 2rem;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+form > mat-form-field {
+  min-width: 100%;
+}
+
+.action-button__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+.action-button__container > button {
+  align-self: center;
+  margin-top: 1rem;
+  min-width: 100%;
+}
+
+.privacy__label {
+  white-space: pre-wrap;
+  width: 100%;
+}
+.mat-error {
+  text-align: end;
+}

@@ -1,0 +1,33 @@
+<div *ngIf="!this.authService.isLogged()" class="datosPersonales">
+  <span class="titulo">No registrado</span>
+</div>
+
+<div *ngIf="this.authService.isLogged()" class="datosPersonales">
+  <span class="titulo">Datos personales</span>
+  <mat-divider></mat-divider>
+
+  <div class="contenido">
+    <button color="primary" (click)="this.editName()"><mat-icon>edit</mat-icon></button>
+    <span class="titulo2">Nombre completo</span><br>
+    <span class="texto">{{ this.userFullName() }}</span>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="contenido">
+    <button color="primary" (click)="this.editEmail()"><mat-icon>edit</mat-icon></button>
+    <span class="titulo2">Email</span><br>
+    <span class="texto">{{ this.authService.getLoggedUser().email }}</span>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="contenido">
+    <button color="primary"><mat-icon>edit</mat-icon></button>
+    <span class="titulo2">Contraseña</span><br>
+    <span class="texto">La contraseña no es visible</span>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>
+
