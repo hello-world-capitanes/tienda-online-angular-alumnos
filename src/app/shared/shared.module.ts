@@ -11,27 +11,32 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ShoppingCartModule } from '../features/shopping-cart/shopping-cart.module';
 import { BannerComponent } from './components/banner/banner.component';
 import { ButtonLanguageComponent } from './components/button-language/button-language.component';
+import { ErrorSnackbarComponent } from './components/error-snackbar/error-snackbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarLayoutComponent } from './components/sidebar-layout/sidebar-layout.component';
-import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 import { OverShadowDirective } from './directives/over-shadow.directive';
+import { StrengthBarComponent } from '../features/authentication/components/sign-up-modal/strength-bar/strength-bar.component';
+import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 
 @NgModule({
   declarations: [
     SidebarLayoutComponent,
     HeaderComponent,
     FooterComponent,
-    SignInFormComponent,
     BannerComponent,
     ButtonLanguageComponent,
-    OverShadowDirective
+    OverShadowDirective,
+    ErrorSnackbarComponent,
+    SignInFormComponent,
+
   ],
   imports: [
     CommonModule,
@@ -45,6 +50,7 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     MatTabsModule,
     MatListModule,
     MatDialogModule,
+    MatSnackBarModule,
     MatExpansionModule,
     MatDividerModule,
     MatInputModule,
@@ -56,6 +62,7 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     SidebarLayoutComponent,
     BannerComponent,
     OverShadowDirective,
+    ErrorSnackbarComponent
   ]
 })
 export class SharedModule { }

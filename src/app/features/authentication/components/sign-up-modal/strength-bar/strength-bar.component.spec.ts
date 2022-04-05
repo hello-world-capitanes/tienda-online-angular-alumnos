@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignInFormComponent } from './sign-in-form.component';
+import { StrengthBarComponent } from './strength-bar.component';
 
-describe('SignInFormComponent', () => {
-  let component: SignInFormComponent;
-  let fixture: ComponentFixture<SignInFormComponent>;
+describe('StrengthBarComponent', () => {
+  let component: StrengthBarComponent;
+  let fixture: ComponentFixture<StrengthBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInFormComponent ]
+      declarations: [ StrengthBarComponent ]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignInFormComponent);
+    fixture = TestBed.createComponent(StrengthBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

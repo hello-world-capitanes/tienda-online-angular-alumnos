@@ -1,0 +1,11 @@
+<ng-container *ngIf="!!user">
+    <div>
+        <span>{{ user | json }}</span>
+    </div>
+</ng-container>
+<ng-container *ngIf="user === null">
+    <p>Usuario no encontrado</p>
+</ng-container>
+<ng-container *ngIf="user === undefined">
+    <p>Cargando información del usuario</p>
+</ng-container>

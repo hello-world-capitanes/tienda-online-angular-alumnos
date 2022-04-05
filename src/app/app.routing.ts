@@ -7,20 +7,16 @@ import { ProductCategoriesSidebarComponent } from './features/product/components
 import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'products', component: ProductListComponent },
-  { path: 'product/:id', component: ProductCardComponent },
-  { path: 'category', component: ProductCategoriesSidebarComponent },
-  { path: 'habituales', component: HabitualesComponent },
-  {
-    path: 'user', loadChildren: () => import(
-      './features/user/user.module').then(m => m.UserModule)
-  },
-  {
-    path: 'filter', loadChildren: () => import(
-      './product/product.module').then(m => m.ProductModule)
-  },
+    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'products', component: ProductListComponent },
+    { path: 'product/:id', component: ProductCardComponent },
+    { path: 'category', component: ProductCategoriesSidebarComponent },
+    { path: 'habituales', component: HabitualesComponent},
+    {
+      path: 'user',
+      loadChildren: () => import('./features/user/user.module').then(m => m.UserModule)
+    }
 ];
 
 // configures NgModule imports and exports
