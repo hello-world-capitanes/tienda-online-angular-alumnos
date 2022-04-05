@@ -6,6 +6,7 @@ import { ProductCardComponent } from './features/product/components/product-card
 import { ProductCategoriesSidebarComponent } from './features/product/components/product-categories-sidebar/product-categories-sidebar.component';
 import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 import { AuthenticationGuardGuard } from './features/user/guards/authentication-guard.guard';
+
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
