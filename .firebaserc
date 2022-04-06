@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-online-mario-querol": {
+      "hosting": {
+        "tienda-online-angular-alumnos": [
+          "tienda-online-mario-querol"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-online-mario-querol"
+  }
+}
