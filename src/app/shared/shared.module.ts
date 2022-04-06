@@ -31,9 +31,9 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     FooterComponent,
     BannerComponent,
     ButtonLanguageComponent,
+
     OverShadowDirective,
     ErrorSnackbarComponent,
-
   ],
   imports: [
     CommonModule,

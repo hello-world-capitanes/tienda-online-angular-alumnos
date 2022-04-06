@@ -1,12 +1,12 @@
-import { UserService } from 'src/app/features/user/services/user.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { UserService } from 'src/app/features/user/services/user.service';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserRoutingModule } from './user-routing.module';
-import { UserInfoComponent } from './components/components/user-info/user-info.component';
 
 @NgModule({
   declarations: [
-    UserInfoComponent,
+    UserProfileComponent,
   ],
   providers: [
     UserService,

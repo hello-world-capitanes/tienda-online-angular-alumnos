@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserFilter } from '../models/user.filter';
 import { User } from '../models/user.model';
-import userJson from "../services/user.json";
+import userJson from "../services/users.json";
 import { USER_ERRORS } from '../utils/user.errors';
 
 

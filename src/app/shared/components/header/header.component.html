@@ -23,7 +23,7 @@
   <mat-menu #userMenu="matMenu" xPosition="before">
     <h2 class="username">Invitado</h2>
     <mat-divider></mat-divider>
-    
+
     <button mat-raised-button color="accent" class="sign-in-button" aria-label="Go to user" (click)="openSigninForm()">
       Iniciar sesión
     </button>
@@ -40,8 +40,7 @@
     </mat-list>
   </mat-menu>
 
-  <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart"
-    (click)="toggleShoppingCart()">
+  <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart" (click)="toggleShoppingCart()">
     <mat-icon [matBadge]="getNumberOfProducts()">shopping_cart</mat-icon>
     <span *ngIf="getTotalPrice(); let totalPrice" class="total-price">{{ totalPrice }}</span>
   </button>
