@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tienda-online-angular-alumnos:build:production",
+            "firebaseProject": "tienda-online-raulbravolopez",
+            "firebaseHostingSite": "tienda-online-raulbravolopez"
+          }
         }
       }
     }
