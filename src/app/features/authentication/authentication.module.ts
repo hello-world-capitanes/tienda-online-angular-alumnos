@@ -19,9 +19,7 @@ import { StrengthBarComponent } from './components/sign-up-modal/strength-bar/st
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
     SharedModule,
-
     MatInputModule,
     MatButtonModule,
     MatIconModule,

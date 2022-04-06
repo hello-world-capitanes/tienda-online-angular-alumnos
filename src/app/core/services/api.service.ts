@@ -1,4 +1,3 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 
@@ -8,7 +7,7 @@ import { environment } from "src/environments/environment";
 export class ApiService {
 
     protected readonly API_URL = environment.apiUrl;
-  
+
     constructor() {}
-  
-}  
+
+}

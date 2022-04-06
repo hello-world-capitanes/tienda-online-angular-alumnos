@@ -27,6 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
 
+
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
   declarations: [

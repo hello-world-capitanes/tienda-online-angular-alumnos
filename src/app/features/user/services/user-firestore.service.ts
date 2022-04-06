@@ -6,11 +6,11 @@ import { User } from '../models/user.model';
   providedIn: 'root',
 })
 export class UserFirestoreService {
-  private collection: string;
+
   private readonly USERS_COLLECTION = 'users';
+  private collection = this.USERS_COLLECTION;
 
   constructor(protected firestore: AngularFirestore) {
-    this.collection = this.USERS_COLLECTION;
   }
 
   public async findUserByEmail(email: string): Promise<User | undefined> {

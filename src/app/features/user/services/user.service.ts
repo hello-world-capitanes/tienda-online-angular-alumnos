@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { UserFilter } from '../models/user.filter';
 import { User } from '../models/user.model';
 import { USER_ERRORS } from '../utils/user.errors';
-import usersJson from './users.json';
+import usersJson from '../data/users.json';
 
 @Injectable({
   providedIn: UserService
