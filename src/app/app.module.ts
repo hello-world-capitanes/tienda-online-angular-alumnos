@@ -1,5 +1,5 @@
-import { localeEsExtra } from '@angular/common/locales/extra/es';
-import { localeES } from '@angular/common/locales/es';
+import localeEsExtra from '@angular/common/locales/extra/es';
+import localeES from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -81,5 +81,5 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
