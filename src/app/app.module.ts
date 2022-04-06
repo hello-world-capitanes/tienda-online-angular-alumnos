@@ -49,7 +49,7 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     MatDividerModule,
 
     // Firebase config
-    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
