@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Authentication } from 'src/app/core/services/Authentication/models/authentication.model';
 import { SignUpModalComponent } from 'src/app/features/authentication/components/sign-up-modal/sign-up-modal.component';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { User } from 'src/app/features/user/models/user.model';
@@ -61,11 +62,11 @@ export class HeaderComponent implements OnInit {
       }
 
       if(result && result.password && result.email){
-        if(this.authService.logIn(result.email, result.password))
+        this.authService.logIn(new Authentication(result.email, result.password)).then( () =>
         {
           // this.route.navigate(["user", result.email]);
           this.route.navigate(["user"]);
-        }
+        });
       }
     });
   }
