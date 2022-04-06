@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/user.module';
 import usersJson from '../../data/authentication.json';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 interface userAuthentication {
@@ -19,7 +20,7 @@ export class AuthServiceService {
   private _encontrado: boolean = false;
   private credenciales: userAuthentication[] = usersJson.Credentials as userAuthentication[];
 
-  constructor() {
+  constructor(private auth: AngularFireAuth) {
   }
 
   sigIn(email: string, password: string){
@@ -41,5 +42,7 @@ export class AuthServiceService {
   public get credentials(): userAuthentication[]{
     return this.credenciales;
   }
+
+  public
 }
 

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-online-osman-mehmed": {
+      "hosting": {
+        "tienda-online-angular-alumnos": [
+          "tienda-online-osman-mehmed"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-online-osman-mehmed"
+  }
+}

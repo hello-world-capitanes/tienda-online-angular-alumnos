@@ -22,6 +22,12 @@ import { HomeComponent } from './features/home/home.component';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
 import { AuthenticationModule } from './features/authentication/authentication.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -48,7 +54,14 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     AuthenticationModule,
     ProductModule,
     MatDividerModule,
-    MatSidenavModule
+    MatSidenavModule,
+
+    AngularFireModule,
+      provideFirebaseApp(() => initializeApp(environment.firebase)),
+      provideAuth(() => getAuth()),
+      provideFirestore(() => getFirestore()),
+      provideStorage(() => getStorage()),
+
   ],
 
   providers: [
@@ -59,3 +72,4 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
