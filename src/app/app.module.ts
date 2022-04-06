@@ -22,12 +22,22 @@ import { HomeComponent } from './features/home/home.component';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { HabitualesComponent } from './features/habituales/habituales.component';
 import { AuthenticationModule } from './features/authentication/authentication.module';
-import { AngularFireModule } from '@angular/fire/compat';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { CoreModule } from './core/core.module';
+import { UserModule } from './features/user/user.module';
+import {
+  ScreenTrackingService,
+  UserTrackingService,
+} from '@angular/fire/analytics';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
 
 registerLocaleData(localeES, 'es-ES', localeEsExtra);
 @NgModule({
@@ -50,24 +60,25 @@ registerLocaleData(localeES, 'es-ES', localeEsExtra);
     MatCheckboxModule,
     ReactiveFormsModule,
     MatIconModule,
+    CoreModule,
     SharedModule,
     AuthenticationModule,
     ProductModule,
     MatDividerModule,
     MatSidenavModule,
-
-    AngularFireModule,
-      provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideAuth(() => getAuth()),
-      provideFirestore(() => getFirestore()),
-      provideStorage(() => getStorage()),
-
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
 
   providers: [
     MatDividerModule,
     { provide: LOCALE_ID, useValue: 'es-ES' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },
+    ScreenTrackingService,
+    UserTrackingService,
   ],
   bootstrap: [AppComponent],
 })

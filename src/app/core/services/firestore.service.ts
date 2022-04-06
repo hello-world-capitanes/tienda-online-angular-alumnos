@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class FirestoreService {
+export abstract class FirestoreService {
+  protected abstract collection: string;
 
-  private collection!: string;
+  constructor(protected firestore: AngularFirestore) {}
 
-  constructor(private firestore: AngularFirestore) { }
-
-  getCollection(){
+  protected getCollection() {
     return this.firestore.collection(this.collection);
   }
 }

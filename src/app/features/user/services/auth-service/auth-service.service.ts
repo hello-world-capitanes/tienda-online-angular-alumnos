@@ -43,6 +43,5 @@ export class AuthServiceService {
     return this.credenciales;
   }
 
-  public
 }
 
