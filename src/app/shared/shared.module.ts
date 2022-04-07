@@ -21,9 +21,10 @@ import { ButtonLanguageComponent } from './components/button-language/button-lan
 import { ErrorSnackbarComponent } from './components/error-snackbar/error-snackbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginButtonComponent } from './components/header/login-button/login-button.component';
+import { ProfileButtonComponent } from './components/header/profile-button/profile-button.component';
 import { SidebarLayoutComponent } from './components/sidebar-layout/sidebar-layout.component';
 import { OverShadowDirective } from './directives/over-shadow.directive';
-import { StrengthBarComponent } from '../features/authentication/components/sign-up-modal/strength-bar/strength-bar.component';
 
 
 @NgModule({
@@ -36,6 +37,8 @@ import { StrengthBarComponent } from '../features/authentication/components/sign
 
     OverShadowDirective,
     ErrorSnackbarComponent,
+    LoginButtonComponent,
+    ProfileButtonComponent,
   ],
   imports: [
     CommonModule,
