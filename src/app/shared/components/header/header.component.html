@@ -15,7 +15,7 @@
 
   <span class="spacer"></span>
 
-  <ng-container *ngIf="this.userLogged; else noUserLogged">
+  <ng-container *ngIf="!this.userLogged; else noUserLogged">
     <app-login-button></app-login-button>
   </ng-container>
   <ng-template #noUserLogged>

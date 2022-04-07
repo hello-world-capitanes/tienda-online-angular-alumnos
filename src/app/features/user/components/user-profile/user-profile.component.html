@@ -1,11 +1,46 @@
-<ng-container *ngIf="!!user">
-    <div>
-        <span>{{ user | json }}</span>
+<div class="user-profile-container">
+  <ng-container *ngIf="!!user">
+    <div class="user-card">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ user?.name }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          *ngIf="!!user?.image"
+          [src]="user?.image"
+          alt="Profile photo"
+        />
+        <mat-card-content>
+          <p>
+            {{ user?.email }}
+          </p>
+          <p>{{ user?.name }} {{ user?.lastname1 }} {{ user?.lastname2 }}</p>
+          <p *ngIf="!!user?.postalCode">
+            {{ user?.postalCode }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="icon-button" color="primary">
+            <mat-icon>edit</mat-icon>
+            <span>Modificar perfil</span>
+          </button>
+          <button mat-raised-button class="icon-button" color="warn">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar cuenta</span>
+          </button>
+          <button mat-raised-button class="icon-button" color="accent">
+            <mat-icon>lock_reset</mat-icon>
+            <span>Reestablecer contraseña</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
     </div>
-</ng-container>
-<ng-container *ngIf="user === null">
+  </ng-container>
+  <ng-container *ngIf="user === null">
     <p>Usuario no encontrado</p>
-</ng-container>
-<ng-container *ngIf="user === undefined">
+  </ng-container>
+  <ng-container *ngIf="user === undefined">
     <p>Cargando información del usuario</p>
-</ng-container>
+  </ng-container>
+</div>

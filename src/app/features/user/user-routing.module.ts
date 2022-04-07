@@ -8,7 +8,7 @@ const routes: Routes = [
     component: UserProfileComponent
   },
   {
-    path: ':id',
+    path: ':email',
     component: UserProfileComponent
   }
 ];

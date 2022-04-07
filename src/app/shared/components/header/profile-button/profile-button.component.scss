@@ -1,7 +1,7 @@
 .profile-button {
     margin-right: 10px;
     .login-icon {
-        display: none;
+        margin-right: 5px;
     }
     .expand-icon {
         margin-left: 5px;
@@ -31,9 +31,6 @@ mat-list {
     .profile-button {
         span, mat-icon {
             display: none;
-        }
-        .login-icon {
-            display: inline-block;
         }
     }
 }

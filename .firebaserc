@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-online-mercadona": {
+      "hosting": {
+        "tienda-online-angular-alumnos": [
+          "tienda-online-mercadona"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-online-mercadona"
+  }
+}

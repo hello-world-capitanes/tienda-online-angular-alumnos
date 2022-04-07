@@ -56,7 +56,7 @@ export class SignUpModalComponent implements OnInit {
         ],
       ],
 
-      privacy: [false, [Validators.required]],
+      privacy: [false, [Validators.required, Validators.requiredTrue]],
     });
 
     /*
