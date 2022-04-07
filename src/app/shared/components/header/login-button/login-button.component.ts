@@ -9,7 +9,8 @@ import { AuthenticationService } from 'src/app/features/authentication/services/
 import { User } from 'src/app/features/user/models/user.model';
 import { UserFirestoreService } from 'src/app/features/user/services/user-firestore.service';
 import { USER_ERRORS } from 'src/app/features/user/utils/user.errors';
-import { ErrorSnackbarComponent } from '../../error-snackbar/error-snackbar.component';
+import { SNACKBAR_MESSAGE_TYPES } from 'src/app/shared/utils/models/snackbar.types';
+import { SnackbarComponent } from '../../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-login-button',
@@ -52,9 +53,10 @@ export class LoginButtonComponent implements OnInit {
             return this.router.navigate(['user']);
           })
           .catch((error) => {
-            this.snackBar.openFromComponent(ErrorSnackbarComponent, {
+            this.snackBar.openFromComponent(SnackbarComponent, {
               data: {
-                error: error?.message,
+                type: SNACKBAR_MESSAGE_TYPES.error,
+                message: error?.message
               },
             });
           });

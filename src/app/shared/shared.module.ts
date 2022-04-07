@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 import { ShoppingCartModule } from '../features/shopping-cart/shopping-cart.module';
 import { BannerComponent } from './components/banner/banner.component';
 import { ButtonLanguageComponent } from './components/button-language/button-language.component';
-import { ErrorSnackbarComponent } from './components/error-snackbar/error-snackbar.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginButtonComponent } from './components/header/login-button/login-button.component';
@@ -36,7 +36,7 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     ButtonLanguageComponent,
 
     OverShadowDirective,
-    ErrorSnackbarComponent,
+    SnackbarComponent,
     LoginButtonComponent,
     ProfileButtonComponent,
   ],
@@ -64,7 +64,7 @@ import { OverShadowDirective } from './directives/over-shadow.directive';
     SidebarLayoutComponent,
     BannerComponent,
     OverShadowDirective,
-    ErrorSnackbarComponent
+    SnackbarComponent
   ]
 })
 export class SharedModule { }

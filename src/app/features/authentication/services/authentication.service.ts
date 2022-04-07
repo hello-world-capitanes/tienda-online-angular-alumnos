@@ -79,11 +79,21 @@ export class AuthenticationService {
 
   public async resetPassword(): Promise<void> {
     return new Promise((resolve, reject) => {
-      this._user$.subscribe((user) => {
-        if (!user || !user?.active ||  !user?.email || user.email.length <= 0) {
-          return reject(USER_ERRORS.database.notFound);
-        }
-        return resolve(this.fireAuth.sendPasswordResetEmail(user?.email));
+      this._user$.subscribe({
+        next: (user) => {
+          if (
+            !user ||
+            !user?.active ||
+            !user?.email ||
+            user.email.length <= 0
+          ) {
+            return reject(USER_ERRORS.database.notFound);
+          }
+          return resolve(this.fireAuth.sendPasswordResetEmail(user?.email));
+        },
+        error: (error) => {
+          reject(USER_ERRORS.database.notFound);
+        },
       });
     });
   }

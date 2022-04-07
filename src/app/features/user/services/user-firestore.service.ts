@@ -62,5 +62,5 @@ export class UserFirestoreService extends FirestoreService {
       .valueChanges()
       .pipe(map((user) => user as User));
   }
-  
+
 }
