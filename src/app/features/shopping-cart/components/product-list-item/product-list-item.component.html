@@ -1,31 +1,3 @@
-<!--     <img [src]="product.image">
-    <div class="product-list-item-info">
-        <div class="product-list-item-info-header">
-            <span>{{ product.name }}</span>
-            <span><strong>{{ getPrice() }}</strong>/ud.</span>
-        </div>
-        <mat-divider></mat-divider>
-        <div class="product-list-item-info-footer">
-            <div class="product-list-item-footer-units">
-                <small>En carro</small>
-                <span><strong *ngIf="getUnits(); let units">{{ units > 1 ? units + " uds." : units + " ud."}}</strong></span>
-            </div>
-            <div>
-                <button mat-mini-fab color="warn" (click)="deleteFromShoppingCart()">
-                    <ng-container *ngIf="getUnits() > 1; else noUnits">
-                        <mat-icon>remove</mat-icon>
-                    </ng-container>
-                    <ng-template #noUnits>
-                        <mat-icon>delete</mat-icon>
-                    </ng-template>
-                </button>
-                <button mat-mini-fab color="accent" (click)="addToShoppingCart()">
-                    <mat-icon>add</mat-icon>
-                </button>
-            </div>
-        </div>
-    </div> -->
-
 <div class = "product-container" *ngIf="!!product">
 
   <div>

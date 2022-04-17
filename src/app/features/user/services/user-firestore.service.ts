@@ -11,7 +11,7 @@ import { USER_ERRORS } from '../utils/user.errors';
 export class UserFirestoreService extends FirestoreService {
   protected collection: string;
 
-  private readonly USERS_COLLECTION = 'users';
+  private readonly USERS_COLLECTION = 'USERS';
 
   constructor(firestore: AngularFirestore) {
     super(firestore);
@@ -22,6 +22,7 @@ export class UserFirestoreService extends FirestoreService {
     if (!email || email.length <= 0) {
       return Promise.reject(USER_ERRORS.email.notProvided);
     }
+
     return this.firestore
       .collection(this.collection)
       .ref.where('email', '==', email)

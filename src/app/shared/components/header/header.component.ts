@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { SignUpModalComponent } from 'src/app/features/authentication/components/sign-up-modal/sign-up-modal.component';
 import { SignInModalComponent } from '../../../features/authentication/components/sign-in-modal/sign-in-modal.component';
 import { PriceService } from '../../services/price.service';
+import { AuthServiceService } from 'src/app/features/user/services/auth-service/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -35,7 +36,9 @@ export class HeaderComponent implements OnInit {
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
     private profileService: ProfileServiceService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService: AuthServiceService,
+
   ) {
   }
 
@@ -73,7 +76,7 @@ export class HeaderComponent implements OnInit {
 
         this.router.navigateByUrl('/user/');
         this.logeado = true;
-        this.mensajeBienvenida = "Hola! "+ result[1];
+        this.mensajeBienvenida = "Hola! "+ result[1].email;
         this.perfil = result[1];
       }
 

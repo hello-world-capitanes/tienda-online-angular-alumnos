@@ -6,6 +6,7 @@
         </div>
         <app-footer></app-footer>
     </mat-drawer-content>
+
     <mat-drawer class="sidebar" mode="over" position="end" [opened]="isShoppingCartOpened">
         <app-shopping-cart (closeShoppingCartEvent)="toggleShoppingCart(false)"></app-shopping-cart>
     </mat-drawer>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/user.module';
 import usersJson from '../../data/authentication.json';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { UserFirestoreService } from '../user-firestore.service';
 
 
 interface userAuthentication {
@@ -25,14 +26,25 @@ export class AuthServiceService {
 
   sigIn(email: string, password: string){
 
-    if (this.credenciales.some( (elemento) => elemento.email == email && elemento.password == password)){
-/*       this._user != this._profileService.getUser('email'); */
-    }
+    // Usando Firebase
+
+    // Usando JSON
+
+/*     if (this.credenciales.some( (elemento) => elemento.email == email && elemento.password == password)){
+/*       this._user != this._profileService.getUser('email');
+    } */
   }
 
   public setNewCredentials(email: string, password: string ){
-      let credential = {email: email, password: password} as userAuthentication;
-      this.credenciales.push(credential);
+
+      // Usando Firebase
+
+
+
+      // Usando JSON
+
+      /* let credential = {email: email, password: password} as userAuthentication;
+      this.credenciales.push(credential); */
   }
 
   public getUserLogged(): boolean{

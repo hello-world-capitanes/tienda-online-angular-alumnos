@@ -45,7 +45,7 @@ export class ProfileServiceService {
   }
 
   public set usuario(usuario: User){
-    this._authService.setNewCredentials(usuario.email,usuario.password);
+    //this._authService.setNewCredentials(usuario.email,usuario.password);
     this._listaUsuarios.push(usuario);
   }
 

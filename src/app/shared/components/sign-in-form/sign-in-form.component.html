@@ -1,4 +1,5 @@
-<!-- <section class="signin__container">
+<!--
+  <section class="signin__container">
     <h1>Identificate</h1>
     <form [formGroup]="signInForm" (ngSubmit)="submitForm()">
       <mat-form-field class="signin__email" appearance="outline">
@@ -60,7 +61,6 @@
           <div *ngIf = "formularioLogin.get('password')?.hasError('required') && buttonPressed" class = "error">
                 Introduce tu contraseña
           </div>
-
         </div>
 
         <div class = "button-accept-form">
