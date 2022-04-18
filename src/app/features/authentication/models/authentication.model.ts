@@ -1,6 +1,3 @@
-export type UserFireCredential = firebase.default.auth.UserCredential;
-export type UserFire = firebase.default.User;
-
 export class UserAuth {
     private _email: string;
     private _password: string;

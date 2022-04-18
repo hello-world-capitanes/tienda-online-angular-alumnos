@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { user } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map, Observable, throwError } from 'rxjs';
 import { FirestoreService } from 'src/app/core/services/firestore.service';
@@ -19,16 +20,16 @@ export class UserFirestoreService extends FirestoreService {
   }
 
   public findUserByEmail(email: string): Promise<User | undefined> {
-    if (!email || email.length <= 0) {
+     if (!email || email.length <= 0) {
       return Promise.reject(USER_ERRORS.email.notProvided);
     }
     return this.firestore
-      .collection(this.collection)
+      .collection('users')
       .ref.where('email', '==', email)
       .limit(1)
       .get()
-      .then((user) => {
-        return user?.docs[0]?.data() as User;
+      .then((query) => {
+        return query?.docs[0]?.data() as User;
       });
   }
 

@@ -1,3 +1,4 @@
+import { UserFirestoreService } from './../../../features/user/services/user-firestore.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,6 +8,7 @@ import { ShoppingCartService } from 'src/app/features/shopping-cart/services/sho
 import { User } from 'src/app/features/user/models/user.model';
 import { SignInModalComponent } from '../../../features/authentication/components/sign-in-modal/sign-in-modal.component';
 import { PriceService } from '../../services/price.service';
+import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -17,14 +19,16 @@ export class HeaderComponent implements OnInit {
   @Output() toggleShoppingCartEvent = new EventEmitter<void>();
 
   constructor(
-    private router: Router,
+    private authService: AuthenticationService,
+    /*     private router: Router, */
     private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
-    private snackBar: MatSnackBar
-  ) {}
+    /*     private snackBar: MatSnackBar,
+        private userService: UserFirestoreService */
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   getNumberOfProducts(): number | null {
     const total: number = this.shoppingCartService.getNumberOfProducts();
@@ -74,8 +78,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  private openSignUpForm(user: User) {
-    const dialogRef = this.matDialog.open(SignUpModalComponent, {
+   private openSignUpForm(user: User) {
+/*     const dialogRef = this.matDialog.open(SignUpModalComponent, {
       data: { email: user.email },
       width: '500px',
     });
@@ -83,13 +87,19 @@ export class HeaderComponent implements OnInit {
       if (!userSignUp) {
         return;
       }
-
-      /*       this.authService.signUp(userSignUp).then((userCredential) => {
+      this.authService.login(userSignUp).then((userCredential) => {
         if (!userCredential) {
-          return;
+          alert("no credencial de usuario");
         }
-        this.userLogged = (!!userCredential?.user ? userCredential?.user : null);
-      }) */
-    });
-  }
+
+        this.authService.signUp(userSignUp).then((userCredential) => {
+          if (!userCredential) {
+            return;
+          }
+          this.userLogged = (!!userCredential?.user ? userCredential?.user : null);
+        })
+      });
+    },
+  } */
+}
 }

@@ -1,9 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { GENERAL_ERRORS } from 'src/app/core/utils/general.errors';
-import { USER_ERRORS } from 'src/app/features/user/utils/user.errors';
+import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 import { USER_CONTANTS } from 'src/app/features/user/utils/user-constants';
+import { USER_ERRORS } from 'src/app/features/user/utils/user.errors';
+import { UserAuth } from '../../models/authentication.model';
 
 @Component({
   selector: 'app-sign-up-modal',
@@ -18,6 +21,8 @@ export class SignUpModalComponent implements OnInit {
   hide = true;
 
   constructor(
+    private readonly authService: AuthenticationService,
+    private readonly router: Router,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<SignUpModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { email: string }
@@ -74,5 +79,26 @@ export class SignUpModalComponent implements OnInit {
     }
 
     this.dialogRef.close(this.signUpForm?.value);
+  }
+
+  login(UserAuth: UserAuth){
+    this.authService
+    .login(UserAuth)
+    .then(() => this.router.navigate(['/home'])
+    .catch((e) => console.log(e.message)));
+  }
+
+  register(UserAuth:UserAuth){
+    this.authService
+    .register(UserAuth)
+    .then(() => this.router.navigate(['/login'])
+    .catch((e) => console.log(e.message)));
+  }
+
+  logout(){
+    this.authService
+    .logout()
+    .then(() => this.router.navigate(['/'])
+    .catch((e) => console.log(e.message)));
   }
 }

@@ -8,12 +8,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { SignInModalComponent } from './components/sign-in-modal/sign-in-modal.component';
 import { SignUpModalComponent } from './components/sign-up-modal/sign-up-modal.component';
 import { StrengthBarComponent } from './components/sign-up-modal/strength-bar/strength-bar.component';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
     SignInModalComponent,
     SignUpModalComponent,
     StrengthBarComponent,
+  ],
+  providers: [
+    AuthenticationService,
   ],
   imports: [
     CommonModule,
@@ -28,4 +32,4 @@ import { StrengthBarComponent } from './components/sign-up-modal/strength-bar/st
   ],
   exports: [SignInModalComponent],
 })
-export class AuthenticationModule {}
+export class AuthenticationModule { }
