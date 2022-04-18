@@ -1,0 +1,34 @@
+<button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
+  <mat-icon class="login-icon">login</mat-icon>
+  <span>Iniciar sesión</span>
+  <mat-icon class="expand-icon">keyboard_arrow_down</mat-icon>
+</button>
+
+<mat-menu #userMenu="matMenu" xPosition="before">
+  <h2 class="username">Invitado</h2>
+
+  <mat-divider></mat-divider>
+
+  <button
+    mat-raised-button
+    color="accent"
+    class="sign-in-button"
+    aria-label="Go to user"
+    (click)="openSignInForm()"
+  >
+    Iniciar sesión
+  </button>
+
+  <mat-divider></mat-divider>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>help</mat-icon>
+      <div mat-line>Preguntas frecuentes</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>support_agent</mat-icon>
+      <div mat-line>Ayuda</div>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>

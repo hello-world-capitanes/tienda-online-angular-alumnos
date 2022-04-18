@@ -1,0 +1,14 @@
+.user-profile-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.user-card {
+    display: inline-block;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-evenly;
+}

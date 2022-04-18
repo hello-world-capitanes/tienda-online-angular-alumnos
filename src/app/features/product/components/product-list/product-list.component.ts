@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
-import { ErrorSnackbarComponent } from 'src/app/shared/components/error-snackbar/error-snackbar.component';
+import { SnackbarComponent } from 'src/app/shared/components/snackbar/snackbar.component';
+import { SNACKBAR_MESSAGE_TYPES } from 'src/app/shared/utils/models/snackbar.types';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 
@@ -24,9 +25,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.products = (!!productsFromApi && productsFromApi.length > 0 ? productsFromApi : []);
       },
       error: (error) => {
-        this.snackBar.openFromComponent(ErrorSnackbarComponent, {
+        this.snackBar.openFromComponent(SnackbarComponent, {
           data: {
-            error: error?.message
+            type: SNACKBAR_MESSAGE_TYPES.error,
+            message: error?.message
           }
         });
       }

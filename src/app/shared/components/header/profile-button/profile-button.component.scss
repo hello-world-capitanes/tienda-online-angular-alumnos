@@ -1,0 +1,36 @@
+.profile-button {
+    margin-right: 10px;
+    .login-icon {
+        margin-right: 5px;
+    }
+    .expand-icon {
+        margin-left: 5px;
+    }
+}
+.username {
+    margin: 5px 15px;
+}
+.postalCode {
+    margin: 5px 15px;
+    color: #00ab61;
+}
+
+mat-list {
+    padding: 5px 0;
+    mat-list-item {
+        &:hover {
+            background: rgba(0,0,0,.04);
+        }
+        &:active {
+            background: rgba(0,0,0,.1);
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .profile-button {
+        span, mat-icon {
+            display: none;
+        }
+    }
+}

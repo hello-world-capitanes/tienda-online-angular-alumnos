@@ -1,0 +1,40 @@
+<button mat-button class="profile-button" [matMenuTriggerFor]="userMenu">
+  <mat-icon class="login-icon">person</mat-icon>
+  <span>{{ user?.name }}</span>
+  <mat-icon class="expand-icon">keyboard_arrow_down</mat-icon>
+</button>
+
+<mat-menu #userMenu="matMenu" xPosition="before">
+  <h2 class="username">{{ user?.name }}</h2>
+  <h3 class="postalCode">Entregar en {{ user?.postalCode }}</h3>
+
+  <mat-divider></mat-divider>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>list_alt</mat-icon>
+      <div mat-line>Mis pedidos</div>
+    </mat-list-item>
+    <mat-list-item role="listitem" routerLink="/user">
+      <mat-icon mat-list-icon>person</mat-icon>
+      <div mat-line>Mi perfil</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-divider></mat-divider>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>help</mat-icon>
+      <div mat-line>Preguntas frecuentes</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>support_agent</mat-icon>
+      <div mat-line>Ayuda</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <mat-icon mat-list-icon>logout</mat-icon>
+      <div mat-line>Cerrar sesión</div>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>

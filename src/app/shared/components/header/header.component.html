@@ -39,10 +39,17 @@
       </mat-list-item>
     </mat-list>
   </mat-menu>
+  <ng-container *ngIf="!this.userLogged; else noUserLogged">
+    <app-login-button></app-login-button>
+  </ng-container>
+  <ng-template #noUserLogged>
+    <app-profile-button [userLogged]="this.userLogged"></app-profile-button>
+  </ng-template>
 
   <button mat-raised-button class="shopping-cart-button" color="accent" aria-label="Go to shopping-cart" (click)="toggleShoppingCart()">
     <mat-icon [matBadge]="getNumberOfProducts()">shopping_cart</mat-icon>
     <span *ngIf="getTotalPrice(); let totalPrice" class="total-price">{{ totalPrice }}</span>
   </button>
 </mat-toolbar>
+
 <mat-divider></mat-divider>

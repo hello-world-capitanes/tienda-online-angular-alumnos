@@ -6,6 +6,7 @@ export class User {
   private _lastname1: string;
   private _lastname2?: string;
   private _image?: string;
+  private _postalCode?: string;
   private _lastLogin?: Date;
   private _lastConnection?: Date;
   private _deleteDate?: Date;
@@ -18,6 +19,7 @@ export class User {
     lastname1: string,
     lastname2?: string,
     image?: string,
+    postalCode?: string,
     lastLogin?: Date,
     lastConnection?: Date,
     deleteDate?: Date,
@@ -29,6 +31,7 @@ export class User {
     this._lastname1 = lastname1;
     this._lastname2 = lastname2;
     this._image = image;
+    this._postalCode = postalCode;
     this._lastLogin = lastLogin;
     this._lastConnection = lastConnection;
     this._deleteDate = deleteDate;
@@ -62,6 +65,13 @@ export class User {
   }
   public set image(value: string | undefined) {
     this._image = value;
+  }
+
+  public get postalCode(): string | undefined {
+    return this._postalCode;
+  }
+  public set postalCode(value: string | undefined) {
+    this._postalCode = value;
   }
 
   public get active(): boolean {
