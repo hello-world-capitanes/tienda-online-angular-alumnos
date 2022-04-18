@@ -1,13 +1,12 @@
-import { UserFirestoreService } from './../../../features/user/services/user-firestore.service';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subscription } from 'rxjs';
+import { SignInModalComponent } from 'src/app/features/authentication/components/sign-in-modal/sign-in-modal.component';
 import { SignUpModalComponent } from 'src/app/features/authentication/components/sign-up-modal/sign-up-modal.component';
+import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 import { ShoppingCartService } from 'src/app/features/shopping-cart/services/shopping-cart.service';
 import { User } from 'src/app/features/user/models/user.model';
-import { SignInModalComponent } from '../../../features/authentication/components/sign-in-modal/sign-in-modal.component';
 import { PriceService } from '../../services/price.service';
 
 @Component({
@@ -15,22 +14,29 @@ import { PriceService } from '../../services/price.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   @Output() toggleShoppingCartEvent = new EventEmitter<void>();
 
+  userSub!: Subscription;
+  userLogged!: User | null;
+
   constructor(
-    private router: Router,
-    private matDialog: MatDialog,
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
-    private authService : AuthenticationService,
-    private snackBar: MatSnackBar,
-    private userService: UserFirestoreService,
-  ) {
+    private authService: AuthenticationService,
+    private matDialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {}
+
+  ngOnInit(): void {
+    this.userSub = this.authService.getUserLogged().subscribe((user) => {
+      this.userLogged = user;
+    });
   }
 
-
-  ngOnInit(): void {}
+  ngOnDestroy(): void {
+    this.userSub?.unsubscribe();
+  }
 
   getNumberOfProducts(): number | null {
     const total: number = this.shoppingCartService.getNumberOfProducts();
@@ -62,16 +68,20 @@ export class HeaderComponent implements OnInit {
         this.openSignUpForm(result as User);
       }
 
-      if(result && result.password && result.email){
-
-        this.authService.signIn(result.email,result.password).then(credentials =>{
-          if(!credentials){
-            alert("Your password is incorrect");
-          }else{
-            this.router.navigate(['/user',credentials.id]);
-          }
-
-        })
+      if (!!result?.email && !!result?.password) {
+        /*         this.authService.signIn(result.email, result.password)
+          .then(credentials => {
+            if (!credentials) {
+              alert("No credentials");
+            }
+            this.router.navigate(['user', 1]);
+          }).catch(error => {
+            this.snackBar.openFromComponent(ErrorSnackbarComponent, {
+              data: {
+                error: error?.message
+              }
+            });
+          }); */
       }
     });
   }
@@ -85,23 +95,14 @@ export class HeaderComponent implements OnInit {
       if (!userSignUp) {
         return;
       }
-      this.authService.signUp(userSignUp.email,userSignUp.password).then(isRegistered =>{
-        if(!isRegistered){
-          alert("no register")
-        }else{
 
-          this.userService.signUp(userSignUp).then(user=>{
-            this.authService.signIn(userSignUp.email,userSignUp.password).then(userLogged=>{
-              if(!userLogged){
-                alert("todo mal");
-              }else{
-                this.router.navigate(["user"]);
-              }
-            });
-          });
+      /*       this.authService.signUp(userSignUp).then((userCredential) => {
+        if (!userCredential) {
+          return;
         }
-      });
+        this.userLogged = (!!userCredential?.user ? userCredential?.user : null);
+      }) */
     });
-    }
+  }
 
 }
