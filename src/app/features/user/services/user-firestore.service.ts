@@ -29,6 +29,9 @@ export class UserFirestoreService extends FirestoreService {
       .get()
       .then((user) => {
         return user?.docs[0]?.data() as User;
+      }).catch(error=> {
+        console.error(error);
+        return undefined;
       });
   }
 
@@ -41,5 +44,17 @@ export class UserFirestoreService extends FirestoreService {
       .doc(id)
       .valueChanges()
       .pipe(map((user) => user as User));
+  }
+  public signUp(user:User): Promise<User |undefined>{
+    return this.firestore.collection(this.collection).add(user).then(document =>{
+      if(!document){
+        alert("error no document");
+        return;
+      }else{
+        user.id = document.id;
+        return user;
+      }
+
+    });
   }
 }

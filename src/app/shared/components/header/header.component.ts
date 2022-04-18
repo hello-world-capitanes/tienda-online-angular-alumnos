@@ -1,3 +1,4 @@
+import { UserFirestoreService } from './../../../features/user/services/user-firestore.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
     private priceService: PriceService,
     private shoppingCartService: ShoppingCartService,
     private authService : AuthenticationService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private userService: UserFirestoreService,
   ) {
   }
 
@@ -83,6 +85,22 @@ export class HeaderComponent implements OnInit {
       if (!userSignUp) {
         return;
       }
+      this.authService.signUp(userSignUp.email,userSignUp.password).then(isRegistered =>{
+        if(!isRegistered){
+          alert("no register")
+        }else{
+
+          this.userService.signUp(userSignUp).then(user=>{
+            this.authService.signIn(userSignUp.email,userSignUp.password).then(userLogged=>{
+              if(!userLogged){
+                alert("todo mal");
+              }else{
+                this.router.navigate(["user"]);
+              }
+            });
+          });
+        }
+      });
     });
     }
 

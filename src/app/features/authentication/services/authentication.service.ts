@@ -1,33 +1,56 @@
-import { Observable } from 'rxjs';
-import { UserServiceService } from './../../user/services/user-service.service';
+import { FirestoreService } from 'src/app/core/services/firestore.service';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { UserFirestoreService } from './../../user/services/user-firestore.service';
 import { Injectable } from '@angular/core';
 import authjson from "src/app/features/authentication/data/authentication.json";
-import { user } from '../../user/model/user-model';
+import { User } from '../../user/models/user.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
+  private user!:User;
   private isLogged:boolean = false;
 
   constructor(
-    private userService: UserServiceService,
+    private userService: UserFirestoreService,
+    private authService: AngularFireAuth,
   ) { }
 
-  public async signIn(email:string, password:string){
-    if(authjson.some(user => user.email==email&&user.password==password)){
-      let user = await this.userService.obtainUser(email);
-      this.isLogged = !!user;
-      return user;
+  public async signIn(email:string, password:string): Promise<User|undefined>{
+    return this.authService.signInWithEmailAndPassword(email,password).then(user => {
+      if(!user){
+        alert("vuelve a comprobar maquina");
+        return;
+      }else{
+        return this.userService.findUserByEmail(email).then((user)=>{
+          if(!user){
+            return;
+          }
+          this.user = user;
+          return this.user;
+        });
+      }
+    })
 
-    }
-    return;
   }
   public getUserLogged(): boolean{
     return this.isLogged;
   }
-  public async signUp(){
+  public async signUp(email:string, password:string): Promise<boolean>{
+    return this.userService.findUserByEmail(email).then((user)=>{
+      if(!!user){
+        alert("ya existe");
+        return false;
+      }else{
+        return this.authService.createUserWithEmailAndPassword(email,password).then(credentials=>{
+          return !!credentials;
+        }
+        );
+      }
+    })
 
   }
 }
