@@ -83,21 +83,21 @@ export class SignUpModalComponent implements OnInit {
 
   login(UserAuth: UserAuth){
     this.authService
-    .login(UserAuth)
+    .signIn(UserAuth)
     .then(() => this.router.navigate(['/home'])
     .catch((e) => console.log(e.message)));
   }
 
   register(UserAuth:UserAuth){
     this.authService
-    .register(UserAuth)
+    .signUp(UserAuth)
     .then(() => this.router.navigate(['/login'])
     .catch((e) => console.log(e.message)));
   }
 
   logout(){
     this.authService
-    .logout()
+    .signOut()
     .then(() => this.router.navigate(['/'])
     .catch((e) => console.log(e.message)));
   }
