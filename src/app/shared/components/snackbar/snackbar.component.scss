@@ -1,0 +1,14 @@
+.snackbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .dismiss-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .snackbar-icon {
+    align-self: flex-start;
+    margin: 5px;
+  }
+}

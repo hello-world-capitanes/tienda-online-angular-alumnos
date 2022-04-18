@@ -18,5 +18,8 @@ export const USER_ERRORS = {
         notProvided: 'No se ha adjuntado una contraseña para el usuario',
         minLength: `Debe contener al menos ${USER_CONTANTS.password.minLength} caracteres`,
         maxLength: `Debe contener como máximo ${USER_CONTANTS.password.maxLength} caracteres`,
+    },
+    database: {
+        notFound: "User not found",
     }
 }

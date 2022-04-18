@@ -4,30 +4,36 @@ import {
   MAT_SNACK_BAR_DATA,
 } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
+import { MessageType, SNACKBAR_MESSAGE_TYPES } from '../../utils/models/snackbar.types';
 
 @Component({
-  selector: 'app-error-snackbar',
-  templateUrl: './error-snackbar.component.html',
-  styleUrls: ['./error-snackbar.component.scss'],
+  selector: 'app-snackbar',
+  templateUrl: './snackbar.component.html',
+  styleUrls: ['./snackbar.component.scss'],
 })
-export class ErrorSnackbarComponent implements OnInit, OnDestroy {
+export class SnackbarComponent implements OnInit, OnDestroy {
   
   private dismissDuration = 5000;
   private dismissSub: Subscription;
 
-  errorMessage!: string;
+  type!: MessageType;
+  message!: string;
 
   constructor(
-    public snackBarRef: MatSnackBarRef<ErrorSnackbarComponent>,
+    public snackBarRef: MatSnackBarRef<SnackbarComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: any
   ) {
     const DISMISS_SECONDS =
       !!data && !Number.isNaN(data?.duration) && data?.duration > 0
         ? data?.duration
         : this.dismissDuration;
-    if (!!data && data?.error && data?.error.length > 0) {
-      this.errorMessage = data.error
+    this.type = !!data?.type ? data?.type : SNACKBAR_MESSAGE_TYPES.info;
+    if (!!data) {
+      if (!!data?.message && data?.message.length > 0) {
+        this.message = data.message
+      }
     }
+
     this.dismissSub = this.snackBarRef.afterOpened().subscribe(() => {
       setInterval(() => {
         this.snackBarRef.dismiss();

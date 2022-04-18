@@ -1,0 +1,38 @@
+.profile-button {
+    margin-right: 10px;
+    .login-icon {
+        display: none;
+    }
+    .expand-icon {
+        margin-left: 5px;
+    }
+}
+.username {
+    margin: 5px 15px 10px 15px;
+}
+.sign-in-button {
+    width: 200px;
+    margin: 10px 20px;
+}
+
+mat-list {
+    mat-list-item {
+        &:hover {
+            background: rgba(0,0,0,.04);
+        }
+        &:active {
+            background: rgba(0,0,0,.1);
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .profile-button {
+        span, mat-icon {
+            display: none;
+        }
+        .login-icon {
+            display: inline-block;
+        }
+    }
+}
