@@ -6,8 +6,11 @@
     "start": "ng serve --hmr",
     "serve": "ng serve",
     "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
