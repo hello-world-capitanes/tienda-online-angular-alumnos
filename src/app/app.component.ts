@@ -9,7 +9,7 @@ import { LanguageService } from './shared/services/language.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tienda-online-angular-alumnos';
+  title = 'tienda-online-monica-rodriguez';
 
   constructor(
     private matIconRegistry: MatIconRegistry,

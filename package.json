@@ -1,5 +1,5 @@
 {
-  "name": "tienda-online-angular-alumnos",
+  "name": "tienda-online-monica-rodriguez",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^13.2.6",
     "@angular/platform-browser-dynamic": "^13.2.6",
     "@angular/router": "^13.2.6",
+    "firebase": "^9.6.11",
     "rxjs": "^7.5.5",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.5"

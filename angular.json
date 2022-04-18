@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tienda-online-angular-alumnos": {
+    "tienda-online-monica-rodriguez": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tienda-online-angular-alumnos",
+            "outputPath": "dist/tienda-online-monica-rodriguez",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tienda-online-angular-alumnos:build:production"
+              "browserTarget": "tienda-online-monica-rodriguez:build:production"
             },
             "development": {
-              "browserTarget": "tienda-online-angular-alumnos:build:development"
+              "browserTarget": "tienda-online-monica-rodriguez:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tienda-online-angular-alumnos:build"
+            "browserTarget": "tienda-online-monica-rodriguez:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "tienda-online-angular-alumnos:build:production",
+            "browserTarget": "tienda-online-monica-rodriguez:build:production",
             "firebaseProject": "tienda-online-monica-rodriguez",
             "firebaseHostingSite": "tienda-online-monica-rodriguez"
           }
@@ -119,5 +119,5 @@
       }
     }
   },
-  "defaultProject": "tienda-online-angular-alumnos"
+  "defaultProject": "tienda-online-monica-rodriguez"
 }
