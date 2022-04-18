@@ -6,8 +6,11 @@
     "start": "ng serve --hmr",
     "serve": "ng serve",
     "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +19,7 @@
     "@angular/common": "^13.2.6",
     "@angular/compiler": "^13.2.6",
     "@angular/core": "^13.2.6",
+    "@angular/fire": "^7.3.0",
     "@angular/forms": "^13.2.6",
     "@angular/material": "^13.2.6",
     "@angular/platform-browser": "^13.2.6",
