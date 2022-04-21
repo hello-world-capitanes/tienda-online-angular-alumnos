@@ -1,4 +1,8 @@
 {
+  "projects": {
+    "default": "tienda-online-mercadona",
+    "tienda-angular-raul-pradanas": "tienda-online-raul-pradanas"
+  },
   "targets": {
     "tienda-online-mercadona": {
       "hosting": {
@@ -7,8 +11,5 @@
         ]
       }
     }
-  },
-  "projects": {
-    "default": "tienda-online-mercadona"
   }
 }

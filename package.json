@@ -11,10 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-coverage": "npm run test -- --code-coverage",
-    "deploy": "firebase deploy --only hosting",
-    "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "deploy": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +43,6 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.5.2",
-    "cypress": "latest"
+    "typescript": "~4.5.2"
   }
 }
