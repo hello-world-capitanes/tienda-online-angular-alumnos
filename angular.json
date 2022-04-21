@@ -115,6 +115,37 @@
             "firebaseProject": "tienda-online-monica-rodriguez",
             "firebaseHostingSite": "tienda-online-monica-rodriguez"
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tienda-online-monica-rodriguez:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tienda-online-monica-rodriguez:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tienda-online-monica-rodriguez:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tienda-online-monica-rodriguez:serve:production"
+            }
+          }
         }
       }
     }
