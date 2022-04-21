@@ -11,7 +11,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-coverage": "npm run test -- --code-coverage",
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {

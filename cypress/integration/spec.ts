@@ -1,7 +1,26 @@
 describe('My First Test', () => {
-  it('Visits the initial project page', () => {
+
+  beforeEach(() => {
+    cy.viewport(1920, 1080)
     cy.visit('/')
-    cy.contains('Welcome')
-    cy.contains('sandbox app is running!')
+  });
+
+  it('Test del login', () => {
+    cy.contains('Productos del momento')
+    cy.get('button.profile-button').click();
+
+    cy.get('button.sign-in-button').click();
+    cy.get('.signin__container', {timeout:1000}).should('be.visible');
+
+    cy.get('.emailInput',{timeout:1000}).should('be.visible');
+    cy.get('.emailInput').type('fernando@devanddel.com');
+
+    cy.get('button.continueButton', {timeout:1000}).should('be.visible');
+    cy.get('button.continueButton').click();
+
+    cy.get('.passwordInput',{timeout:1000}).should('be.visible');
+    cy.get('.passwordInput').type('admin1234#');
+
+    cy.get('button.continueButton').click();
   })
 })
