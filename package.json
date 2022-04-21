@@ -7,9 +7,10 @@
     "serve": "ng serve",
     "build": "ng build",
     "build:dev": "ng build --configuration development",
-    "build:prod": "ng build --configuration production",
+    "build:prod": "ng build --configuration production --aot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test-coverage": "npm run test -- --code-coverage",
     "deploy": "firebase deploy --only hosting"
   },
   "private": true,
