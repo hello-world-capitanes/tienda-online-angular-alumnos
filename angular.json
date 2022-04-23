@@ -115,6 +115,37 @@
             "firebaseProject": "tienda-online-osman-mehmed",
             "firebaseHostingSite": "tienda-online-osman-mehmed"
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tienda-online-angular-alumnos:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tienda-online-angular-alumnos:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tienda-online-angular-alumnos:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tienda-online-angular-alumnos:serve:production"
+            }
+          }
         }
       }
     }
