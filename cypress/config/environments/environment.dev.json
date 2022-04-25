@@ -1,0 +1,6 @@
+{
+  "extends": ["../../../cypress.json", "../app.json"],
+  "projectId": "6734wd",
+  "baseUrl": "http://localhost:4200",
+  "ignoreTestFiles": ["**/prod/*"]
+}

@@ -1,6 +1,7 @@
 {
   "name": "tienda-online-angular-alumnos",
   "version": "0.0.0",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve --hmr",
@@ -14,9 +15,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-coverage": "npm run test -- --code-coverage",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:dev": "cypress open --config-file cypress/config/environments/environment.dev.json",
+    "cypress:dev:record": "cypress run --record --key 4c6472cd-7f30-49a9-b639-0adc4060e91a --config-file cypress/config/environments/environment.dev.json",
+    "cypress:prod": "cypress open --config-file cypress/config/environments/environment.prod.json",
     "deploy": "firebase deploy --only hosting"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^13.3.3",
     "@angular/cdk": "^13.3.3",
@@ -37,6 +43,7 @@
     "@angular-devkit/build-angular": "^13.3.3",
     "@angular/cli": "^13.3.3",
     "@angular/compiler-cli": "^13.3.3",
+    "@cypress/schematic": "^1.6.0",
     "@types/jasmine": "^3.10.6",
     "@types/node": "^12.20.48",
     "jasmine-core": "~4.0.0",
@@ -46,6 +53,7 @@
     "karma-jasmine": "^4.0.2",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.5.2",
-    "webpack-bundle-analyzer": "^4.5.0"
+    "webpack-bundle-analyzer": "^4.5.0",
+    "cypress": "^9.5.4"
   }
 }

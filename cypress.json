@@ -1,0 +1,15 @@
+{
+  "projectId": "tienda-online-alumnos",
+  "defaultCommandTimeout": 10000,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "integrationFolder": "cypress/integration",
+  "supportFile": "cypress/support/index.ts",
+  "videosFolder": "cypress/videos",
+  "screenshotsFolder": "cypress/screenshots",
+  "pluginsFile": "cypress/plugins/index.ts",
+  "fixturesFolder": "cypress/fixtures",
+  "baseUrl": "http://localhost:4200"
+}

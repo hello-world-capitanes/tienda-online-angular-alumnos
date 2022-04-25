@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "../../../cypress.json",
+        "../app.json"
+    ],
+    "baseUrl": "https://tienda-online-mercadona.web.app",
+    "ignoreTestFiles": ["**/prod/*"]
+}
